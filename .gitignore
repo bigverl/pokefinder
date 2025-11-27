@@ -1,0 +1,87 @@
+# ============================
+# Python / Litestar / Textual
+# ============================
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.pym
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables / secrets
+.env
+.env.*
+*.env
+
+# SQLite / DB artifacts
+databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.bak
+*.sql  # if you export dumps, keep them out unless intentional
+
+# Alembic cache / migration artifacts
+alembic.ini
+alembic/versions/__pycache__/
+
+# Logs
+*.log
+logs/
+*.tmp
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# Textual (TUI) cache and dev artifacts
+.textual/
+.textual-dev/
+*.tcss.cache  # Textual CSS cache
+
+# Structlog / runtime output (if you log to files)
+*.json.log
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+MANIFEST
+
+# Uvicorn reload cache
+uvicorn.log
+
+# IDEs / Editors
+.vscode/
+
+# Dev scripts
+/scripts
+
+# Dev data_cache
+data_cache/
+
+# Dev docs
+.devnotes
+.deprecated
+.misc-docs
+
+# Misc files
+zz_test.py
+seed_sqlite_db.py
+pokemon_master_pokerogue.json
+pokemon_master_unbound.json

@@ -1,0 +1,9 @@
+{
+  "exclude": [
+    "pokedex_main.py",
+    ".venv",
+    "./.deprecated",
+    "app.py" // This is temporary until I actually start on the front-end.
+  ],
+  "include": ["."]
+}
