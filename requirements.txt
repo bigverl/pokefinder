@@ -5,6 +5,7 @@ uvicorn[standard]   # ASGI server with websockets support
 # Database
 aiosqlite          # Async SQLite driver for Phase 3
 sqlalchemy[asyncio] # ORM with async support for Phase 5 (PostgreSQL migration)
+advanced-alchemy
 alembic            # Database migrations
 asyncpg            # Async PostgreSQL driver for Phase 5
 

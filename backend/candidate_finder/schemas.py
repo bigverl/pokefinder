@@ -1,5 +1,9 @@
-from pydantic import BaseModel, RootModel
+from pydantic import BaseModel as _BaseModel, RootModel
 from typing import Any
+
+class BaseModel(_BaseModel):
+    # Evidently, this has to be done to enable ORM Mode
+    model_config = {"from_attributes": True}
 
 class PokemonInfoResponse(BaseModel):
     name: str
