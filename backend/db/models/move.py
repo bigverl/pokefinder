@@ -12,7 +12,6 @@ if TYPE_CHECKING:
 class Move(UUIDBase):
     __tablename__ = "move"
     name: Mapped[str] = mapped_column(unique=True)
-    number: Mapped[int] = mapped_column(unique=True)
     machine_id: Mapped[Optional[str]] = mapped_column(unique=True)
     pokemon: Mapped[list["Pokemon"]] = relationship(secondary="pokemon_move", back_populates="pokemon_moves")
 

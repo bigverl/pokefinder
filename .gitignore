@@ -85,3 +85,6 @@ zz_test.py
 seed_sqlite_db.py
 pokemon_master_pokerogue.json
 pokemon_master_unbound.json
+uv.lock
+backend/db/migrations/env.py
+zzz_4.5_testing/test_0_models.py

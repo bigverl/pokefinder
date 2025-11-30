@@ -1,5 +1,6 @@
 import pytest
 import pytest_asyncio
+import os
 from backend.candidate_finder.services import CandidateFinder
 from backend.candidate_finder.repository import (
     JsonRepository,
@@ -10,6 +11,23 @@ from config import (
     DATA_CACHE_DIR,
     SQLITE_DB_PATH
 )
+
+# ==================
+# Test Mode Setup
+# ==================
+@pytest.fixture(scope="session", autouse=True)
+def setup_test_mode(request):
+    """Set TEST_MODE based on test file location"""
+    test_path = str(request.fspath)
+
+    if "/tests/unit/" in test_path or "/zzz_4.5_testing/" in test_path:
+        os.environ["TEST_MODE"] = "unit"
+    elif "/tests/integration/" in test_path:
+        os.environ["TEST_MODE"] = "integration"
+
+    yield
+
+    os.environ.pop("TEST_MODE", None)
 
 # ==================
 # test_candidate_finder.py

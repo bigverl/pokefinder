@@ -12,8 +12,6 @@ if TYPE_CHECKING:
     from backend.db.models.move import Move
     from backend.db.models.pokemon_stats import PokemonStats
     from backend.db.models.type import Type
-    from backend.db.models.pokemon_move import pokemon_move
-    from backend.db.models.pokemon_type import pokemon_type
 
 class Pokemon(UUIDBase):
     __tablename__ = "pokemon"
