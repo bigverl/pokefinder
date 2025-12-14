@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from sqlalchemy import ForeignKey, CheckConstraint, Table, Column, Float, Index
 from advanced_alchemy.base import UUIDBase
-from backend.data.models.universal_uuid import UniversalUUID
+from advanced_alchemy.types import GUID
 
 # -- =================
 # -- # Junction Table (Many-to-Many)
@@ -11,8 +11,8 @@ from backend.data.models.universal_uuid import UniversalUUID
 type_matchup = Table(
     "type_matchup",
     UUIDBase.metadata,
-    Column("defender_type_id", UniversalUUID, ForeignKey("type.id"), primary_key=True),
-    Column("attacker_type_id", UniversalUUID, ForeignKey("type.id"), primary_key=True),
+    Column("defender_type_id", GUID, ForeignKey("type.id"), primary_key=True),
+    Column("attacker_type_id", GUID, ForeignKey("type.id"), primary_key=True),
     Column("multiplier", Float),
     CheckConstraint("multiplier IN (0, 0.5, 1, 2, 4)", name="check_multiplier_valid"),
     Index("idx_get_type_matchups_by_defender", "defender_type_id")

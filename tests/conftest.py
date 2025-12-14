@@ -2,7 +2,7 @@ import pytest_asyncio
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from backend.src.config.settings import settings
 from advanced_alchemy.base import UUIDBase
-from scripts.seed_database import seed_database
+from scripts.seed_db import seed_database
 from sqlalchemy.pool import StaticPool
 
 # ==================

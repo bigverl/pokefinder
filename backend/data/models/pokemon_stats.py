@@ -4,7 +4,7 @@ from uuid import UUID
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from advanced_alchemy.base import UUIDBase
-from backend.data.models.universal_uuid import UniversalUUID
+from advanced_alchemy.types import GUID
 
 # Static checker please ignore
 from typing import TYPE_CHECKING
@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 class PokemonStats(UUIDBase):
     __tablename__ = "pokemon_stats"
-    pokemon_id: Mapped[UUID] = mapped_column(UniversalUUID, ForeignKey("pokemon.id"), primary_key=True)
+    pokemon_id: Mapped[UUID] = mapped_column(GUID, ForeignKey("pokemon.id"), primary_key=True)
     hp: Mapped[int]
     attack: Mapped[int]
     defense: Mapped[int]
