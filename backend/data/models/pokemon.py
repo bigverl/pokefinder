@@ -3,8 +3,8 @@ from __future__ import annotations
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from advanced_alchemy.base import UUIDBase
 from backend.data.models.pokemon_type import pokemon_type
-from backend.data.models.universal_uuid import UniversalUUID
-import uuid
+from advanced_alchemy.types import GUID
+from uuid import UUID, uuid4
 
 
 # Static checker please ignore
@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 class Pokemon(UUIDBase):
     __tablename__ = "pokemon"
-    id: Mapped[uuid.UUID] = mapped_column(UniversalUUID, primary_key=True, default=uuid.uuid4)
+    id: Mapped[UUID] = mapped_column(GUID, primary_key=True, default=uuid4)
     name: Mapped[str] = mapped_column(unique=True)
     display_name: Mapped[str] = mapped_column(unique=True)
     number: Mapped[int]
