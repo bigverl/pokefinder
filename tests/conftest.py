@@ -1,75 +1,55 @@
-import pytest
 import pytest_asyncio
-import os
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from backend.src.config.settings import settings
-from litestar.plugins.sqlalchemy import UUIDBase
+from advanced_alchemy.base import UUIDBase
 from scripts.seed_database import seed_database
+from sqlalchemy.pool import StaticPool
 
 # ==================
-# Test Mode Setup
+# SQLite Session-Scoped Setup (fast, shared across tests)
 # ==================
-@pytest.fixture(scope="session", autouse=True)
-def setup_test_mode(request):
-    if request.config.getoption("-m") == "unit":
-        os.environ["TEST_MODE"] = "unit"
-    else:
-        os.environ["TEST_MODE"] = "integration"
-    yield
-    os.environ.pop("TEST_MODE", None)
-
 @pytest_asyncio.fixture(scope="session")
-async def seed_db_engine():
-    """Create engine just to seed the database, then fully dispose"""
-    engine = create_async_engine(settings.db_url, echo=False)
-    async_session_maker = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
-
-    # create tables
-    async with engine.begin() as conn:
-        await conn.run_sync(UUIDBase.metadata.create_all)
-
-    # seed database
-    async with async_session_maker() as session:
-        await seed_database(session)
-
-    # dispose
-    await engine.dispose()
-
-    yield
-
-# engine created once and used for all tests
-@pytest_asyncio.fixture(scope="session", loop_scope="session")
-async def _db_engine(setup_test_mode):
-    """Create engine and seed database once per test session"""
-    engine = create_async_engine(settings.db_url, echo=False)
-
-    # Create all tables
-    async with engine.begin() as conn:
-        await conn.run_sync(UUIDBase.metadata.create_all)
-
-    # Create session maker
-    async_session_maker = async_sessionmaker(
-        engine, class_=AsyncSession, expire_on_commit=False
+async def _db_engine():
+    """Session-scoped engine for SQLite (fast, shared across tests)"""
+    db_url = "sqlite+aiosqlite:///:memory:"
+    engine = create_async_engine(
+        db_url,
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+        echo=False,
     )
 
-    # Seed the database once per test session
+    async_session_maker = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+    # Create tables + seed
+    async with engine.begin() as conn:
+        await conn.run_sync(UUIDBase.metadata.create_all)
     async with async_session_maker() as session:
-        print(f"\n🌱 Seeding {settings.db_url.split('://')[0]} database for tests...")
         await seed_database(session)
-        print("✅ Database seeded successfully\n")
+
+    yield async_session_maker
+    await engine.dispose()
+
+# ==================
+# PostgreSQL Function-Scoped Setup (slower, but avoids concurrent operation errors)
+# ==================
+@pytest_asyncio.fixture(scope="function")
+async def _db_engine_postgres():
+    """Function-scoped engine for PostgreSQL (creates fresh DB per test)"""
+    db_url = settings.db_url
+    engine = create_async_engine(db_url, echo=False)
+
+    async_session_maker = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+    # Create tables + seed for each test
+    async with engine.begin() as conn:
+        await conn.run_sync(UUIDBase.metadata.create_all)
+    async with async_session_maker() as session:
+        await seed_database(session)
 
     yield async_session_maker
 
-    await engine.dispose()
-
-# db session used only for tests
-@pytest_asyncio.fixture
-async def db_session():
-    """Provide a fresh database session per test"""
-    engine = create_async_engine(settings.db_url, echo=False)
-    async_session_maker = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
-
-    async with async_session_maker() as session:
-        yield session
-
+    # Cleanup: drop all tables after each test
+    async with engine.begin() as conn:
+        await conn.run_sync(UUIDBase.metadata.drop_all)
     await engine.dispose()

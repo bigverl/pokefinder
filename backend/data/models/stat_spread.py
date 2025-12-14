@@ -2,11 +2,14 @@ from __future__ import annotations
 
 from sqlalchemy import String, Integer
 from sqlalchemy.orm import Mapped, mapped_column
-from litestar.plugins.sqlalchemy import UUIDBase
+from advanced_alchemy.base import UUIDBase
+from backend.data.models.universal_uuid import UniversalUUID
+import uuid
 
 
 class StatSpread(UUIDBase):
     __tablename__ = "stat_spread"
+    id: Mapped[uuid.UUID] = mapped_column(UniversalUUID, primary_key=True, default=uuid.uuid4)
     stat_name: Mapped[str] = mapped_column(String, primary_key=True)
     percentile_20: Mapped[int] = mapped_column(Integer)
     percentile_40: Mapped[int] = mapped_column(Integer)

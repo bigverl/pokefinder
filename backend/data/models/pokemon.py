@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from litestar.plugins.sqlalchemy import UUIDBase
+from advanced_alchemy.base import UUIDBase
 from backend.data.models.pokemon_type import pokemon_type
+from backend.data.models.universal_uuid import UniversalUUID
+import uuid
 
 
 # Static checker please ignore
@@ -13,6 +15,7 @@ if TYPE_CHECKING:
 
 class Pokemon(UUIDBase):
     __tablename__ = "pokemon"
+    id: Mapped[uuid.UUID] = mapped_column(UniversalUUID, primary_key=True, default=uuid.uuid4)
     name: Mapped[str] = mapped_column(unique=True)
     display_name: Mapped[str] = mapped_column(unique=True)
     number: Mapped[int]

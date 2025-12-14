@@ -2039,7 +2039,7 @@
     "description": "A legendary bird POK\u00e9MON that is said to appear to doomed people who are lost in icy mountains.",
     "genus": "Freeze Pok\u00e9mon",
     "type_display": "ice/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -2053,7 +2053,7 @@
     "description": "A legendary bird POK\u00e9MON that is said to appear from clouds while dropping enormous lightning bolts.",
     "genus": "Electric Pok\u00e9mon",
     "type_display": "electric/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -2067,7 +2067,7 @@
     "description": "Known as the legendary bird of fire. Every flap of its wings creates a dazzling flash of flames.",
     "genus": "Flame Pok\u00e9mon",
     "type_display": "fire/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -3425,7 +3425,7 @@
     "description": "The rain clouds it carries let it fire thunderbolts at will. They say that it descended with lightning.",
     "genus": "Thunder Pok\u00e9mon",
     "type_display": "electric",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -3439,7 +3439,7 @@
     "description": "Volcanoes erupt when it barks. Un\u00ad able to restrain its extreme power, it races headlong around the land.",
     "genus": "Volcano Pok\u00e9mon",
     "type_display": "fire",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -3453,7 +3453,7 @@
     "description": "It races around the world to purify fouled water. It dashes away with the north wind.",
     "genus": "Aurora Pok\u00e9mon",
     "type_display": "water",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -5301,7 +5301,7 @@
     "description": "Its entire body is made of rock. If any part chips off in battle, it attaches rocks to repair itself.",
     "genus": "Rock Peak Pok\u00e9mon",
     "type_display": "rock",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -5315,7 +5315,7 @@
     "description": "REGICE\u2019s body was made during an ice age. The deep-frozen body can\u2019t be melted, even by fire. This POK\u00e9MON controls frigid air of minus 328 degrees F.",
     "genus": "Iceberg Pok\u00e9mon",
     "type_display": "ice",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -5329,7 +5329,7 @@
     "description": "REGISTEEL has a body that is harder than any kind of metal. Its body is apparently hollow. No one has any idea what this POK\u00e9MON eats.",
     "genus": "Iron Pok\u00e9mon",
     "type_display": "steel",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -5343,7 +5343,7 @@
     "description": "LATIAS is highly sensitive to the emotions of people. If it senses any hostility, this POK\u00e9MON ruffles the feathers all over its body and cries shrilly to intimidate the foe.",
     "genus": "Eon Pok\u00e9mon",
     "type_display": "dragon/psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -5357,7 +5357,7 @@
     "description": "LATIOS has the ability to make its foe see an image of what it has seen or imagines in its head. This POK\u00e9MON is intelligent and understands human speech.",
     "genus": "Eon Pok\u00e9mon",
     "type_display": "dragon/psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -6869,7 +6869,7 @@
     "description": "Known as \u201cThe Being of Knowledge.\u201d It is said that it can wipe out the memory of those who see its eyes.",
     "genus": "Knowledge Pok\u00e9mon",
     "type_display": "psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -6883,7 +6883,7 @@
     "description": "Known as \u201cThe Being of Emotion.\u201d It taught humans the nobility of sorrow, pain, and joy.",
     "genus": "Emotion Pok\u00e9mon",
     "type_display": "psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -6897,7 +6897,7 @@
     "description": "Known as \u201cThe Being of Willpower.\u201d It sleeps at the bottom of a lake to keep the world in balance.",
     "genus": "Willpower Pok\u00e9mon",
     "type_display": "psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -6939,7 +6939,7 @@
     "description": "It dwells in volcanic caves. It digs in with its cross-shaped feet to crawl on ceilings and walls.",
     "genus": "Lava Dome Pok\u00e9mon",
     "type_display": "fire/steel",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -6953,7 +6953,7 @@
     "description": "There is an enduring legend that states this Pok\u00e9mon towed continents with ropes.",
     "genus": "Colossal Pok\u00e9mon",
     "type_display": "normal",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -6995,7 +6995,7 @@
     "description": "Shiny particles are released from its wings like a veil. It is said to represent the crescent moon.",
     "genus": "Lunar Pok\u00e9mon",
     "type_display": "psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -9431,7 +9431,7 @@
     "description": "This legendary Pok\u00e9mon battled against humans to protect Pok\u00e9mon. Its personality is calm and composed.",
     "genus": "Iron Will Pok\u00e9mon",
     "type_display": "steel/fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -9445,7 +9445,7 @@
     "description": "This Pok\u00e9mon came to the defense of Pok\u00e9mon that had lost their homes in a war among humans.",
     "genus": "Cavern Pok\u00e9mon",
     "type_display": "rock/fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -9459,7 +9459,7 @@
     "description": "This Pok\u00e9mon fought humans in order to protect its friends. Legends about it continue to be passed down.",
     "genus": "Grassland Pok\u00e9mon",
     "type_display": "grass/fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -9473,7 +9473,7 @@
     "description": "The lower half of its body is wrapped in a cloud of energy. It zooms through the sky at 200 mph.",
     "genus": "Cyclone Pok\u00e9mon",
     "type_display": "flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -9487,7 +9487,7 @@
     "description": "Countless charred remains mar the landscape of places through which Thundurus has passed.",
     "genus": "Bolt Strike Pok\u00e9mon",
     "type_display": "electric/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -9529,7 +9529,7 @@
     "description": "Lands visited by Landorus grant such bountiful crops that it has been hailed as \u201cThe Guardian of the Fields.\u201d",
     "genus": "Abundance Pok\u00e9mon",
     "type_display": "ground/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11573,7 +11573,7 @@
     "description": "The heavy control mask it wears suppresses its intrinsic capabilities. This Pok\u00e9mon has some hidden special power.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "normal",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11587,7 +11587,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "normal",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11601,7 +11601,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11615,7 +11615,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11629,7 +11629,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "poison",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11643,7 +11643,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "ground",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11657,7 +11657,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "rock",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11671,7 +11671,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "bug",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11685,7 +11685,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "ghost",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11699,7 +11699,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "steel",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11713,7 +11713,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "fire",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11727,7 +11727,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "water",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11741,7 +11741,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "grass",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11755,7 +11755,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "electric",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11769,7 +11769,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11783,7 +11783,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "ice",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11797,7 +11797,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "dragon",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11811,7 +11811,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "dark",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11825,7 +11825,7 @@
     "description": "Its trust in its partner is what awakens it. This Pok\u00e9mon is capable of changing its type, a flexibility that is well displayed in battle.",
     "genus": "Synthetic Pok\u00e9mon",
     "type_display": "fairy",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -11993,7 +11993,7 @@
     "description": "This guardian deity of Melemele is brimming with curiosity. It summons thunderclouds and stores their lightning inside its body.",
     "genus": "Land Spirit Pok\u00e9mon",
     "type_display": "electric/fairy",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -12007,7 +12007,7 @@
     "description": "This guardian deity of Akala is guilelessly cruel. The fragrant aroma of flowers is the source of its energy.",
     "genus": "Land Spirit Pok\u00e9mon",
     "type_display": "psychic/fairy",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -12021,7 +12021,7 @@
     "description": "It pulls large trees up by the roots and swings them around. It causes vegetation to grow, and then it absorbs energy from the growth.",
     "genus": "Land Spirit Pok\u00e9mon",
     "type_display": "grass/fairy",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -12035,7 +12035,7 @@
     "description": "The dense fog it creates brings the downfall and destruction of its confused enemies. Ocean currents are the source of its energy.",
     "genus": "Land Spirit Pok\u00e9mon",
     "type_display": "water/fairy",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -12049,7 +12049,7 @@
     "description": "Its body is gaseous and frail. It slowly grows as it collects dust from the atmosphere.",
     "genus": "Nebula Pok\u00e9mon",
     "type_display": "psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -12063,7 +12063,7 @@
     "description": "Motionless as if dead, its body is faintly warm to the touch. In the distant past, it was called the cocoon of the stars.",
     "genus": "Protostar Pok\u00e9mon",
     "type_display": "psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -12105,7 +12105,7 @@
     "description": "One of several mysterious Ultra Beasts. People on the street report observing those infested by it suddenly becoming violent.",
     "genus": "Parasite Pok\u00e9mon",
     "type_display": "rock/poison",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12119,7 +12119,7 @@
     "description": "This Ultra Beast appeared from another world. It shows off its body, but whether that display is a boast or a threat remains unclear.",
     "genus": "Swollen Pok\u00e9mon",
     "type_display": "bug/fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12133,7 +12133,7 @@
     "description": "One of the dangerous Ultra Beasts, it has been spotted running across the land at terrific speeds.",
     "genus": "Lissome Pok\u00e9mon",
     "type_display": "bug/fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12147,7 +12147,7 @@
     "description": "One of the mysterious life-forms known as Ultra Beasts. Astonishing electric shocks emanate from its entire body, according to witnesses.",
     "genus": "Glowing Pok\u00e9mon",
     "type_display": "electric",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12161,7 +12161,7 @@
     "description": "It appeared from the Ultra Wormhole. Witnesses observed it flying across the sky at high speed.",
     "genus": "Launch Pok\u00e9mon",
     "type_display": "steel/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12175,7 +12175,7 @@
     "description": "This Ultra Beast came from the Ultra Wormhole. It seems not to attack enemies on its own, but its sharp body is a dangerous weapon in itself.",
     "genus": "Drawn Sword Pok\u00e9mon",
     "type_display": "grass/steel",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12189,7 +12189,7 @@
     "description": "It has gobbled mountains and swallowed whole buildings, according to reports. It\u2019s one of the Ultra Beasts.",
     "genus": "Junkivore Pok\u00e9mon",
     "type_display": "dark/dragon",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12245,7 +12245,7 @@
     "description": "This Ultra Beast is well enough liked to be chosen as a first partner in its own world.",
     "genus": "Poison Pin Pok\u00e9mon",
     "type_display": "poison",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12259,7 +12259,7 @@
     "description": "It stores hundreds of liters of poisonous liquid inside its body. It is one of the organisms known as UBs.",
     "genus": "Poison Pin Pok\u00e9mon",
     "type_display": "poison/dragon",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12273,7 +12273,7 @@
     "description": "It appeared from an Ultra Wormhole. Each one appears to be made up of many life-forms stacked one on top of each other.",
     "genus": "Rampart Pok\u00e9mon",
     "type_display": "rock/steel",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -12287,7 +12287,7 @@
     "description": "It slithers toward people. Then, without warning, it triggers the explosion of its own head. It\u2019s apparently one kind of Ultra Beast.",
     "genus": "Fireworks Pok\u00e9mon",
     "type_display": "fire/ghost",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": true
   },
@@ -13505,7 +13505,7 @@
     "description": "Kubfu trains hard to perfect its moves. The moves it masters will determine which form it takes when it evolves.",
     "genus": "Wushu Pok\u00e9mon",
     "type_display": "fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -13519,7 +13519,7 @@
     "description": "This form of Urshifu is a strong believer in the one-hit KO. Its strategy is to leap in close to foes and land a devastating blow with a hardened fist.",
     "genus": "Wushu Pok\u00e9mon",
     "type_display": "fighting/dark",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -13533,7 +13533,7 @@
     "description": "This form of Urshifu is a strong believer in the one-hit KO. Its strategy is to leap in close to foes and land a devastating blow with a hardened fist.",
     "genus": "Wushu Pok\u00e9mon",
     "type_display": "fighting/water",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -13561,7 +13561,7 @@
     "description": "This Pok\u00e9mon is a cluster of electrical energy. It\u2019s said that removing the rings on Regieleki\u2019s body will unleash the Pok\u00e9mon\u2019s latent power.",
     "genus": "Electron Pok\u00e9mon",
     "type_display": "electric",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -13575,7 +13575,7 @@
     "description": "An academic theory proposes that Regidrago\u2019s arms were once the head of an ancient dragon Pok\u00e9mon. The theory remains unproven.",
     "genus": "Dragon Orb Pok\u00e9mon",
     "type_display": "dragon",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -13589,7 +13589,7 @@
     "description": "Glastrier emits intense cold from its hooves. It\u2019s also a belligerent Pok\u00e9mon\u2014anything it wants, it takes by force.",
     "genus": "Wild Horse Pok\u00e9mon",
     "type_display": "ice",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -13603,7 +13603,7 @@
     "description": "It probes its surroundings with all its senses save one\u2014it doesn\u2019t use its sense of sight. Spectrier\u2019s kicks are said to separate soul from body.",
     "genus": "Swift Horse Pok\u00e9mon",
     "type_display": "ghost",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -13729,7 +13729,7 @@
     "description": "When it flies to this land from across the sea, the bitter winter comes to an end. According to legend, this Pok\u00e9mon's love gives rise to the budding of fresh life across Hisui.",
     "genus": "Love-Hate Pok\u00e9mon",
     "type_display": "fairy/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15157,7 +15157,7 @@
     "description": "The grudge of a person punished for writing the king\u2019s evil deeds upon wooden tablets has clad itself in dead leaves to become a Pok\u00e9mon.",
     "genus": "Ruinous Pok\u00e9mon",
     "type_display": "dark/grass",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15171,7 +15171,7 @@
     "description": "This Pok\u00e9mon can control 100 tons of fallen snow. It plays around innocently by leaping in and out of avalanches it has caused.",
     "genus": "Ruinous Pok\u00e9mon",
     "type_display": "dark/ice",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15185,7 +15185,7 @@
     "description": "The fear poured into an ancient ritual vessel has clad itself in rocks and dirt to become a Pok\u00e9mon.",
     "genus": "Ruinous Pok\u00e9mon",
     "type_display": "dark/ground",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15199,7 +15199,7 @@
     "description": "It controls flames burning at over 5,400 degrees Fahrenheit. It casually swims through the sea of lava it creates by melting rock and sand.",
     "genus": "Ruinous Pok\u00e9mon",
     "type_display": "dark/fire",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15353,7 +15353,7 @@
     "description": "After all its muscles were stimulated by the toxic chain around its neck, Okidogi transformed and gained a powerful physique.",
     "genus": "Retainer Pok\u00e9mon",
     "type_display": "poison/fighting",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15367,7 +15367,7 @@
     "description": "The chain is made from toxins that enhance capabilities. It stimulated Munkidori's brain and caused the Pok\u00e9mon's psychic powers to bloom.",
     "genus": "Retainer Pok\u00e9mon",
     "type_display": "poison/psychic",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15381,7 +15381,7 @@
     "description": "Fezandipiti owes its beautiful looks and lovely voice to the toxic stimulants emanating from the chain wrapped around its body.",
     "genus": "Retainer Pok\u00e9mon",
     "type_display": "poison/fairy",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15395,7 +15395,7 @@
     "description": "This Pok\u00e9mon's type changes based on which mask it's wearing. It confounds its enemies with nimble movements and kicks.",
     "genus": "Mask Pok\u00e9mon",
     "type_display": "grass",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15773,7 +15773,7 @@
     "description": "It flutters around fields of flowers and cares for flowers that are starting to wilt. It draws out the hidden power of flowers to battle.",
     "genus": "Single Bloom Pok\u00e9mon",
     "type_display": "fairy",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15899,7 +15899,7 @@
     "description": "A legendary bird POK\u00e9MON that is said to appear to doomed people who are lost in icy mountains.",
     "genus": "Freeze Pok\u00e9mon",
     "type_display": "psychic/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15913,7 +15913,7 @@
     "description": "A legendary bird POK\u00e9MON that is said to appear from clouds while dropping enormous lightning bolts.",
     "genus": "Electric Pok\u00e9mon",
     "type_display": "fighting/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -15927,7 +15927,7 @@
     "description": "Known as the legendary bird of fire. Every flap of its wings creates a dazzling flash of flames.",
     "genus": "Flame Pok\u00e9mon",
     "type_display": "dark/flying",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   },
@@ -16333,7 +16333,7 @@
     "description": "I believe it was Hisui's swampy terrain that gave Ursaluna its burly physique and newfound capacity to manipulate peat at will.",
     "genus": "Peat Pok\u00e9mon",
     "type_display": "ground/normal",
-    "is_legendary": false,
+    "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
   }

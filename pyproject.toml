@@ -42,6 +42,7 @@ tui = [
 asyncio_mode = "auto"
 markers = [
     "unit: Unit tests using SQLite in-memory",
+    "unit_postgres: Unit tests using PostgreSQL (slow, function-scoped)",
     "integration: Integration tests using PostgreSQL test database",
 ]
 

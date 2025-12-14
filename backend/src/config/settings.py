@@ -1,6 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
-import os
 from pathlib import Path
 
 class Settings(BaseSettings):
@@ -13,9 +12,7 @@ class Settings(BaseSettings):
 
     # DB URLS
     dev_database_url: str = "postgresql+asyncpg://postgres:password@localhost:5432/postgres-dev"
-    # TODO: Change this if we need to start using sqlite in memory for unit tests. remember that it's
-    # going to need a converter from bytes to string (postgres vs sqlite)
-    unit_test_database_url: str = "postgresql+asyncpg://postgres:password@localhost:5432/postgres-dev"
+    unit_test_database_url: str = "sqlite+aiosqlite:///:memory:"  # in-memory SQLite for unit tests
     prod_database_url: str = ""
 
     # Litestar
@@ -65,19 +62,13 @@ class Settings(BaseSettings):
     def type_matchups_fixture_path(self) -> Path:
         return self.fixtures_dir / "type_matchups.json"
     
-    # DB Url for seed_db.py
     @property
     def db_url(self) -> str:
         """Returns appropriate DB based on environment"""
-        test_mode = os.getenv("TEST_MODE")
-        db_env = os.getenv("ENVIRONMENT", "development")
-
-        if test_mode == "unit":
-            return self.unit_test_database_url
-        elif test_mode == "integration" or db_env == "development":
-            return self.dev_database_url
-        else:
+        if self.environment == "production":
             return self.prod_database_url
+        else:
+            return self.dev_database_url
         
 
 # Settings generator and getter

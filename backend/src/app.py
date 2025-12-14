@@ -3,8 +3,8 @@ from litestar.di import Provide
 from litestar.config.cors import CORSConfig
 from litestar.middleware.rate_limit import RateLimitConfig
 from litestar.plugins.structlog import StructlogPlugin
-from advanced_alchemy.extensions.litestar import SQLAlchemyPlugin
-from litestar.plugins.sqlalchemy import (
+from advanced_alchemy.extensions.litestar import (
+    SQLAlchemyPlugin,
     AsyncSessionConfig,
     SQLAlchemyAsyncConfig
 )

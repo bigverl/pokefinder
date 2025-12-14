@@ -1,8 +1,8 @@
 install:
     uv sync --all-groups
 
-dev:
-    python src app.py
+run:
+    uv run litestar --app backend.src.app:app run --reload
 
 up:
     docker-compose up -d --build
@@ -11,11 +11,15 @@ down:
     docker-compose down
 
 test-unit:
-    TEST_MODE=unit uv run pytest -m unit
+    uv run pytest -m unit
+
+test-unit-postgres:
+    uv run pytest tests/unit/test_candidate_finder_postgres.py
 
 test-integration:
-    TEST_MODE=integration uv run pytest -m integration
+    uv run pytest -m integration
 
 test-all:
-    TEST_MODE=unit uv run pytest -m unit
-    TEST_MODE=integration uv run pytest -m integration
+    just test-unit
+    just test-integration
+    just test-unit-postgres

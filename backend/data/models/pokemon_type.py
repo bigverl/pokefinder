@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from sqlalchemy import ForeignKey, CheckConstraint, Table, Column, Integer, Index
-from litestar.plugins.sqlalchemy import UUIDBase
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
+from advanced_alchemy.base import UUIDBase
+from backend.data.models.universal_uuid import UniversalUUID
 
 # -- =================
 # -- # Junction Table (Many-to-Many)
@@ -21,8 +21,8 @@ from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 pokemon_type = Table(
     "pokemon_type",
     UUIDBase.metadata,
-    Column("pokemon_id", PG_UUID, ForeignKey("pokemon.id"), primary_key=True),
-    Column("type_id", PG_UUID, ForeignKey("type.id"), primary_key=True),
+    Column("pokemon_id", UniversalUUID, ForeignKey("pokemon.id"), primary_key=True),
+    Column("type_id", UniversalUUID, ForeignKey("type.id"), primary_key=True),
     Column("slot", Integer),
     CheckConstraint("slot IN (1, 2)", name="check_slot_valid"),
     Index("idx_get_pokemon_by_type", "type_id")

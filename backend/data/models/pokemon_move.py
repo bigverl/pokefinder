@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from sqlalchemy import Column, ForeignKey, Table, String, Integer, Index
-from litestar.plugins.sqlalchemy import UUIDBase
-from sqlalchemy.dialects.postgresql import UUID as PG_UUID
+from advanced_alchemy.base import UUIDBase
+from backend.data.models.universal_uuid import UniversalUUID
 
 # -- =================
 # -- # Junction Table (Many-to-Many)
@@ -11,7 +11,7 @@ from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 pokemon_move = Table(
     "pokemon_move",
     UUIDBase.metadata,
-    Column("pokemon_id", PG_UUID, ForeignKey("pokemon.id"), primary_key=True),
+    Column("pokemon_id", UniversalUUID, ForeignKey("pokemon.id"), primary_key=True),
     Column("move_name", String, primary_key=True),  # String, no FK
     Column("learn_method", String, nullable=False, primary_key=True),
     Column("level", Integer, default=0, primary_key=True),

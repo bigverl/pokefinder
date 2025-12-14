@@ -6,7 +6,7 @@ from sqlalchemy import pool
 from alembic import context
 
 # Import your models and config
-from litestar.plugins.sqlalchemy import UUIDBase
+from advanced_alchemy.base import UUIDBase
 from backend.src.config.settings import settings
 
 # Import all models so Alembic can detect them

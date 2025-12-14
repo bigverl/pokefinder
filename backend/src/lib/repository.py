@@ -76,21 +76,6 @@ class SQLAlchemyRepository():
 
     async def _query_move_index(self) -> dict[str, dict[str, dict[str, Any]]]:
         """Query move index: {move_name: {pokemon_name: {learn_method: level/True}}}"""
-        # Debug: Check tables
-        pm_count = await self.session.scalar(text("SELECT COUNT(*) FROM pokemon_move"))
-        p_count = await self.session.scalar(text("SELECT COUNT(*) FROM pokemon"))
-        print(f"DEBUG: pokemon_move={pm_count} rows, pokemon={p_count} rows")
-
-        # Debug: Check if any IDs match
-        sample_pm = await self.session.execute(text("SELECT pokemon_id FROM pokemon_move LIMIT 1"))
-        sample_pm_id = sample_pm.scalar()
-        sample_p = await self.session.execute(text("SELECT id FROM pokemon LIMIT 1"))
-        sample_p_id = sample_p.scalar()
-        print(f"DEBUG: Sample pokemon_move.pokemon_id={sample_pm_id}, sample pokemon.id={sample_p_id}")
-
-        # Check if the sample ID exists in pokemon table
-        exists = await self.session.scalar(text(f"SELECT COUNT(*) FROM pokemon WHERE id = '{sample_pm_id}'"))
-        print(f"DEBUG: Does pokemon_move's pokemon_id exist in pokemon table? {exists > 0}")
 
         result = await self.session.execute(text("""
             SELECT pm.move_name, p.name as pokemon_name, pm.learn_method, pm.level
@@ -99,7 +84,6 @@ class SQLAlchemyRepository():
             ORDER BY pm.move_name, p.name
         """))
         rows = result.all()
-        print(f"DEBUG: JOIN returned {len(rows)} rows")
         
         move_index = {}
         for row in rows:
