@@ -1,8 +1,9 @@
 
 import pytest
-from backend.candidate_finder.exceptions import (
+from backend.src.lib.exceptions import (
     NoPokemonFoundError,
-    InvalidPokemonMoveError
+    InvalidPokemonMoveError,
+    InvalidPokemonTypeError
 )
 
 # ===========================
@@ -10,43 +11,47 @@ from backend.candidate_finder.exceptions import (
 # ============================
 
 # Case 1: Incorrect arg datatype (Programmer mistake)
+@pytest.mark.unit
 def test_get_pokemon_by_move_incorrect_argument_datatype(finder):
     with pytest.raises(TypeError):
         finder.get_pokemon_by_move(123) # type: ignore
 
 # Case 2: Move does not exist
+@pytest.mark.unit
 def test_get_pokemon_by_move_invalid_pokemon_types(finder):
     with pytest.raises(InvalidPokemonMoveError):
         finder.get_pokemon_by_move("definitely not a move")
 
 # Case 3: Found
+@pytest.mark.unit
 def test_get_pokemon_by_move_found_single_type(finder):
     result = finder.get_pokemon_by_move("hypnosis")
-    # Ultra Beasts (xurkitree, blacephalon) are excluded by default
+    # PokeRogue fixture data (current source of truth)
     assert result == {
-        'vulpix': {'egg': True}, 'zubat': {'egg': True},
-        'meowth': {'egg': True}, 'psyduck': {'egg': True},
-        'poliwag': {'level-up': 1}, 'poliwhirl': {'level-up': 1},
-        'poliwrath': {'level-up': 1}, 'ponyta': {'egg': True},
-        'gastly': {'level-up': 4}, 'haunter': {'level-up': 1},
-        'gengar': {'level-up': 1}, 'exeggcute': {'level-up': 1},
-        'exeggutor': {'level-up': 1}, 'mr-mime': {'egg': True},
-        'hoothoot': {'level-up': 36}, 'noctowl': {'level-up': 48},
-        'politoed': {'level-up': 1}, 'ralts': {'level-up': 9},
-        'kirlia': {'level-up': 9}, 'gardevoir': {'level-up': 9},
-        'lunatone': {'level-up': 5}, 'solrock': {'level-up': 5},
-        'feebas': {'egg': True}, 'drifloon': {'egg': True},
-        'bronzor': {'level-up': 20}, 'bronzong': {'level-up': 20},
-        'mime-jr': {'egg': True}, 'spiritomb': {'level-up': 55},
-        'gallade': {'level-up': 1}, 'munna': {'level-up': 4},
-        'musharna': {'level-up': 1}, 'pidove': {'egg': True},
-        'sigilyph': {'level-up': 10}, 'gothita': {'level-up': 24},
-        'gothorita': {'level-up': 24}, 'gothitelle': {'level-up': 24},
-        'inkay': {'level-up': 3}, 'malamar': {'level-up': 1},
-        'sandygast': {'level-up': 30}, 'palossand': {'level-up': 30}
+        'bronzong': {'level-up': 20},
+        'exeggutor': {'level-up': 1},
+        'gallade': {'level-up': 1},
+        'glameow': {'level-up': 13},
+        'gothorita': {'level-up': 24},
+        'haunter': {'level-up': 1},
+        'hoothoot': {'level-up': 36},
+        'hypno': {'level-up': 1},
+        'kirlia': {'level-up': 9},
+        'lunatone': {'level-up': 5},
+        'malamar': {'level-up': 1},
+        'munna': {'level-up': 4},
+        'poliwhirl': {'level-up': 1},
+        'sandygast': {'level-up': 30},
+        'sigilyph': {'level-up': 10},
+        'spinda': {'level-up': 19},
+        'watchog': {'level-up': 18},
+        'wyrdeer': {'level-up': 10},
+        'yanma': {'level-up': 38},
+        'yanmega': {'level-up': 0}
     }
 
 # Case 4: Legendary/Mythical filtering - Default (exclude both)
+@pytest.mark.unit
 def test_get_pokemon_by_move_exclude_legendary_and_mythical_by_default(finder):
     result = finder.get_pokemon_by_move("psychic")
     # Should NOT include legendaries
@@ -60,6 +65,7 @@ def test_get_pokemon_by_move_exclude_legendary_and_mythical_by_default(finder):
     assert "alakazam" in result
 
 # Case 5: Include legendary and mythical
+@pytest.mark.unit
 def test_get_pokemon_by_move_include_legendary_and_mythical(finder):
     result = finder.get_pokemon_by_move("psychic", include_legendary=True, include_mythical=True)
     # Should include legendaries
@@ -72,6 +78,7 @@ def test_get_pokemon_by_move_include_legendary_and_mythical(finder):
     assert "alakazam" in result
 
 # Case 6: Include all special Pokemon (legendary, mythical, ultra beasts)
+@pytest.mark.unit
 def test_get_pokemon_by_move_include_all_special_pokemon(finder):
     result = finder.get_pokemon_by_move("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
     # Should include Ultra Beasts
@@ -91,48 +98,53 @@ def test_get_pokemon_by_move_include_all_special_pokemon(finder):
 # ============================
 
 # Case 1: Incorrect argument datatype (Programmer mistake)
+@pytest.mark.unit
 def test_get_pokemon_by_stats_incorrect_stat_datatype(finder):
     with pytest.raises(TypeError):
         finder.get_pokemon_by_stats(123, "speed")  # type: ignore
 
 
 # Case 2: Empty stat names (Caller mistake)
+@pytest.mark.unit
 def test_get_pokemon_by_stats_empty_primary_stat(finder):
     with pytest.raises(ValueError, match="primary_stat cannot be empty"):
         finder.get_pokemon_by_stats("", "speed")
 
-
+@pytest.mark.unit
 def test_get_pokemon_by_stats_empty_secondary_stat(finder):
     with pytest.raises(ValueError, match="secondary_stat cannot be empty"):
         finder.get_pokemon_by_stats("attack", "")
 
 
 # Case 3: Invalid stat names (Caller mistake)
+@pytest.mark.unit
 def test_get_pokemon_by_stats_invalid_primary_stat(finder):
     with pytest.raises(ValueError, match="Invalid primary_stat"):
         finder.get_pokemon_by_stats("coolness", "speed")
 
-
+@pytest.mark.unit
 def test_get_pokemon_by_stats_invalid_secondary_stat(finder):
     with pytest.raises(ValueError, match="Invalid secondary_stat"):
         finder.get_pokemon_by_stats("attack", "badness")
 
 
 # Case 4: Valid search with default parameters
+@pytest.mark.unit
 def test_get_pokemon_by_stats_basic_attack_speed_search(finder):
     result = finder.get_pokemon_by_stats("attack", "speed")
 
-    # Should return a list
-    assert isinstance(result, list)
+    # Should return a dict
+    assert isinstance(result, dict)
 
     # Should have results
     assert len(result) > 0
 
-    # Should be ordered (best first)
-    assert len(result) >= 5  # Should have at least 5 results
+    # Should have at least 5 results
+    assert len(result) >= 5
 
 
 # Case 5: No Pokemon found (threshold too high)
+@pytest.mark.unit
 def test_get_pokemon_by_stats_no_pokemon_found_high_threshold(finder):
     with pytest.raises(NoPokemonFoundError):
         # No Pokemon has 200 attack and 200 speed
@@ -140,16 +152,25 @@ def test_get_pokemon_by_stats_no_pokemon_found_high_threshold(finder):
 
 
 # Case 6: Ranking order (weighted 70/30)
+@pytest.mark.unit
 def test_get_pokemon_by_stats_ranking_order(finder):
     result = finder.get_pokemon_by_stats("attack", "speed")
 
-    # Slaking (Attack: 160, Speed: 100) should rank very high
-    # Garchomp (Attack: 130, Speed: 102) should also be in top results
-    assert "slaking" in result[:10]
-    assert "garchomp" in result[:20]
+    # Slaking (Attack: 160, Speed: 100) should rank #1
+    # Dragapult should also be in top results (high attack + speed)
+    assert "slaking" in result
+    assert "dragapult" in result
+
+    # Get the ranking by converting to list
+    ranking = list(result.keys())
+
+    # Both should be in top 10
+    assert "slaking" in ranking[:10]
+    assert "dragapult" in ranking[:10]
 
 
 # Case 7: Default behavior (exclude legendary, mythical, ultra beasts)
+@pytest.mark.unit
 def test_get_pokemon_by_stats_exclude_special_pokemon_by_default(finder):
     result = finder.get_pokemon_by_stats("attack", "speed")
 
@@ -164,6 +185,7 @@ def test_get_pokemon_by_stats_exclude_special_pokemon_by_default(finder):
 
 
 # Case 8: Include all special Pokemon (legendary, mythical, ultra beasts)
+@pytest.mark.unit
 def test_get_pokemon_by_stats_include_all_special_pokemon(finder):
     result = finder.get_pokemon_by_stats(
         "attack", "speed",
@@ -185,6 +207,7 @@ def test_get_pokemon_by_stats_include_all_special_pokemon(finder):
 
 
 # Case 9: min_primary filter
+@pytest.mark.unit
 def test_get_pokemon_by_stats_min_primary_threshold(finder):
     result = finder.get_pokemon_by_stats("attack", "speed", min_primary=130)
 
@@ -197,6 +220,7 @@ def test_get_pokemon_by_stats_min_primary_threshold(finder):
 
 
 # Case 10: Explicit min_secondary
+@pytest.mark.unit
 def test_get_pokemon_by_stats_explicit_min_secondary(finder):
     result = finder.get_pokemon_by_stats("attack", "speed", min_primary=100, min_secondary=100)
 
@@ -207,6 +231,7 @@ def test_get_pokemon_by_stats_explicit_min_secondary(finder):
     assert "garchomp" in result
 
 # Case 11: min_speed filter
+@pytest.mark.unit
 def test_get_pokemon_by_stats_min_speed_filter(finder):
     result = finder.get_pokemon_by_stats("attack", "defense", min_primary=100, min_speed=100)
 
@@ -225,12 +250,13 @@ def test_get_pokemon_by_stats_min_speed_filter(finder):
 # ============================
 
 # Case 1: Invalid type (Caller mistake)
+@pytest.mark.unit
 def test_get_pokemon_by_type_invalid_type(finder):
-    from backend.candidate_finder.exceptions import InvalidPokemonTypeError
     with pytest.raises(InvalidPokemonTypeError):
         finder.get_pokemon_by_type("definitely-not-a-type")
 
 # Case 2: Single type search
+@pytest.mark.unit
 def test_get_pokemon_by_type_single_type(finder):
     result = finder.get_pokemon_by_type("fire")
 
@@ -245,6 +271,7 @@ def test_get_pokemon_by_type_single_type(finder):
     assert "pikachu" not in result
 
 # Case 3: Dual type search
+@pytest.mark.unit
 def test_get_pokemon_by_type_dual_type(finder):
     result = finder.get_pokemon_by_type("fire", "flying")
 
@@ -256,6 +283,7 @@ def test_get_pokemon_by_type_dual_type(finder):
     assert "pidgeot" not in result  # Flying only
 
 # Case 4: Default behavior (exclude legendary, mythical, ultra beasts)
+@pytest.mark.unit
 def test_get_pokemon_by_type_exclude_special_pokemon_by_default(finder):
     result = finder.get_pokemon_by_type("psychic")
 
@@ -267,6 +295,7 @@ def test_get_pokemon_by_type_exclude_special_pokemon_by_default(finder):
     assert "alakazam" in result
 
 # Case 5: Include all special Pokemon
+@pytest.mark.unit
 def test_get_pokemon_by_type_include_all_special_pokemon(finder):
     result = finder.get_pokemon_by_type("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
 
@@ -285,6 +314,7 @@ def test_get_pokemon_by_type_include_all_special_pokemon(finder):
 # ============================
 
 # Case 1: Single type effectiveness
+@pytest.mark.unit
 def test_get_type_effectiveness_single_type(finder):
     result = finder.get_type_effectiveness("fire")
 
@@ -301,6 +331,7 @@ def test_get_type_effectiveness_single_type(finder):
     assert "grass" in result["0.5x"]
 
 # Case 2: Dual type effectiveness (stacking)
+@pytest.mark.unit
 def test_get_type_effectiveness_dual_type(finder):
     result = finder.get_type_effectiveness("fire", "flying")
 

@@ -1,0 +1,1622 @@
+[
+  {
+    "defender_type": "bug",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "fighting",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "fire",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "flying",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "grass",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "ground",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "rock",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "bug",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "bug",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "dark",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "fairy",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "fighting",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "ghost",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "psychic",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dark",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "dragon",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "electric",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "fairy",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "fighting",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "fire",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "grass",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "ice",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "dragon",
+    "attacker_type": "water",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "electric",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "fighting",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "flying",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "ground",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "steel",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "electric",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "bug",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "dark",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "dragon",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "fighting",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "poison",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "steel",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "fairy",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "bug",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "dark",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "fairy",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "fighting",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "flying",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "psychic",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "rock",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fighting",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "bug",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "fairy",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "fighting",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "fire",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "grass",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "ground",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "ice",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "rock",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "steel",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "fire",
+    "attacker_type": "water",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "bug",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "electric",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "fighting",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "grass",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "ground",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "ice",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "rock",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "flying",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "bug",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "dark",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "fighting",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "ghost",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "normal",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "poison",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ghost",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "bug",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "electric",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "fighting",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "fire",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "flying",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "grass",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "ground",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "ice",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "poison",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "grass",
+    "attacker_type": "water",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "electric",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "fighting",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "grass",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "ice",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "poison",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "rock",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ground",
+    "attacker_type": "water",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "fighting",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "fire",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "ice",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "rock",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "steel",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "ice",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "fighting",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "ghost",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "normal",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "bug",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "fairy",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "fighting",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "grass",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "ground",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "poison",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "psychic",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "poison",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "bug",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "dark",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "fighting",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "fire",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "ghost",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "grass",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "psychic",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "steel",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "psychic",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "fighting",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "fire",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "flying",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "grass",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "ground",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "ice",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "normal",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "poison",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "steel",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "rock",
+    "attacker_type": "water",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "bug",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "dragon",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "electric",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "fairy",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "fighting",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "fire",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "flying",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "grass",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "ground",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "ice",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "normal",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "poison",
+    "multiplier": 0.0
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "psychic",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "rock",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "steel",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "steel",
+    "attacker_type": "water",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "bug",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "dark",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "dragon",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "electric",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "fairy",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "fighting",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "fire",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "flying",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "ghost",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "grass",
+    "multiplier": 2.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "ground",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "ice",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "normal",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "poison",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "psychic",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "rock",
+    "multiplier": 1.0
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "steel",
+    "multiplier": 0.5
+  },
+  {
+    "defender_type": "water",
+    "attacker_type": "water",
+    "multiplier": 0.5
+  }
+]
