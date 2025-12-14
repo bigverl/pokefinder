@@ -1,8 +1,9 @@
 
 import pytest
-from backend.candidate_finder.exceptions import (
+from backend.src.lib.exceptions import (
     NoPokemonFoundError,
-    InvalidPokemonMoveError
+    InvalidPokemonMoveError,
+    InvalidPokemonTypeError
 )
 
 # ===========================
@@ -10,16 +11,19 @@ from backend.candidate_finder.exceptions import (
 # ============================
 
 # Case 1: Incorrect arg datatype (Programmer mistake)
+@pytest.mark.unit
 def test_get_pokemon_by_move_incorrect_argument_datatype(finder):
     with pytest.raises(TypeError):
         finder.get_pokemon_by_move(123) # type: ignore
 
 # Case 2: Move does not exist
+@pytest.mark.unit
 def test_get_pokemon_by_move_invalid_pokemon_types(finder):
     with pytest.raises(InvalidPokemonMoveError):
         finder.get_pokemon_by_move("definitely not a move")
 
 # Case 3: Found
+@pytest.mark.unit
 def test_get_pokemon_by_move_found_single_type(finder):
     result = finder.get_pokemon_by_move("hypnosis")
     # Ultra Beasts (xurkitree, blacephalon) are excluded by default
@@ -47,6 +51,7 @@ def test_get_pokemon_by_move_found_single_type(finder):
     }
 
 # Case 4: Legendary/Mythical filtering - Default (exclude both)
+@pytest.mark.unit
 def test_get_pokemon_by_move_exclude_legendary_and_mythical_by_default(finder):
     result = finder.get_pokemon_by_move("psychic")
     # Should NOT include legendaries
@@ -122,14 +127,14 @@ def test_get_pokemon_by_stats_invalid_secondary_stat(finder):
 def test_get_pokemon_by_stats_basic_attack_speed_search(finder):
     result = finder.get_pokemon_by_stats("attack", "speed")
 
-    # Should return a list
-    assert isinstance(result, list)
+    # Should return a dict
+    assert isinstance(result, dict)
 
     # Should have results
     assert len(result) > 0
 
-    # Should be ordered (best first)
-    assert len(result) >= 5  # Should have at least 5 results
+    # Should have at least 5 results
+    assert len(result) >= 5
 
 
 # Case 5: No Pokemon found (threshold too high)
@@ -145,8 +150,15 @@ def test_get_pokemon_by_stats_ranking_order(finder):
 
     # Slaking (Attack: 160, Speed: 100) should rank very high
     # Garchomp (Attack: 130, Speed: 102) should also be in top results
-    assert "slaking" in result[:10]
-    assert "garchomp" in result[:20]
+    assert "slaking" in result
+    assert "garchomp" in result
+
+    # Get the ranking by converting to list
+    ranking = list(result.keys())
+
+    # Both should be in top results
+    assert "slaking" in ranking[:10]
+    assert "garchomp" in ranking[:10]
 
 
 # Case 7: Default behavior (exclude legendary, mythical, ultra beasts)
@@ -226,7 +238,6 @@ def test_get_pokemon_by_stats_min_speed_filter(finder):
 
 # Case 1: Invalid type (Caller mistake)
 def test_get_pokemon_by_type_invalid_type(finder):
-    from backend.candidate_finder.exceptions import InvalidPokemonTypeError
     with pytest.raises(InvalidPokemonTypeError):
         finder.get_pokemon_by_type("definitely-not-a-type")
 

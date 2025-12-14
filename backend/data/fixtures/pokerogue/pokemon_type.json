@@ -1,0 +1,8892 @@
+[
+  {
+    "pokemon_name": "abomasnow",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "abomasnow",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "abra",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "absol",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "accelgor",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aegislash",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aegislash",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "aerodactyl",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aerodactyl",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "aggron",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aggron",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "aipom",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alakazam",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alcremie",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.diglett",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.diglett",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.dugtrio",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.dugtrio",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.exeggutor",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.exeggutor",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.geodude",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.geodude",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.golem",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.golem",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.graveler",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.graveler",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.grimer",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.grimer",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.marowak",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.marowak",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.meowth",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.muk",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.muk",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.ninetales",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.ninetales",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.persian",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.raichu",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.raichu",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.raticate",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.raticate",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.rattata",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.rattata",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.sandshrew",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.sandshrew",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.sandslash",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alola.sandslash",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "alola.vulpix",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "alomomola",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "altaria",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "altaria",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "amaura",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "amaura",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ambipom",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "amoonguss",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "amoonguss",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ampharos",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "annihilape",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "annihilape",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "anorith",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "anorith",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "appletun",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "appletun",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "applin",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "applin",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "araquanid",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "araquanid",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "arbok",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arboliva",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arboliva",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "arcanine",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.bug",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.dark",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.dragon",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.electric",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.fairy",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.fighting",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.fire",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.flying",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.ghost",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.grass",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.ground",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.ice",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.poison",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.psychic",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.rock",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.steel",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arceus.water",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "archaludon",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "archaludon",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "archen",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "archen",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "archeops",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "archeops",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "arctibax",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arctibax",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "arctovish",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arctovish",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "arctozolt",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "arctozolt",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ariados",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ariados",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "armaldo",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "armaldo",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "armarouge",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "armarouge",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "aromatisse",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aron",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aron",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "arrokuda",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "articuno",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "articuno",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "audino",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aurorus",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "aurorus",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "avalugg",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "axew",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "azelf",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "azumarill",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "azumarill",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "azurill",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "azurill",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bagon",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "baltoy",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "baltoy",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "banette",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "barbaracle",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "barbaracle",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "barboach",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "barboach",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "barraskewda",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "basculegion.female",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "basculegion.female",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "basculegion.male",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "basculegion.male",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "basculin",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bastiodon",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bastiodon",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "baxcalibur",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "baxcalibur",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bayleef",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "beartic",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "beautifly",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "beautifly",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "beedrill",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "beedrill",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "beheeyem",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "beldum",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "beldum",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bellibolt",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bellossom",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bellsprout",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bellsprout",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bergmite",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bewear",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bewear",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bibarel",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bibarel",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bidoof",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "binacle",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "binacle",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bisharp",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bisharp",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "blacephalon",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "blacephalon",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "blastoise",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "blaziken",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "blaziken",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "blipbug",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "blissey",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "blitzle",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "boldore",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "boltund",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bombirdier",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bombirdier",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bonsly",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bouffalant",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bounsweet",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "braixen",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "brambleghast",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "brambleghast",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bramblin",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bramblin",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "braviary",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "braviary",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "breloom",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "breloom",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "brionne",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bronzong",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bronzong",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bronzor",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bronzor",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "brute_bonnet",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "brute_bonnet",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "bruxish",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bruxish",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "budew",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "budew",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "buizel",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bulbasaur",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bulbasaur",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "buneary",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "bunnelby",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "burmy",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "butterfree",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "butterfree",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "buzzwole",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "buzzwole",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cacnea",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cacturne",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cacturne",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "calyrex",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "calyrex",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "camerupt",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "camerupt",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "capsakid",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "carbink",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "carbink",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "carkol",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "carkol",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "carnivine",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "carracosta",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "carracosta",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "carvanha",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "carvanha",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cascoon",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "castform",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "caterpie",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "celebi",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "celebi",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "celesteela",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "celesteela",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "centiskorch",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "centiskorch",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ceruledge",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ceruledge",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cetitan",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cetoddle",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chandelure",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chandelure",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "chansey",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "charcadet",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "charizard",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "charizard",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "charjabug",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "charjabug",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "charmander",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "charmeleon",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chatot",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chatot",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cherrim",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cherubi",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chesnaught",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chesnaught",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "chespin",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chewtle",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chi_yu",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chi_yu",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "chien_pao",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chien_pao",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "chikorita",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chimchar",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chimecho",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chinchou",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "chinchou",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "chingling",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cinccino",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cinderace",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "clamperl",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "clauncher",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "clawitzer",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "claydol",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "claydol",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "clefable",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "clefairy",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cleffa",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "clobbopus",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "clodsire",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "clodsire",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cloyster",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cloyster",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "coalossal",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "coalossal",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cobalion",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cobalion",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cofagrigus",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "combee",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "combee",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "combusken",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "combusken",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "comfey",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "conkeldurr",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "copperajah",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "corphish",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "corsola",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "corsola",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "corviknight",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "corviknight",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "corvisquire",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cosmoem",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cosmog",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cottonee",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cottonee",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "crabominable",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "crabominable",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "crabrawler",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cradily",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cradily",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cramorant",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cramorant",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cranidos",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "crawdaunt",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "crawdaunt",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cresselia",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "croagunk",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "croagunk",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "crobat",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "crobat",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "crocalor",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "croconaw",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "crustle",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "crustle",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cryogonal",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cubchoo",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cubone",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cufant",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cursola",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cutiefly",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cutiefly",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cyclizar",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "cyclizar",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "cyndaquil",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dachsbun",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "darkrai",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "darmanitan",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dartrix",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dartrix",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "darumaka",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "decidueye",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "decidueye",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dedenne",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dedenne",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "deerling.autumn",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deerling.autumn",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "deerling.spring",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deerling.spring",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "deerling.summer",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deerling.summer",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "deerling.winter",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deerling.winter",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "deino",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deino",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "delcatty",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "delibird",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "delibird",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "delphox",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "delphox",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "deoxys",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deoxys.attack",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deoxys.defense",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "deoxys.speed",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dewgong",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dewgong",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dewott",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dewpider",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dewpider",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dhelmise",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dhelmise",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dialga",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dialga",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "diancie",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "diancie",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "diggersby",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "diggersby",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "diglett",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dipplin",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dipplin",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ditto",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dodrio",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dodrio",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "doduo",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "doduo",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dolliv",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dolliv",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dondozo",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "donphan",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dottler",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dottler",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "doublade",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "doublade",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dracovish",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dracovish",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dracozolt",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dracozolt",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dragalge",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dragalge",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dragapult",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dragapult",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dragonair",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dragonite",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dragonite",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "drakloak",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drakloak",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "drampa",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drampa",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "drapion",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drapion",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dratini",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drednaw",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drednaw",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dreepy",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dreepy",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "drifblim",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drifblim",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "drifloon",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drifloon",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "drilbur",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drizzile",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "drowzee",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "druddigon",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dubwool",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ducklett",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ducklett",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dudunsparce.three-segment",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dudunsparce.two-segment",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dugtrio",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dunsparce",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "duosion",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "duraludon",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "duraludon",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "durant",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "durant",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dusclops",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dusknoir",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "duskull",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dustox",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dustox",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "dwebble",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "dwebble",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "eelektrik",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "eelektross",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "eevee",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "eevee.partner",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "eiscue",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ekans",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "eldegoss",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "electabuzz",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "electivire",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "electrike",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "electrode",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "elekid",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "elgyem",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "emboar",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "emboar",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "emolga",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "emolga",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "empoleon",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "empoleon",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "enamorus",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "enamorus",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "entei",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "escavalier",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "escavalier",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "espathra",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "espeon",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "espurr",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "eternatus",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "eternatus",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "excadrill",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "excadrill",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "exeggcute",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "exeggcute",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "exeggutor",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "exeggutor",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "exploud",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "falinks",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "farfetchd",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "farfetchd",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "farigiraf",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "farigiraf",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "fearow",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "fearow",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "feebas",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "fennekin",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "feraligatr",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ferroseed",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ferroseed",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ferrothorn",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ferrothorn",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "fezandipiti",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "fezandipiti",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "fidough",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "finizen",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "finneon",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flaaffy",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flabebe",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flamigo",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flamigo",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "flapple",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flapple",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "flareon",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "fletchinder",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "fletchinder",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "fletchling",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "fletchling",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "flittle",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "floatzel",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "floette",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "floette.eternal",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "floragato",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "florges",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flutter_mane",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flutter_mane",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "flygon",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "flygon",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "fomantis",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "foongus",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "foongus",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "forretress",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "forretress",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "fraxure",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "frigibax",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "frigibax",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "frillish",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "frillish",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "froakie",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "frogadier",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "froslass",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "froslass",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "frosmoth",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "frosmoth",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "fuecoco",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "furfrou",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "furret",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gabite",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gabite",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.articuno",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.articuno",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.corsola",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.darmanitan",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.darumaka",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.farfetchd",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.linoone",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.linoone",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.meowth",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.moltres",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.moltres",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.mr_mime",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.mr_mime",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.ponyta",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.rapidash",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.rapidash",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.slowbro",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.slowbro",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.slowking",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.slowking",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.slowpoke",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.stunfisk",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.stunfisk",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.weezing",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.weezing",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.yamask",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.yamask",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.zapdos",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.zapdos",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galar.zigzagoon",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galar.zigzagoon",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gallade",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gallade",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "galvantula",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "galvantula",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "garbodor",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "garchomp",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "garchomp",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gardevoir",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gardevoir",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "garganacl",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gastly",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gastly",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gastrodon",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gastrodon",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "genesect",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "genesect",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gengar",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gengar",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "geodude",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "geodude",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gholdengo",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gholdengo",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gible",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gible",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gigalith",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gimmighoul.chest",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gimmighoul.roaming",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "girafarig",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "girafarig",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "giratina.altered",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "giratina.altered",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "giratina.origin",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "giratina.origin",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "glaceon",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "glalie",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "glameow",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "glastrier",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gligar",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gligar",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "glimmet",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "glimmet",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "glimmora",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "glimmora",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gliscor",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gliscor",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gloom",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gloom",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gogoat",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golbat",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golbat",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "goldeen",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golduck",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golem",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golem",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "golett",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golett",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "golisopod",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golisopod",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "golurk",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "golurk",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "goodra",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "goomy",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gorebyss",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gossifleur",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gothita",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gothitelle",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gothorita",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gouging_fire",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gouging_fire",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gourgeist.average",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gourgeist.average",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gourgeist.large",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gourgeist.large",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gourgeist.small",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gourgeist.small",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gourgeist.super",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gourgeist.super",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "grafaiai",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grafaiai",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "granbull",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grapploct",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "graveler",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "graveler",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "great_tusk",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "great_tusk",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "greavard",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "greedent",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "greninja",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "greninja",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "greninja.ash",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "greninja.ash",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "grimer",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grimmsnarl",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grimmsnarl",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "grookey",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grotle",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "groudon",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grovyle",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "growlithe",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grubbin",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "grumpig",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gulpin",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gumshoos",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gurdurr",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "guzzlord",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "guzzlord",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "gyarados",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "gyarados",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hakamo-o",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hakamo-o",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "happiny",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hariyama",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hatenna",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hatterene",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hatterene",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hattrem",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "haunter",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "haunter",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hawlucha",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hawlucha",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "haxorus",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "heatmor",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "heatran",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "heatran",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "heliolisk",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "heliolisk",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "helioptile",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "helioptile",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "heracross",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "heracross",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "herdier",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hippopotas",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hippowdon",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.arcanine",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.arcanine",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.avalugg",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.avalugg",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.braviary",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.braviary",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.decidueye",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.decidueye",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.electrode",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.electrode",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.goodra",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.goodra",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.growlithe",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.growlithe",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.lilligant",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.lilligant",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.qwilfish",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.qwilfish",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.samurott",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.samurott",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.sliggoo",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.sliggoo",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.sneasel",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.sneasel",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.typhlosion",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.typhlosion",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.voltorb",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.voltorb",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.zoroark",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.zoroark",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hisui.zorua",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hisui.zorua",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hitmonchan",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hitmonlee",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hitmontop",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ho-oh",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ho-oh",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "honchkrow",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "honchkrow",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "honedge",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "honedge",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hoopa",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hoopa",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hoothoot",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hoothoot",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hoppip",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hoppip",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "horsea",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "houndoom",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "houndoom",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "houndour",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "houndour",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "houndstone",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "huntail",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hydrapple",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hydrapple",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hydreigon",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "hydreigon",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "hypno",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "igglybuff",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "igglybuff",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "illumise",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "impidimp",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "impidimp",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "incineroar",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "incineroar",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "indeedee.female",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "indeedee.female",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "indeedee.male",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "indeedee.male",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "infernape",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "infernape",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "inkay",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "inkay",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "inteleon",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_boulder",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_boulder",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_bundle",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_bundle",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_crown",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_crown",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_hands",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_hands",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_jugulis",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_jugulis",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_leaves",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_leaves",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_moth",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_moth",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_thorns",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_thorns",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_treads",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_treads",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "iron_valiant",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "iron_valiant",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ivysaur",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ivysaur",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "jangmo-o",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "jellicent",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "jellicent",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "jigglypuff",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "jigglypuff",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "jirachi",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "jirachi",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "jolteon",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "joltik",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "joltik",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "jumpluff",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "jumpluff",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "jynx",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "jynx",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kabuto",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kabuto",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kabutops",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kabutops",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kadabra",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kakuna",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kakuna",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kangaskhan",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "karrablast",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kartana",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kartana",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kecleon",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "keldeo.ordinary",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "keldeo.ordinary",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "keldeo.resolute",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "keldeo.resolute",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kilowattrel",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kilowattrel",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kingambit",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kingambit",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kingdra",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kingdra",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kingler",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kirlia",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kirlia",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "klang",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "klawf",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kleavor",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kleavor",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "klefki",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "klefki",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "klink",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "klinklang",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "koffing",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "komala",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kommo-o",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kommo-o",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "koraidon",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "koraidon",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "krabby",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kricketot",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kricketune",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "krokorok",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "krokorok",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "krookodile",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "krookodile",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "kubfu",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kyogre",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kyurem",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "kyurem",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lairon",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lairon",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lampent",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lampent",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "landorus",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "landorus",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lanturn",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lanturn",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lapras",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lapras",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "larvesta",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "larvesta",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "larvitar",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "larvitar",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "latias",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "latias",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "latios",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "latios",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "leafeon",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "leavanny",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "leavanny",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lechonk",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ledian",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ledian",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ledyba",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ledyba",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lickilicky",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lickitung",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "liepard",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lileep",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lileep",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lilligant",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lillipup",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "linoone",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "litleo",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "litleo",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "litten",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "litwick",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "litwick",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lokix",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lokix",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lombre",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lombre",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lopunny",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lotad",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lotad",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "loudred",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lucario",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lucario",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ludicolo",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ludicolo",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lugia",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lugia",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lumineon",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lunala",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lunala",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lunatone",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lunatone",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "lurantis",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "luvdisc",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "luxio",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "luxray",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lycanroc.dusk",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lycanroc.midday",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "lycanroc.midnight",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mabosstiff",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "machamp",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "machoke",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "machop",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magby",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magcargo",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magcargo",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "magearna",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magearna",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "magikarp",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magmar",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magmortar",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magnemite",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magnemite",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "magneton",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magneton",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "magnezone",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "magnezone",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "makuhita",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "malamar",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "malamar",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mamoswine",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mamoswine",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "manaphy",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mandibuzz",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mandibuzz",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "manectric",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mankey",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mantine",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mantine",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mantyke",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mantyke",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "maractus",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mareanie",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mareanie",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mareep",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "marill",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "marill",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "marowak",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "marshadow",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "marshadow",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "marshtomp",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "marshtomp",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "maschiff",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "masquerain",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "masquerain",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "maushold",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mawile",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mawile",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "medicham",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "medicham",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "meditite",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meditite",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "meganium",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "melmetal",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meloetta.aria",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meloetta.aria",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "meloetta.pirouette",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meloetta.pirouette",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "meltan",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meowscarada",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meowscarada",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "meowstic.female",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meowstic.male",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "meowth",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mesprit",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "metagross",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "metagross",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "metang",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "metang",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "metapod",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mew",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mewtwo",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mienfoo",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mienshao",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mightyena",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "milcery",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "milotic",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "miltank",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mime_jr",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mime_jr",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mimikyu",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mimikyu",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "minccino",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "minior",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "minior",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "minun",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "miraidon",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "miraidon",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "misdreavus",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mismagius",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "moltres",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "moltres",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "monferno",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "monferno",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "morelull",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "morelull",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "morgrem",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "morgrem",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "morpeko",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "morpeko",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mothim",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mothim",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mr_mime",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mr_mime",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mr_rime",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mr_rime",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "mudbray",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mudkip",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "mudsdale",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "muk",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "munchlax",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "munkidori",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "munkidori",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "munna",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "murkrow",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "murkrow",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "musharna",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nacli",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "naclstack",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "naganadel",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "naganadel",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "natu",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "natu",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "necrozma",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nickit",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nidoking",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nidoking",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "nidoqueen",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nidoqueen",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "nidoran_f",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nidoran_m",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nidorina",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nidorino",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nihilego",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nihilego",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "nincada",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nincada",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ninetales",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ninjask",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ninjask",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "noctowl",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "noctowl",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "noibat",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "noibat",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "noivern",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "noivern",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "nosepass",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "numel",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "numel",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "nuzleaf",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "nuzleaf",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "nymble",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "obstagoon",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "obstagoon",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "octillery",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oddish",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oddish",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ogerpon",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oinkologne.female",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oinkologne.male",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "okidogi",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "okidogi",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "omanyte",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "omanyte",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "omastar",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "omastar",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "onix",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "onix",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "oranguru",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oranguru",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "orbeetle",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "orbeetle",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "oricorio.baile",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oricorio.baile",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "oricorio.pau",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oricorio.pau",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "oricorio.pom-pom",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oricorio.pom-pom",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "oricorio.sensu",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oricorio.sensu",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "orthworm",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "oshawott",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "overqwil",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "overqwil",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pachirisu",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "palafin",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "paldea.tauros.aqua",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "paldea.tauros.aqua",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "paldea.tauros.blaze",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "paldea.tauros.blaze",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "paldea.tauros.combat",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "paldea.wooper",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "paldea.wooper",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "palkia",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "palkia",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "palossand",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "palossand",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "palpitoad",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "palpitoad",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pancham",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pangoro",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pangoro",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "panpour",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pansage",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pansear",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "paras",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "paras",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "parasect",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "parasect",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "passimian",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "patrat",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pawmi",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pawmo",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pawmo",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pawmot",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pawmot",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pawniard",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pawniard",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pecharunt",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pecharunt",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pelipper",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pelipper",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "perrserker",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "persian",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "petilil",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "phanpy",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "phantump",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "phantump",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pheromosa",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pheromosa",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "phione",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pichu",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pidgeot",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pidgeot",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pidgeotto",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pidgeotto",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pidgey",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pidgey",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pidove",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pidove",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pignite",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pignite",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pikachu",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pikachu.partner",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pikipek",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pikipek",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "piloswine",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "piloswine",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pincurchin",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pineco",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pinsir",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "piplup",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "plusle",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poipole",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "politoed",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poliwag",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poliwhirl",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poliwrath",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poliwrath",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "poltchageist.artisan",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poltchageist.artisan",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "poltchageist.counterfeit",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poltchageist.counterfeit",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "polteageist",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ponyta",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "poochyena",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "popplio",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "porygon",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "porygon-z",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "porygon2",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "primarina",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "primarina",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "primeape",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "prinplup",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "probopass",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "probopass",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "psyduck",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pumpkaboo.average",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pumpkaboo.average",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pumpkaboo.large",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pumpkaboo.large",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pumpkaboo.small",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pumpkaboo.small",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pumpkaboo.super",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pumpkaboo.super",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pupitar",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pupitar",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "purrloin",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "purugly",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pyroar",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "pyroar",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "pyukumuku",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "quagsire",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "quagsire",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "quaquaval",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "quaquaval",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "quaxly",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "quaxwell",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "quilava",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "quilladin",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "qwilfish",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "qwilfish",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "raboot",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rabsca",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rabsca",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "raging_bolt",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "raging_bolt",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "raichu",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "raikou",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ralts",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ralts",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rampardos",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rapidash",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "raticate",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rattata",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rayquaza",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rayquaza",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "regice",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "regidrago",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "regieleki",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "regigigas",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "regirock",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "registeel",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "relicanth",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "relicanth",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rellor",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "remoraid",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "reshiram",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "reshiram",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "reuniclus",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "revavroom",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "revavroom",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rhydon",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rhydon",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rhyhorn",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rhyhorn",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rhyperior",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rhyperior",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ribombee",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ribombee",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rillaboom",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "riolu",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "roaring_moon",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "roaring_moon",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rockruff",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "roggenrola",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rolycoly",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rookidee",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "roselia",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "roselia",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "roserade",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "roserade",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rotom.fan",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rotom.fan",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rotom.frost",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rotom.frost",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rotom.heat",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rotom.heat",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rotom.mow",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rotom.mow",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rotom.wash",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rotom.wash",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rowlet",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rowlet",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "rufflet",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "rufflet",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "runerigus",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "runerigus",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sableye",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sableye",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "salamence",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "salamence",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "salandit",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "salandit",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "salazzle",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "salazzle",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "samurott",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sandaconda",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sandile",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sandile",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sandshrew",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sandslash",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sandy_shocks",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sandy_shocks",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sandygast",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sandygast",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sawk",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sawsbuck.autumn",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sawsbuck.autumn",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sawsbuck.spring",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sawsbuck.spring",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sawsbuck.summer",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sawsbuck.summer",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sawsbuck.winter",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sawsbuck.winter",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "scatterbug",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sceptile",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scizor",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scizor",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "scolipede",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scolipede",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "scorbunny",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scovillain",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scovillain",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "scrafty",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scrafty",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "scraggy",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scraggy",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "scream_tail",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scream_tail",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "scyther",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "scyther",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "seadra",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "seaking",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sealeo",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sealeo",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "seedot",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "seel",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "seismitoad",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "seismitoad",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sentret",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "serperior",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "servine",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "seviper",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sewaddle",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sewaddle",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sharpedo",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sharpedo",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shaymin.land",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shaymin.sky",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shaymin.sky",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shedinja",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shedinja",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shelgon",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shellder",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shellos",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shelmet",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shieldon",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shieldon",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shiftry",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shiftry",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shiinotic",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shiinotic",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shinx",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shroodle",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shroodle",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shroomish",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shuckle",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "shuckle",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "shuppet",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sigilyph",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sigilyph",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "silcoon",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silicobra",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.bug",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.dark",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.dragon",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.electric",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.fairy",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.fighting",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.fire",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.flying",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.ghost",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.grass",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.ground",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.ice",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.poison",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.psychic",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.rock",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.steel",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "silvally.water",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "simipour",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "simisage",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "simisear",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sinistcha",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sinistcha",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sinistea",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sirfetchd",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sizzlipede",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sizzlipede",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "skarmory",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skarmory",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "skeledirge",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skeledirge",
+    "type_name": "ghost",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "skiddo",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skiploom",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skiploom",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "skitty",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skorupi",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skorupi",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "skrelp",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skrelp",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "skuntank",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "skuntank",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "skwovet",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slaking",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slakoth",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sliggoo",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slither_wing",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slither_wing",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "slowbro",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slowbro",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "slowking",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slowking",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "slowpoke",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slowpoke",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "slugma",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "slurpuff",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "smeargle",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "smoliv",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "smoliv",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "smoochum",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "smoochum",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sneasel",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sneasel",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sneasler",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sneasler",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "snivy",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "snom",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "snom",
+    "type_name": "bug",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "snorlax",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "snorunt",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "snover",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "snover",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "snubbull",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sobble",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "solgaleo",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "solgaleo",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "solosis",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "solrock",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "solrock",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "spearow",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spearow",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "spectrier",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spewpa",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spheal",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spheal",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "spidops",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spinarak",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spinarak",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "spinda",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spiritomb",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spiritomb",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "spoink",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sprigatito",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "spritzee",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "squawkabilly.blue-plumage",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "squawkabilly.blue-plumage",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "squawkabilly.green-plumage",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "squawkabilly.green-plumage",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "squawkabilly.white-plumage",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "squawkabilly.white-plumage",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "squawkabilly.yellow-plumage",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "squawkabilly.yellow-plumage",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "squirtle",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stakataka",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stakataka",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "stantler",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "staraptor",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "staraptor",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "staravia",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "staravia",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "starly",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "starly",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "starmie",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "starmie",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "staryu",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "steelix",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "steelix",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "steenee",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stonjourner",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stoutland",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stufful",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stufful",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "stunfisk",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stunfisk",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "stunky",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "stunky",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sudowoodo",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "suicune",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sunflora",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "sunkern",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "surskit",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "surskit",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "swablu",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swablu",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "swadloon",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swadloon",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "swalot",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swampert",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swampert",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "swanna",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swanna",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "swellow",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swellow",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "swinub",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swinub",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "swirlix",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swoobat",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "swoobat",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "sylveon",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tadbulb",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "taillow",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "taillow",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "talonflame",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "talonflame",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tandemaus",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tangela",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tangrowth",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tapu_bulu",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tapu_bulu",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tapu_fini",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tapu_fini",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tapu_koko",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tapu_koko",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tapu_lele",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tapu_lele",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tarountula",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tatsugiri",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tatsugiri",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tauros",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "teddiursa",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tentacool",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tentacool",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tentacruel",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tentacruel",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tepig",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "terapagos",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "terrakion",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "terrakion",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "thievul",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "throh",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "thundurus",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "thundurus",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "thwackey",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "timburr",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ting_lu",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ting_lu",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tinkatink",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tinkatink",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tinkaton",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tinkaton",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tinkatuff",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tinkatuff",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tirtouga",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tirtouga",
+    "type_name": "rock",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "toedscool",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toedscool",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "toedscruel",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toedscruel",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "togedemaru",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "togedemaru",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "togekiss",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "togekiss",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "togepi",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "togetic",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "togetic",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "torchic",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "torkoal",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tornadus",
+    "type_name": "flying",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "torracat",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "torterra",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "torterra",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "totodile",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toucannon",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toucannon",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "toxapex",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toxapex",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "toxel",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toxel",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "toxicroak",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toxicroak",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "toxtricity.amped",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toxtricity.amped",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "toxtricity.low-key",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "toxtricity.low-key",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tranquill",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tranquill",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "trapinch",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "treecko",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "trevenant",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "trevenant",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tropius",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tropius",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "trubbish",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "trumbeak",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "trumbeak",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tsareena",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "turtonator",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "turtonator",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "turtwig",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tympole",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tynamo",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "type_null",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "typhlosion",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tyranitar",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tyranitar",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tyrantrum",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tyrantrum",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "tyrogue",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tyrunt",
+    "type_name": "rock",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "tyrunt",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "umbreon",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "unfezant",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "unfezant",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "unown",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ursaluna",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ursaluna",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ursaluna.bloodmoon",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "ursaluna.bloodmoon",
+    "type_name": "normal",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "ursaring",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "urshifu.rapid-strike",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "urshifu.rapid-strike",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "urshifu.single-strike",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "urshifu.single-strike",
+    "type_name": "dark",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "uxie",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vanillish",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vanillite",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vanilluxe",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vaporeon",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "varoom",
+    "type_name": "steel",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "varoom",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "veluza",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "veluza",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "venipede",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "venipede",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "venomoth",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "venomoth",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "venonat",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "venonat",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "venusaur",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "venusaur",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "vespiquen",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vespiquen",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "vibrava",
+    "type_name": "ground",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vibrava",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "victini",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "victini",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "victreebel",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "victreebel",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "vigoroth",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vikavolt",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vikavolt",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "vileplume",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vileplume",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "virizion",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "virizion",
+    "type_name": "fighting",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "vivillon",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vivillon",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "volbeat",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "volcanion",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "volcanion",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "volcarona",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "volcarona",
+    "type_name": "fire",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "voltorb",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vullaby",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "vullaby",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "vulpix",
+    "type_name": "fire",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wailmer",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wailord",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "walking_wake",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "walking_wake",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "walrein",
+    "type_name": "ice",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "walrein",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wartortle",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "watchog",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wattrel",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wattrel",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "weavile",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "weavile",
+    "type_name": "ice",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "weedle",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "weedle",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "weepinbell",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "weepinbell",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "weezing",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "whimsicott",
+    "type_name": "grass",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "whimsicott",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "whirlipede",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "whirlipede",
+    "type_name": "poison",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "whiscash",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "whiscash",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "whismur",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wigglytuff",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wigglytuff",
+    "type_name": "fairy",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wiglett",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wimpod",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wimpod",
+    "type_name": "water",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wingull",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wingull",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wishiwashi",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wo_chien",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wo_chien",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wobbuffet",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "woobat",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "woobat",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wooloo",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wooper",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wooper",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wormadam.plant",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wormadam.plant",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wormadam.sandy",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wormadam.sandy",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wormadam.trash",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wormadam.trash",
+    "type_name": "steel",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "wugtrio",
+    "type_name": "water",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wurmple",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wynaut",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wyrdeer",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "wyrdeer",
+    "type_name": "psychic",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "xatu",
+    "type_name": "psychic",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "xatu",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "xerneas",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "xurkitree",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "yamask",
+    "type_name": "ghost",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "yamper",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "yanma",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "yanma",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "yanmega",
+    "type_name": "bug",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "yanmega",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "yungoos",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "yveltal",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "yveltal",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zacian",
+    "type_name": "fairy",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zamazenta",
+    "type_name": "fighting",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zangoose",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zapdos",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zapdos",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zarude",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zarude",
+    "type_name": "grass",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zebstrika",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zekrom",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zekrom",
+    "type_name": "electric",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zeraora",
+    "type_name": "electric",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zigzagoon",
+    "type_name": "normal",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zoroark",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zorua",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zubat",
+    "type_name": "poison",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zubat",
+    "type_name": "flying",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zweilous",
+    "type_name": "dark",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zweilous",
+    "type_name": "dragon",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zygarde.10",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zygarde.10",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zygarde.10-power-construct",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zygarde.10-power-construct",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zygarde.50",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zygarde.50",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zygarde.50-power-construct",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zygarde.50-power-construct",
+    "type_name": "ground",
+    "slot": 2
+  },
+  {
+    "pokemon_name": "zygarde.complete",
+    "type_name": "dragon",
+    "slot": 1
+  },
+  {
+    "pokemon_name": "zygarde.complete",
+    "type_name": "ground",
+    "slot": 2
+  }
+]

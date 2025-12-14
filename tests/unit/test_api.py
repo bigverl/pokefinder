@@ -1,7 +1,6 @@
 # tests/api/test_pokemon_routes.py
-import pytest
 from litestar.testing import TestClient
-from backend.app import app
+from backend.src.app import app
 
 # ========
 # /health

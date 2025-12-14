@@ -1,0 +1,56 @@
+[
+  {
+    "stat_name": "hp",
+    "percentile_20": 50,
+    "percentile_40": 60,
+    "percentile_60": 73,
+    "percentile_80": 90,
+    "percentile_100": 255,
+    "median": 68
+  },
+  {
+    "stat_name": "attack",
+    "percentile_20": 50,
+    "percentile_40": 66,
+    "percentile_60": 85,
+    "percentile_80": 104,
+    "percentile_100": 181,
+    "median": 75
+  },
+  {
+    "stat_name": "defense",
+    "percentile_20": 48,
+    "percentile_40": 60,
+    "percentile_60": 75,
+    "percentile_80": 95,
+    "percentile_100": 230,
+    "median": 70
+  },
+  {
+    "stat_name": "special_attack",
+    "percentile_20": 43,
+    "percentile_40": 59,
+    "percentile_60": 74,
+    "percentile_80": 95,
+    "percentile_100": 173,
+    "median": 65
+  },
+  {
+    "stat_name": "special_defense",
+    "percentile_20": 48,
+    "percentile_40": 60,
+    "percentile_60": 75,
+    "percentile_80": 90,
+    "percentile_100": 230,
+    "median": 66
+  },
+  {
+    "stat_name": "speed",
+    "percentile_20": 40,
+    "percentile_40": 58,
+    "percentile_60": 72,
+    "percentile_80": 95,
+    "percentile_100": 200,
+    "median": 65
+  }
+]

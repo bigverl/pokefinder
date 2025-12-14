@@ -1,0 +1,514 @@
+[
+  {
+    "name": "cut",
+    "machine_id": "hm01"
+  },
+  {
+    "name": "fly",
+    "machine_id": "hm02"
+  },
+  {
+    "name": "surf",
+    "machine_id": "hm03"
+  },
+  {
+    "name": "strength",
+    "machine_id": "hm04"
+  },
+  {
+    "name": "dive",
+    "machine_id": "hm05"
+  },
+  {
+    "name": "rock_smash",
+    "machine_id": "hm06"
+  },
+  {
+    "name": "waterfall",
+    "machine_id": "hm07"
+  },
+  {
+    "name": "rock_climb",
+    "machine_id": "hm08"
+  },
+  {
+    "name": "focus_punch",
+    "machine_id": "tm001"
+  },
+  {
+    "name": "dragon_claw",
+    "machine_id": "tm002"
+  },
+  {
+    "name": "water_pulse",
+    "machine_id": "tm003"
+  },
+  {
+    "name": "calm_mind",
+    "machine_id": "tm004"
+  },
+  {
+    "name": "roar",
+    "machine_id": "tm005"
+  },
+  {
+    "name": "toxic",
+    "machine_id": "tm006"
+  },
+  {
+    "name": "hail",
+    "machine_id": "tm007"
+  },
+  {
+    "name": "bulk_up",
+    "machine_id": "tm008"
+  },
+  {
+    "name": "bullet_seed",
+    "machine_id": "tm009"
+  },
+  {
+    "name": "hidden_power",
+    "machine_id": "tm010"
+  },
+  {
+    "name": "sunny_day",
+    "machine_id": "tm011"
+  },
+  {
+    "name": "taunt",
+    "machine_id": "tm012"
+  },
+  {
+    "name": "ice_beam",
+    "machine_id": "tm013"
+  },
+  {
+    "name": "blizzard",
+    "machine_id": "tm014"
+  },
+  {
+    "name": "hyper_beam",
+    "machine_id": "tm015"
+  },
+  {
+    "name": "light_screen",
+    "machine_id": "tm016"
+  },
+  {
+    "name": "protect",
+    "machine_id": "tm017"
+  },
+  {
+    "name": "rain_dance",
+    "machine_id": "tm018"
+  },
+  {
+    "name": "giga_drain",
+    "machine_id": "tm019"
+  },
+  {
+    "name": "safeguard",
+    "machine_id": "tm020"
+  },
+  {
+    "name": "frustration",
+    "machine_id": "tm021"
+  },
+  {
+    "name": "solar_beam",
+    "machine_id": "tm022"
+  },
+  {
+    "name": "iron_tail",
+    "machine_id": "tm023"
+  },
+  {
+    "name": "thunderbolt",
+    "machine_id": "tm024"
+  },
+  {
+    "name": "thunder",
+    "machine_id": "tm025"
+  },
+  {
+    "name": "earthquake",
+    "machine_id": "tm026"
+  },
+  {
+    "name": "return",
+    "machine_id": "tm027"
+  },
+  {
+    "name": "dig",
+    "machine_id": "tm028"
+  },
+  {
+    "name": "psychic",
+    "machine_id": "tm029"
+  },
+  {
+    "name": "shadow_ball",
+    "machine_id": "tm030"
+  },
+  {
+    "name": "brick_break",
+    "machine_id": "tm031"
+  },
+  {
+    "name": "double_team",
+    "machine_id": "tm032"
+  },
+  {
+    "name": "reflect",
+    "machine_id": "tm033"
+  },
+  {
+    "name": "shockwave",
+    "machine_id": "tm034"
+  },
+  {
+    "name": "flamethrower",
+    "machine_id": "tm035"
+  },
+  {
+    "name": "sludge_bomb",
+    "machine_id": "tm036"
+  },
+  {
+    "name": "sandstorm",
+    "machine_id": "tm037"
+  },
+  {
+    "name": "fire_blast",
+    "machine_id": "tm038"
+  },
+  {
+    "name": "rock_tomb",
+    "machine_id": "tm039"
+  },
+  {
+    "name": "aerial_ace",
+    "machine_id": "tm040"
+  },
+  {
+    "name": "torment",
+    "machine_id": "tm041"
+  },
+  {
+    "name": "facade",
+    "machine_id": "tm042"
+  },
+  {
+    "name": "secret_power",
+    "machine_id": "tm043"
+  },
+  {
+    "name": "rest",
+    "machine_id": "tm044"
+  },
+  {
+    "name": "attract",
+    "machine_id": "tm045"
+  },
+  {
+    "name": "thief",
+    "machine_id": "tm046"
+  },
+  {
+    "name": "steel_wing",
+    "machine_id": "tm047"
+  },
+  {
+    "name": "skill_swap",
+    "machine_id": "tm048"
+  },
+  {
+    "name": "leech_fang",
+    "machine_id": "tm049"
+  },
+  {
+    "name": "overheat",
+    "machine_id": "tm050"
+  },
+  {
+    "name": "roost",
+    "machine_id": "tm051"
+  },
+  {
+    "name": "focus_blast",
+    "machine_id": "tm052"
+  },
+  {
+    "name": "energy_ball",
+    "machine_id": "tm053"
+  },
+  {
+    "name": "false_swipe",
+    "machine_id": "tm054"
+  },
+  {
+    "name": "brine",
+    "machine_id": "tm055"
+  },
+  {
+    "name": "hone_claws",
+    "machine_id": "tm056"
+  },
+  {
+    "name": "charge_beam",
+    "machine_id": "tm057"
+  },
+  {
+    "name": "endure",
+    "machine_id": "tm058"
+  },
+  {
+    "name": "dragon_pulse",
+    "machine_id": "tm059"
+  },
+  {
+    "name": "drain_punch",
+    "machine_id": "tm060"
+  },
+  {
+    "name": "will_o_wisp",
+    "machine_id": "tm061"
+  },
+  {
+    "name": "silver_wind",
+    "machine_id": "tm062"
+  },
+  {
+    "name": "venoshock",
+    "machine_id": "tm063"
+  },
+  {
+    "name": "explosion",
+    "machine_id": "tm064"
+  },
+  {
+    "name": "shadow_claw",
+    "machine_id": "tm065"
+  },
+  {
+    "name": "payback",
+    "machine_id": "tm066"
+  },
+  {
+    "name": "recycle",
+    "machine_id": "tm067"
+  },
+  {
+    "name": "giga_impact",
+    "machine_id": "tm068"
+  },
+  {
+    "name": "rock_polish",
+    "machine_id": "tm069"
+  },
+  {
+    "name": "flash",
+    "machine_id": "tm070"
+  },
+  {
+    "name": "stone_edge",
+    "machine_id": "tm071"
+  },
+  {
+    "name": "avalanche",
+    "machine_id": "tm072"
+  },
+  {
+    "name": "thunder_wave",
+    "machine_id": "tm073"
+  },
+  {
+    "name": "gyro_ball",
+    "machine_id": "tm074"
+  },
+  {
+    "name": "swords_dance",
+    "machine_id": "tm075"
+  },
+  {
+    "name": "stealth_rock",
+    "machine_id": "tm076"
+  },
+  {
+    "name": "flame_charge",
+    "machine_id": "tm077"
+  },
+  {
+    "name": "low_sweep",
+    "machine_id": "tm078"
+  },
+  {
+    "name": "dark_pulse",
+    "machine_id": "tm079"
+  },
+  {
+    "name": "rock_slide",
+    "machine_id": "tm080"
+  },
+  {
+    "name": "x_scissor",
+    "machine_id": "tm081"
+  },
+  {
+    "name": "sleep_talk",
+    "machine_id": "tm082"
+  },
+  {
+    "name": "scald",
+    "machine_id": "tm083"
+  },
+  {
+    "name": "poison_jab",
+    "machine_id": "tm084"
+  },
+  {
+    "name": "dream_eater",
+    "machine_id": "tm085"
+  },
+  {
+    "name": "grass_knot",
+    "machine_id": "tm086"
+  },
+  {
+    "name": "swagger",
+    "machine_id": "tm087"
+  },
+  {
+    "name": "pluck",
+    "machine_id": "tm088"
+  },
+  {
+    "name": "u_turn",
+    "machine_id": "tm089"
+  },
+  {
+    "name": "substitute",
+    "machine_id": "tm090"
+  },
+  {
+    "name": "flash_cannon",
+    "machine_id": "tm091"
+  },
+  {
+    "name": "volt_switch",
+    "machine_id": "tm092"
+  },
+  {
+    "name": "dragon_tail",
+    "machine_id": "tm093"
+  },
+  {
+    "name": "incinerate",
+    "machine_id": "tm094"
+  },
+  {
+    "name": "struggle_bug",
+    "machine_id": "tm095"
+  },
+  {
+    "name": "bulldoze",
+    "machine_id": "tm096"
+  },
+  {
+    "name": "frost_breath",
+    "machine_id": "tm097"
+  },
+  {
+    "name": "work_up",
+    "machine_id": "tm098"
+  },
+  {
+    "name": "wild_charge",
+    "machine_id": "tm099"
+  },
+  {
+    "name": "infestation",
+    "machine_id": "tm100"
+  },
+  {
+    "name": "power_up_hit",
+    "machine_id": "tm101"
+  },
+  {
+    "name": "dazzle_gleam",
+    "machine_id": "tm102"
+  },
+  {
+    "name": "sludge_wave",
+    "machine_id": "tm103"
+  },
+  {
+    "name": "psyshock",
+    "machine_id": "tm104"
+  },
+  {
+    "name": "brutal_swing",
+    "machine_id": "tm105"
+  },
+  {
+    "name": "smart_strike",
+    "machine_id": "tm106"
+  },
+  {
+    "name": "acrobatics",
+    "machine_id": "tm107"
+  },
+  {
+    "name": "snarl",
+    "machine_id": "tm108"
+  },
+  {
+    "name": "defog",
+    "machine_id": "tm109"
+  },
+  {
+    "name": "drain_kiss",
+    "machine_id": "tm110"
+  },
+  {
+    "name": "smack_down",
+    "machine_id": "tm111"
+  },
+  {
+    "name": "round",
+    "machine_id": "tm112"
+  },
+  {
+    "name": "echoed_voice",
+    "machine_id": "tm113"
+  },
+  {
+    "name": "natural_gift",
+    "machine_id": "tm114"
+  },
+  {
+    "name": "quash",
+    "machine_id": "tm115"
+  },
+  {
+    "name": "trick_room",
+    "machine_id": "tm116"
+  },
+  {
+    "name": "fling",
+    "machine_id": "tm117"
+  },
+  {
+    "name": "aurora_veil",
+    "machine_id": "tm118"
+  },
+  {
+    "name": "sky_drop",
+    "machine_id": "tm119"
+  },
+  {
+    "name": "nature_power",
+    "machine_id": "tm120"
+  }
+]
