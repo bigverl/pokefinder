@@ -13,6 +13,11 @@ go:
     just seed-db
 
 run:
+    @echo "Starting PostgreSQL..."
+    @docker start postgres-dev 2>/dev/null || docker run --name postgres-dev -e POSTGRES_PASSWORD=password -e POSTGRES_DB=postgres-dev -p 5432:5432 -d postgres:16
+    @echo "Waiting for database..."
+    @sleep 3
+    @echo "Starting app..."
     uv run litestar --app backend.src.app:app run --reload
 
 up:
@@ -37,3 +42,9 @@ test-all:
     just test-unit
     just test-integration
     just test-unit-postgres
+
+frontend:
+    uv run textual run --dev frontend/app.py
+
+serve:
+    textual serve frontend/app.py

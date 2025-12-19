@@ -1,251 +1,266 @@
+from textual.app import (
+    App, 
+    ComposeResult,
+    )
+
+from textual.containers import (
+    Container,
+    Horizontal,
+    Vertical,
+    VerticalScroll,
+    HorizontalGroup,
+    VerticalGroup
+    )
+
+from textual.suggester import SuggestFromList
+
+
+from textual.widgets import (
+    Header,
+    Footer,
+    Static,
+    Checkbox,
+    RadioButton,
+    Select,
+    Input,
+    Label,
+    TabbedContent,
+    TabPane,
+    DataTable,
+    Rule,
+    Button
+    )
+
+# Custom DataTable classes that configure themselves
+class MovesDataTable(DataTable):
+    pass
+    # def on_show(self) -> None:
+    #     if self.columns: 
+    #         return
+    #     self.show_header = True
+    #     self.add_columns("level learned", "machine", "egg move")
+    #     self.add_row("34", "yes", "no")
+
+class StatsDataTable(DataTable):
+    pass
+    # def on_show(self) -> None:
+    #     if self.columns: 
+    #         return
+    #     self.show_header = True
+    #     self.add_columns("attack", "defense", "special attack", "special defense", "speed")
+    #     self.add_row("100", "80", "120", "90", "75")
+
+class TypesDataTable(DataTable):
+    pass
+    # def on_show(self) -> None:
+    #     if self.columns: 
+    #         return
+    #     self.show_header = True
+    #     self.add_columns("type 1", "type 2")
+    #     self.add_row("fire", "flying")
+
+class TypeMatchupsDataTable(DataTable):
+    pass
+    # def on_show(self) -> None:
+    #     if self.columns: 
+    #         return
+    #     self.show_header = True
+    #     self.add_columns("4x", "2x", "1x", "0.5x", "0x")
+    #     self.add_row("rock", "water, electric", "normal, fighting", "fire, grass", "ground")
+
 """
-Pokedex TUI Application
-A terminal-based Pokédex using Textual framework with three-panel layout.
+Data Table Columns
 """
 
-from textual.app import App, ComposeResult
-from textual.containers import Container, Horizontal
-from textual.widgets import ListView, ListItem, Static, Label
-from textual.binding import Binding
-# from textual.messages import work
+moves_columns = ["level learned", "machine", "egg move"]
 
-import api.client as client
+stats_columns = ["attack", "defense", "special attack", "special defense", "speed"]
 
+types_columns = ["type 1", "type 2"]
 
-class PokemonList(ListView):
-    """Left panel: List of Pokemon (15% width)."""
-    
-    BINDINGS = [
-        Binding("up", "cursor_up", "Move Up", show=False),
-        Binding("down", "cursor_down", "Move Down", show=False),
-        Binding("left", "page_up", "Previous Page", show=False),
-        Binding("right", "page_down", "Next Page", show=False),
-        Binding("enter", "select_pokemon", "Select", show=False),
+type_matchups_columns = ["4x", "2x", "1x", "0.5x", "0x"]
+
+type_selections = [
+    ("normal", "normal"),
+    ("fire", "fire"),
+    ("water", "water"),
+    ("electric", "electric"),
+    ("grass", "grass"),
+    ("ice", "ice"),
+    ("fighting", "fighting"),
+    ("poison", "poison"),
+    ("ground", "ground"),
+    ("flying", "flying"),
+    ("psychic", "psychic"),
+    ("bug", "bug"),
+    ("rock", "rock"),
+    ("ghost", "ghost"),
+    ("dragon", "dragon"),
+    ("dark", "dark"),
+    ("steel", "steel"),
+    ("fairy", "fairy")
     ]
-    
-    def on_mount(self) -> None:
-        """Populate with stub Pokemon data on startup."""
-        # TODO: Replace with actual API call to pokeapi.co
-        stub_pokemon = [
-            "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon",
-            "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie",
-            "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill",
-            "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate"
-        ]
-        
-        for pokemon in stub_pokemon:
-            self.append(ListItem(Label(pokemon)))
-    
-    def on_list_view_highlighted(self, event: ListView.Highlighted) -> None:
-        """When cursor hovers over a Pokemon, update center panel."""
-        if event.item:
-            label = event.item.children[0]
-            pokemon_name = label.render()
-            self.app.update_pokemon_info(str(pokemon_name))
-    
-    def action_page_up(self) -> None:
-        """Page up through the list (left key)."""
-        visible_items = 10  # Approximate items visible at once
-        current = self.index or 0
-        new_index = max(0, current - visible_items)
-        self.index = new_index
-    
-    def action_page_down(self) -> None:
-        """Page down through the list (right key)."""
-        visible_items = 10
-        current = self.index or 0
-        new_index = min(len(self.children) - 1, current + visible_items)
-        self.index = new_index
-    
-    def action_select_pokemon(self) -> None:
-        """Enter key opens the details menu on the right."""
-        self.app.show_details_menu()
 
+type_suggestions = [
+    "normal", "fire", "water", "electric", "grass", "ice",
+    "fighting", "poison", "ground", "flying", "psychic", "bug",
+    "rock", "ghost", "dragon", "dark", "steel", "fairy"
+]
 
-class PokemonInfo(Static):
-    """Center panel: Pokemon information display (70% width)."""
-    
-    def on_mount(self) -> None:
-        """Initialize with placeholder content."""
-        self.update("[dim]Select a Pokemon to view details[/dim]")
-    
-    # @work(exclusive=True)
-    async def display_pokemon(self, name: str) -> None:
-        """Display Pokemon information.
-        
-        Args:
-            name: Pokemon name to display
-        """
-        # TODO: Fetch actual data from pokeapi.co/api/v2/pokemon/{name}
-        # TODO: Parse and format: name, types, abilities, stats, sprites, etc.
-     
-        await client.get_pokemon("ditto")
-
-        pokemon_data = self.worker.wait()
-        log(pokemon_data)
-
-        self.update(pokemon_data)
-#         self.update(f"""
-# [bold cyan]{name.upper()}[/bold cyan]
-
-# [yellow]Type:[/yellow] TODO - Fetch from API
-# [yellow]Height:[/yellow] TODO - Fetch from API
-# [yellow]Weight:[/yellow] TODO - Fetch from API
-
-# [yellow]Abilities:[/yellow]
-#   • TODO - Fetch from API
-#   • TODO - Fetch from API
-
-# [yellow]Base Stats:[/yellow]
-#   HP: TODO
-#   Attack: TODO
-#   Defense: TODO
-#   Sp. Atk: TODO
-#   Sp. Def: TODO
-#   Speed: TODO
-
-# [dim]Press ENTER to see more details[/dim]
-#         """)
-    
-    def display_detail_view(self, detail_type: str, pokemon_name: str) -> None:
-        """Display specific detail view based on menu selection.
-        
-        Args:
-            detail_type: Type of detail to show ('detail', 'strengths', 'initial moves')
-            pokemon_name: Pokemon to show details for
-        """
-        # TODO: Implement different views based on detail_type
-        # TODO: Fetch appropriate data from pokeapi.co
-        if detail_type == "Detail":
-            content = f"[bold]Full Details for {pokemon_name}[/bold]\n\nTODO: Species info, evolution chain, etc."
-        elif detail_type == "Strengths":
-            content = f"[bold]Type Effectiveness for {pokemon_name}[/bold]\n\nTODO: Strong against, weak against"
-        elif detail_type == "Initial Moves":
-            content = f"[bold]Starting Moves for {pokemon_name}[/bold]\n\nTODO: Level 1 moves, learned moves"
-        else:
-            content = "Unknown detail type"
-        
-        self.update(content)
-
-
-class DetailsMenu(ListView):
-    """Right panel: Pokemon details submenu (15% width)."""
-    
-    BINDINGS = [
-        Binding("up", "cursor_up", "Move Up", show=False),
-        Binding("down", "cursor_down", "Move Down", show=False),
-        Binding("enter", "select_detail", "Select Detail", show=False),
-        Binding("escape", "close_menu", "Close Menu", show=False),
+stat_selections = [
+    ("attack","attack"),
+    ("defense","defense"),
+    ("special attack","special_attack"),
+    ("special defense","special_defense"),
+    ("speed","speed")
     ]
-    
-    def on_mount(self) -> None:
-        """Populate menu options."""
-        options = ["Detail", "Strengths", "Initial Moves"]
-        for option in options:
-            self.append(ListItem(Label(option)))
-        
-    def action_select_detail(self) -> None:
-            """Enter key on a menu item updates the center panel."""
-            if self.highlighted_child:
-                label = self.highlighted_child.children[0]
-                detail_type = str(label.render())
-                self.app.show_detail_view(detail_type)
-                
-    def action_close_menu(self) -> None:
-        """Escape key closes the menu and returns focus to Pokemon list."""
-        self.app.hide_details_menu()
 
+class Pokefinder(App):
+    CSS_PATH = "main.tcss"
 
-class PokedexApp(App):
-    """Main Pokedex TUI Application."""
-    
-    CSS = """
-    Screen {
-        background: $surface;
-    }
-    
-    Horizontal {
-        height: 100%;
-    }
-    
-    PokemonList {
-        width: 15%;
-        border: solid $primary;
-        padding: 1;
-    }
-    
-    PokemonInfo {
-        width: 70%;
-        border: solid $primary;
-        padding: 1;
-    }
-    
-    DetailsMenu {
-        width: 15%;
-        border: solid $accent;
-        padding: 1;
-    }
-    
-    .hidden {
-        display: none;
-    }
-    """
-    
-    BINDINGS = [
-        Binding("q", "quit", "Quit", show=True),
-    ]
-    
-    def __init__(self):
-        super().__init__()
-        self.current_pokemon = None
-        self.details_visible = False
-    
     def compose(self) -> ComposeResult:
-        """Create the three-panel layout."""
-        with Horizontal():
-            yield PokemonList()
-            yield PokemonInfo()
-            yield DetailsMenu().add_class("hidden")  # Hidden by default
-    
-    def update_pokemon_info(self, pokemon_name: str) -> None:
-        """Update center panel when hovering over a Pokemon.
-        
-        Args:
-            pokemon_name: Name of the Pokemon to display
-        """
-        self.current_pokemon = pokemon_name
-        info_panel = self.query_one(PokemonInfo)
-        info_panel.display_pokemon(pokemon_name)
-    
-    def show_details_menu(self) -> None:
-        """Show the details menu and shift focus to it (Enter key on Pokemon)."""
-        if not self.details_visible:
-            menu = self.query_one(DetailsMenu)
-            menu.remove_class("hidden")
-            menu.focus()
-            self.details_visible = True
-    
-    def hide_details_menu(self) -> None:
-        """Hide the details menu and return focus to Pokemon list (Escape key)."""
-        if self.details_visible:
-            menu = self.query_one(DetailsMenu)
-            menu.add_class("hidden")
-            
-            pokemon_list = self.query_one(PokemonList)
-            pokemon_list.focus()
-            self.details_visible = False
-    
-    def show_detail_view(self, detail_type: str) -> None:
-        """Display specific detail view in center panel.
-        
-        Args:
-            detail_type: Type of detail selected from menu
-        """
-        if self.current_pokemon:
-            info_panel = self.query_one(PokemonInfo)
-            info_panel.display_detail_view(detail_type, self.current_pokemon)
+        # yield Header()
+        # Big Box
+        with Horizontal(id="app-grid"):
+            # Left Pane: Search filters
+            with VerticalScroll(id="left-pane", classes="box"):
 
+                # Checkboxes
+                with VerticalGroup(id="special_pokemon_box", classes="box"):
+                    yield RadioButton("legendary", id="legendary_radio", classes="first-checkbox")
+                    yield RadioButton("mythical", id="mythical_radio")
+                    yield RadioButton("ultra beast", id="ultra_beast_radio")
+
+                # Move box
+                with VerticalGroup(id="move_box", classes="box"):
+                    yield RadioButton("enabled", id="move_radio", classes="first-checkbox")
+                    with HorizontalGroup(id="move_input_group", classes="boxless_group"):
+                       
+                        yield Label(id="move_label", content="move name")
+                        yield Input(id="move_input", classes="move_input")
+
+                # Stats box
+                with VerticalGroup(id="stats_box", classes="box"):
+                    # [ ] primary stat: <dropdown>
+                    with VerticalGroup(id="stats_enabled_box"):
+                        yield RadioButton("enabled", id="primary_stat_radio", classes="first-checkbox")
+                    with VerticalGroup(id="primary_stat_box", classes="box"):
+                        with HorizontalGroup(id="primary_stat_select_group", classes="box_group"):
+                            yield Label(id="primary_stat_label", content="stat name")
+                            yield Select(id="primary_stat_select",options=(stat_selections),prompt="select stat")
+                        # minimum: <input>
+                        with HorizontalGroup(id="primary_stat_input_group", classes="box_group"):
+                            yield Label(id="primary_stat_minimum_label", content="minimum value")
+                            yield Input(id="primary_stat_input", classes="stat_input")
+                    # secondary stat: <dropdown>
+                    with VerticalGroup(id="secondary_stat_box", classes="box"):
+                        with HorizontalGroup(id="secondary_stat_filter_group", classes="box_group"):
+                            yield Label(id="secondary_stat_label", content="stat name")
+                            yield Select(id="secondary_stat_select",options=(stat_selections),prompt="select stat")
+                        # minimum: <input>
+                        with HorizontalGroup(id="secondary_stat_input_group", classes="box_group"):
+                            yield Label(id="secondary_stat_minimum_label", content="minimum value")
+                            yield Input(id="secondary_stat_input", classes="stat_input")                    
+                    # minimum speed: <input>
+                    with VerticalGroup(id="min_speed_box", classes="box"):
+                        with HorizontalGroup(id="min_speed_filter_group", classes="box_group"):
+                            yield Label(id="min_speed_label", content="minimum value")
+                            yield Input(id="min_speed_stat_input", classes="stat_input")
+
+                # Desired Type Box
+                with VerticalGroup(id="desired_type_box", classes="box"):
+                    yield RadioButton("enabled", id="desired_type_radio", classes="first-checkbox")
+                    with HorizontalGroup(id="desired_first_type_filter_group", classes="boxless_group"):
+                        yield Label(id="desired_first_type_label", content="type 1")
+                        yield Input(
+                            id="desired_first_type_input",
+                            classes="type_input",
+                            suggester=SuggestFromList(
+                            type_suggestions, case_sensitive=False)
+                            )
+                    with HorizontalGroup(id="desired_second_type_filter_group", classes="boxless_group"):
+                        yield Label(id="desired_second_type_label", content="type 2")
+                        yield Input(
+                            id="desired_second_type_input",
+                            classes="type_input",
+                            suggester=SuggestFromList(
+                            type_suggestions, case_sensitive=False)
+                            )
+
+                # Versus Type Box
+                with VerticalGroup(id="versus_type_box", classes="box"):
+                    yield RadioButton("enabled", id="versus_type_radio", classes="first-checkbox")
+                    with HorizontalGroup(id="versus_first_type_filter_group", classes="boxless_group"):
+                        yield Label(id="versus_first_type_label", content="type 1")
+                        yield Input(
+                            id="desired_first_type_input",
+                            classes="type_input",
+                            suggester=SuggestFromList(
+                            type_suggestions, case_sensitive=False)
+                            )
+                    with HorizontalGroup(id="versus_second_type_filter_group", classes="boxless_group"):
+                        yield Label(id="versus_second_type_label", content="type 2")
+                        yield Input(
+                            id="versus_second_type_input",
+                            classes="type_input",
+                            suggester=SuggestFromList(
+                            type_suggestions, case_sensitive=False)
+                            )
+                yield Button(label="Catch 'em all!",classes="go_button")
+                        
+            # Right Pane: Data tables
+            with Vertical(id="right-pane") as right_pane:
+                right_pane.border_title = "results"
+                with TabbedContent(id="results_tabbedcontent"):
+                    with TabPane("moves", id="moves_tabpane"):
+                        yield MovesDataTable(id="moves_datatable")
+                    with TabPane("stats", id="stats_tabpane"):
+                        yield StatsDataTable(id="stats_datatable")
+                    with TabPane("types", id="types_tabpane",):
+                        yield TypesDataTable(id="types_datatable")
+                    with TabPane("type matchups", id="type_matchups_tabpane"):
+                        yield TypeMatchupsDataTable(id="type_matchups_datatable")
+        yield Footer()
+
+    def on_mount(self) -> None:
+        # Border Titles
+        self.query_one("#special_pokemon_box", VerticalGroup).border_title = "special pokemon"
+        self.query_one("#left-pane").border_title = "poke-finder"
+        self.query_one("#move_box").border_title = "move"
+        self.query_one("#stats_box").border_title = "stats"
+        self.query_one("#primary_stat_box").border_title = "primary stat"
+        self.query_one("#secondary_stat_box").border_title = "secondary stat (optional)"
+        self.query_one("#min_speed_box").border_title = "desired speed (optional)"
+        self.query_one("#desired_type_box").border_title = "desired type"
+        self.query_one("#versus_type_box").border_title = "versus type"
+
+        moves = self.query_one("#moves_datatable", MovesDataTable)
+        moves.show_header = True
+        moves.add_columns("level learned", "machine", "egg move")
+        moves.add_row("34", "hm01", "no")
+        moves.add_row("18", "tm69", "yes")
+
+        stats = self.query_one("#stats_datatable", StatsDataTable)
+        stats.show_header = True
+        stats.add_columns("attack", "defense", "special attack", "special defense", "speed")
+        stats.add_row("100", "80", "120", "90", "75")
+
+        types = self.query_one("#types_datatable", TypesDataTable)
+        types.show_header = True
+        types.add_columns("type 1", "type 2")
+        types.add_row("fire", "flying")
+
+        matchups = self.query_one("#type_matchups_datatable", TypeMatchupsDataTable)
+        matchups.show_header = True
+        matchups.add_columns("4x", "2x", "1x", "0.5x", "0x")
+        matchups.add_row(
+            "rock",
+            "water, electric",
+            "normal, fighting",
+            "fire, grass",
+            "ground",
+        )
 
 if __name__ == "__main__":
-    app = PokedexApp()
+    app = Pokefinder()
     app.run()
