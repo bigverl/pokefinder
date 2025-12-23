@@ -116,7 +116,7 @@ stat_selections = [
     ]
 
 class Pokefinder(App):
-    CSS_PATH = "main.tcss"
+    CSS_PATH = "libs/main.tcss"
 
     def compose(self) -> ComposeResult:
         # yield Header()
@@ -151,7 +151,7 @@ class Pokefinder(App):
                         # minimum: <input>
                         with HorizontalGroup(id="primary_stat_input_group", classes="box_group"):
                             yield Label(id="primary_stat_minimum_label", content="minimum value")
-                            yield Input(id="primary_stat_input", classes="stat_input")
+                            yield Input(id="primary_stat_input")
                     # secondary stat: <dropdown>
                     with VerticalGroup(id="secondary_stat_box", classes="box"):
                         with HorizontalGroup(id="secondary_stat_filter_group", classes="box_group"):
@@ -160,12 +160,12 @@ class Pokefinder(App):
                         # minimum: <input>
                         with HorizontalGroup(id="secondary_stat_input_group", classes="box_group"):
                             yield Label(id="secondary_stat_minimum_label", content="minimum value")
-                            yield Input(id="secondary_stat_input", classes="stat_input")                    
+                            yield Input(id="secondary_stat_input")                    
                     # minimum speed: <input>
                     with VerticalGroup(id="min_speed_box", classes="box"):
                         with HorizontalGroup(id="min_speed_filter_group", classes="box_group"):
                             yield Label(id="min_speed_label", content="minimum value")
-                            yield Input(id="min_speed_stat_input", classes="stat_input")
+                            yield Input(id="min_speed_stat_input")
 
                 # Desired Type Box
                 with VerticalGroup(id="desired_type_box", classes="box"):

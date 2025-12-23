@@ -139,6 +139,20 @@ RadioButton > .toggle--label {
     color: white;
 }
 
+RadioButton:hover > .toggle--label {
+    background: transparent;
+}
+
+RadioButton > .toggle--button {
+    background: #282a36;
+    color: black;
+}
+
+RadioButton.-on > .toggle--button {
+    background: #282a36;
+    color: white;
+}
+
 TabbedContent {
     background: #1e1e2e;
     height: 100%;
@@ -244,21 +258,10 @@ VerticalGroup {
     color: #6272a4;
 }
 
-.box_title_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
 .box_group {
     padding: 0 0 0 0;
 }
 
 .boxless_group {
     padding: 0 0 0 2;
-}
-
-.boxless_rule {
-    padding: 0;
 }
