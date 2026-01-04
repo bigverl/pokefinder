@@ -1,0 +1,140 @@
+Screen {
+    background: #1e1e2e;
+}
+
+#left_pane {
+    width: 2fr;
+    height: 100%;
+    background: #1e1e2e;
+    border: round #6272a4;
+    border-title-color: #8be9fd;
+    border-title-align: right;
+
+    /*  */
+}
+
+.go_button {
+    margin: 1 0 0 8;
+    background: #8be9fd;
+    color: #282a36;
+    height: 3;
+    border: none;
+    width: 39;
+    text-style: bold;
+}
+
+.box {
+    background: #1e1e2e;
+    border: round #6272a4;
+    border-title-color: #8be9fd;
+    border-title-align: left;
+    margin: 0;
+    padding: 0 1;
+    height: auto;
+}
+
+.aligned_inputs {
+    padding: 0 0 0 2;
+}
+
+
+Input {
+    background: #44475a;
+    color: #f8f8f2;
+    border: none;
+    height: 1;
+    padding: 0 0 0 1;
+}
+
+Select {
+    max-width: 25;
+    padding: 0 0 0 4;
+}
+
+SelectCurrent {
+    background: #44475a;
+    border: none;
+    padding: 0 1;
+}
+
+SelectCurrent > Static#label {
+    color: #f8f8f2;
+}
+
+SelectOverlay {
+    background: #44475a;
+    color: #f8f8f2;
+    border: none
+}
+
+Label {
+    color: #f8f8f2;
+    padding: 0 1 0 0;
+    height: 1;
+    margin: 0 1 0 0;
+}
+
+RadioButton {
+    background: transparent;
+    border: none;
+    height: 1;
+    padding: 0;
+}
+
+RadioButton > .toggle--label {
+    color: white;
+}
+
+RadioButton:hover > .toggle--label {
+    background: transparent;
+}
+
+RadioButton > .toggle--button {
+    background: transparent;
+    color: black;
+}
+
+RadioButton.-on > .toggle--button {
+    background: transparent;
+    color: white;
+}
+
+#right_pane {
+    width: 5fr;
+    background: #1e1e2e;
+    border: round #6272a4;
+    border-title-color: #8be9fd;
+    border-title-align: right;
+}
+
+.results_tabs {
+    &.hidden {
+        display: none;
+    }
+}
+
+Tab {
+    background: transparent;
+    color: #6272a4;
+    margin: 0 2
+}
+
+Tab:hover {
+    color: #8be9fd;
+}
+
+Tab.-active {
+    color: #8be9fd;
+    text-style: bold;
+}
+
+DataTable {
+    background: #282a36;
+    color: #f8f8f2;
+    padding: 0 1;
+}
+
+Footer {
+    background: #6272a4;
+    color: white;
+}
