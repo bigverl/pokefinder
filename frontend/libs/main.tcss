@@ -2,42 +2,29 @@ Screen {
     background: #1e1e2e;
 }
 
-#app-grid {
+#left_pane {
+    width: 2fr;
     height: 100%;
-}
-
-#left-pane {
-    width: 1fr;
-    height: 100%;
-    background: #282a36;
-    border: solid #6272a4;
-    border-title-color: #8be9fd;
-    border-title-align: right;
-    padding: 0;
-    scrollbar-visibility: visible;
-}
-
-.go_button {
-    margin: 1 0 0 5;
-    background: #8be9fd;
-    color: #282a36;
-    height: 3;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-    width: 39;
-}
-
-#right-pane {
-    width: 3fr;
     background: #1e1e2e;
     border: round #6272a4;
     border-title-color: #8be9fd;
     border-title-align: right;
+
+    /*  */
+}
+
+.go_button {
+    margin: 1 0 0 8;
+    background: #8be9fd;
+    color: #282a36;
+    height: 3;
+    border: none;
+    width: 39;
+    text-style: bold;
 }
 
 .box {
-    background: #282a36;
+    background: #1e1e2e;
     border: round #6272a4;
     border-title-color: #8be9fd;
     border-title-align: left;
@@ -46,93 +33,52 @@ Screen {
     height: auto;
 }
 
+.aligned_inputs {
+    padding: 0 0 0 2;
+}
+
+
 Input {
     background: #44475a;
-    border: none;
     color: #f8f8f2;
+    border: none;
     height: 1;
     padding: 0 0 0 1;
-    margin: 0;
-    box-sizing: border-box;
-    content-align: left middle;
-}
-
-Input.move_input {
-    margin: 0 0 0 1;
-}
-
-Input.type_input {
-    margin: 0 0 0 1;
-}
-
-Input:focus {
-    border: none;
 }
 
 Select {
-    border: none;
     max-width: 25;
     padding: 0 0 0 4;
-    margin: 0;
-    box-sizing: border-box;
-    content-align: left middle;
-}
-
-Select:focus {
-    border: none;
 }
 
 SelectCurrent {
     background: #44475a;
     border: none;
     padding: 0 1;
-    height: 1;
-    width: 100%;
 }
 
 SelectCurrent > Static#label {
-    color: #f8f8f2;
-    background: transparent;
-}
-
-SelectCurrent.-has-value > Static#label {
     color: #f8f8f2;
 }
 
 SelectOverlay {
     background: #44475a;
     color: #f8f8f2;
-    border: solid #6272a4;
-}
-
-DataTable {
-    background: #282a36;
-    color: #f8f8f2;
-    height: 1fr;
-    width: 100%;
+    border: none
 }
 
 Label {
     color: #f8f8f2;
-    width: auto;
     padding: 0 1 0 0;
     height: 1;
     margin: 0 1 0 0;
-    box-sizing: border-box;
-    content-align: left middle;
 }
 
 RadioButton {
     background: transparent;
     border: none;
-    width: auto;
     height: 1;
     padding: 0;
-    margin: 0 1 0 0;
-}
-
-RadioButton.first-checkbox {
-    margin: 0 1 0 0;
 }
 
 RadioButton > .toggle--label {
@@ -144,25 +90,33 @@ RadioButton:hover > .toggle--label {
 }
 
 RadioButton > .toggle--button {
-    background: #282a36;
+    background: transparent;
     color: black;
 }
 
 RadioButton.-on > .toggle--button {
-    background: #282a36;
+    background: transparent;
     color: white;
 }
 
-TabbedContent {
+#right_pane {
+    width: 5fr;
     background: #1e1e2e;
-    height: 100%;
-    padding: 0;
+    border: round #6272a4;
+    border-title-color: #8be9fd;
+    border-title-align: right;
+}
+
+.results_tabs {
+    &.hidden {
+        display: none;
+    }
 }
 
 Tab {
-    padding: 0 1;
     background: transparent;
     color: #6272a4;
+    margin: 0 2
 }
 
 Tab:hover {
@@ -174,94 +128,13 @@ Tab.-active {
     text-style: bold;
 }
 
-TabPane {
-    background: #1e1e2e;
-    padding: 1;
-    layout: vertical;
-}
-
-Header {
-    background: #6272a4;
+DataTable {
+    background: #282a36;
     color: #f8f8f2;
+    padding: 0 1;
 }
 
 Footer {
     background: #6272a4;
-    color: #f8f8f2;
-}
-
-HorizontalGroup {
-    height: auto;
-    width: 100%;
-    padding: 0;
-    margin: 0 0 0 0;
-    align: left middle;
-}
-
-VerticalGroup {
-    height: auto;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-#special_pokemon_box {
-    margin-top: 1;
-}
-
-#move_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
-#primary_stat_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
-#secondary_stat_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
-#desired_type_top_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
-#desired_type_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
-#versus_type_top_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
-#versus_type_rule {
-    padding: 0;
-    margin: 0;
-    border: none;
-    color: #6272a4;
-}
-
-.box_group {
-    padding: 0 0 0 0;
-}
-
-.boxless_group {
-    padding: 0 0 0 2;
+    color: white;
 }

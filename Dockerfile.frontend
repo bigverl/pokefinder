@@ -1,0 +1,45 @@
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+
+WORKDIR /app
+
+# Copy dependency files
+COPY pyproject.toml uv.lock ./
+
+# Install dependencies
+RUN uv sync --frozen --no-dev --group tui
+
+# Copy application code
+COPY frontend ./frontend
+
+# Create non-root user
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
+
+# Set PYTHONPATH
+ENV PYTHONPATH=/app
+
+# Default public URL (can be overridden with -e PUBLIC_URL=...)
+ENV PUBLIC_URL=http://localhost:8080
+
+# Switch to non-root user
+USER appuser
+
+# Expose port
+EXPOSE 8080
+
+# Health check - verifies the web server is responding
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8080/ || exit 1
+
+# Run with textual serve (using sh -c to allow env var expansion while keeping exec form)
+CMD ["sh", "-c", "uv run --group tui textual serve frontend/app.py --host 0.0.0.0 --port 8080 --url ${PUBLIC_URL}"]
+
+
+#######
+# Build
+# docker build -f Dockerfile.frontend -t pokefinder-frontend .
+
+# Run with flags
+# docker run -p 8080:8080 -e FEATURE_POKEDEX=true pokefinder-frontend
+
+# http://localhost:8080

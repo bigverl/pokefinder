@@ -10,7 +10,6 @@ packages = ["backend"]
 name = "pokepicker"
 version = "0.1.0"
 description = "Just a fun pokemon tool for pokerogue and unbound fans"
-readme = "README.md"
 requires-python = ">=3.12"
 
 dependencies = [
@@ -37,6 +36,7 @@ dev = [
 tui = [
     "textual>=6.6.0",
     "textual-dev>=1.8.0",
+    "httpx>=0.27.0",
 ]
 
 [tool.pytest.ini_options]
