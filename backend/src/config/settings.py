@@ -61,7 +61,11 @@ class Settings(BaseSettings):
     @property
     def type_matchups_fixture_path(self) -> Path:
         return self.fixtures_dir / "type_matchups.json"
-    
+
+    @property
+    def type_pairs_fixture_path(self) -> Path:
+        return self.fixtures_dir / "type_pairs.json"
+
     @property
     def db_url(self) -> str:
         """Returns appropriate DB based on environment"""

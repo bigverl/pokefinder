@@ -8,8 +8,6 @@ from textual.containers import (
     Vertical
     )
 
-from textual.suggester import SuggestFromList
-
 from textual.widgets import (
     RadioButton,
     Select,
@@ -17,6 +15,8 @@ from textual.widgets import (
     Label,
     Button
     )
+
+from textual.suggester import SuggestFromList
 
 if TYPE_CHECKING:
     from frontend.app import Pokefinder
@@ -125,24 +125,6 @@ class CandidateFinderSearch(Vertical):
                     type_suggestions, case_sensitive=False)
                     )
 
-        # Versus Type Box
-        with VerticalGroup(id="versus_type_box", classes="box"):
-            yield RadioButton("enabled")
-            with HorizontalGroup(classes="aligned_inputs"):
-                yield Label(content="type 1")
-                yield Input(
-                    classes="type_input",
-                    suggester=SuggestFromList(
-                    type_suggestions, case_sensitive=False)
-                    )
-            with HorizontalGroup(classes="aligned_inputs"):
-                yield Label(content="type 2")
-                yield Input(
-                    classes="type_input",
-                    suggester=SuggestFromList(
-                    type_suggestions, case_sensitive=False)
-                    )
-                
         yield Button(label="Catch 'em all!", classes="go_button")     
 
 

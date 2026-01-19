@@ -10,11 +10,10 @@ class BaseModel(_BaseModel):
 
 class MovesTableRow(BaseModel):
     """Row for moves DataTable: [name, level_learned, machine, egg_move]"""
-    pokemon_name: str
-    move_name: str
-    level_learned: str | int | None
-    machine: str | None
-    egg_move: str | None
+    name: str
+    level_learned: str | int
+    machine: str
+    egg_move: str
 
 class StatsTableRow(BaseModel):
     """Row for stats DataTable: [name, attack, defense, special_attack, special_defense, speed]"""

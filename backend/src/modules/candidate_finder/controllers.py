@@ -1,15 +1,24 @@
+import logging
+from typing import Any
 
-import json
+from litestar import (
+    get, 
+    Controller, 
+    Request, 
+    Response, 
+    MediaType
+)
 
-from litestar import get, Controller, Request, Response, MediaType
+from litestar.status_codes import (
+    HTTP_400_BAD_REQUEST, 
+    HTTP_404_NOT_FOUND
+) 
+
 from litestar.exceptions import NotFoundException, ClientException
-from litestar.status_codes import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND
 
 from backend.src.modules.candidate_finder.urls import (
     HEALTH,
-    POKEMON,
-    POKEMON_NAME,
-    TYPE_MATCHUPS
+    SEARCH_POKEMON,
 )
 
 from backend.src.lib.exceptions import (
@@ -18,19 +27,13 @@ from backend.src.lib.exceptions import (
     InvalidPokemonStatError,
     NoPokemonFoundError,
     TooManyTypesError,
-
 )
 
-from backend.src.modules.candidate_finder.schemas import (
-    PokemonInfoResponse,
-    PokemonTypeResponse,
-    PokemonMoveResponse,
-    PokemonStatsResponse,
-    TypeMatchupResponse
-)
+from backend.src.modules.candidate_finder.schemas import CandidateFinderResponse
 
 from backend.src.modules.candidate_finder.deps import CandidateFinderService
-from backend.src.config.settings import settings
+
+logger = logging.getLogger(__name__)
 
 # Error handlers
 def invalid_pokemon_type_error_handler(_: Request, exc: InvalidPokemonTypeError) -> Response:
@@ -77,36 +80,20 @@ class CandidateFinderController(Controller):
         InvalidPokemonStatError: invalid_pokemon_stat_error_handler,
         InvalidPokemonTypeError: invalid_pokemon_type_error_handler,        
         NoPokemonFoundError: no_pokemon_found_error_handler,
-        TooManyTypesError: too_many_types_error_handler
+        TooManyTypesError: too_many_types_error_handler,
     }
 
     @get(HEALTH)
     async def health_check(self) -> dict:
         return { "status": "healthy" }
-        
-    @get (POKEMON_NAME)
-    async def pokemon_name(
-        self, 
-        finder: CandidateFinderService,
-        name: str | None = None
-        ) -> PokemonInfoResponse:
-
-        if not name:
-            raise ClientException(detail="Name required")
-        
-        results = finder.get_pokemon_by_name(name)
-
-        if results:
-            return PokemonInfoResponse(name = name, **results)
-        else:
-            raise NotFoundException(detail=f"pokemon {name!r} not found")
-        
-    @get(POKEMON)
-    async def pokemon_list(
+    
+    # @get(SEARCH_POKEMON)
+    @get("/search_pokemon")
+    async def search_pokemon(
         self,
         finder: CandidateFinderService,
         move: str | None = None,
-        types: str | None = None,
+        desired_type: str | None = None,
         primary_stat: str | None = None,
         secondary_stat: str | None = None,
         min_primary: int = 0,
@@ -115,62 +102,34 @@ class CandidateFinderController(Controller):
         include_mythical: bool = False,
         include_legendary: bool = False,
         include_ultra_beasts: bool = False
-    ) -> PokemonMoveResponse | PokemonTypeResponse | PokemonStatsResponse:
-            # Split types by hyphen to support dual types (e.g., "fire" or "fire-flying")
-        if types:
-            type_list = types.split('-')
+    ) -> CandidateFinderResponse:
 
-        if move:
-            results = finder.get_pokemon_by_move(
-            move,
+        # Case 1: No params
+        if not any([move, desired_type, primary_stat, secondary_stat]):
+            raise ClientException(detail="Must provide at least one search parameter")
+        
+        # Get results
+        response: frozenset[str] = finder.search_pokemon(
+            move=move,
+            desired_type=desired_type,
+            primary_stat=primary_stat,
+            secondary_stat=secondary_stat,
+            min_primary=min_primary,
+            min_secondary=min_secondary,
+            min_speed=min_speed,
             include_legendary=include_legendary,
             include_mythical=include_mythical,
             include_ultra_beasts=include_ultra_beasts
-            )
-            return PokemonMoveResponse(move_name=move, pokemon_list=results)
+        )
 
-        elif types:
-            # Split types by hyphen to support dual types (e.g., "fire" or "fire-flying")
-            type_list = types.split('-')
-
-            results = finder.get_pokemon_by_type(
-                *type_list,  # Now unpacks the list, not the string
-                include_legendary=include_legendary,
-                include_mythical=include_mythical,
-                include_ultra_beasts=include_ultra_beasts
-            )
-        
-            return PokemonTypeResponse(type_combo=types, pokemon_list=results)
-
-        elif primary_stat and secondary_stat:
-            results = finder.get_pokemon_by_stats(
-                primary_stat,
-                secondary_stat,
-                min_primary=min_primary,
-                min_secondary=min_secondary,
-                min_speed=min_speed,
-                include_mythical=include_mythical,
-                include_legendary=include_legendary,
-                include_ultra_beasts=include_ultra_beasts
+        # Case 2: No pokemon found
+        if not response:
+            raise NotFoundException(
+                detail="No pokemon found. Try loosening filters."
                 )
-            return PokemonStatsResponse(root=results) #dict[str,dict]:
-            
-        else:
-            # Return all or implement pagination
-            raise ClientException(detail="Must specify type, move, or stats filter")
-    
-    @get(TYPE_MATCHUPS)
-    async def type_matchups(
-            self,
-            finder: CandidateFinderService,
-            types: str | None = None
-            ) -> TypeMatchupResponse:
         
-            if types:
-                type_list = types.split('-')
+        # Populate tables
+        results = finder.build_response(response)
 
-                results = finder.get_type_effectiveness(*type_list)
-
-                return TypeMatchupResponse(root=results)
-            else:
-                raise ClientException(detail="Must specify type(s)")
+        # Return tables
+        return results

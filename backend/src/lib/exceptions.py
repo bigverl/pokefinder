@@ -10,6 +10,11 @@ class PokemonSearchError(Exception):
     """Base exception for Pokemon search errors."""
     pass
 
+class InvalidPokemonStatError(PokemonSearchError):
+    """Raised when an invalid Pokemon stat is provided."""
+    pass
+    
+
 class InvalidPokemonTypeError(PokemonSearchError):
     """Raised when an invalid Pokemon type is provided."""
     pass
@@ -29,8 +34,4 @@ class InvalidPokemonMoveError(PokemonSearchError):
 
 class InvalidPokemonNameError(PokemonSearchError):
     """Raised when invalid pokemon name provided"""
-    pass
-
-class InvalidPokemonStatError(PokemonSearchError):
-    """Raised when invalid pokemon stat provided"""
     pass

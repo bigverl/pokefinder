@@ -378,7 +378,160 @@
     "speed": 95
   },
   {
+    "pokemon_name": "arceus",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.bug",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.dark",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.dragon",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.electric",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
     "pokemon_name": "arceus.fairy",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.fighting",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.fire",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.flying",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.ghost",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.grass",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.ground",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.ice",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.poison",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.psychic",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.rock",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.steel",
+    "hp": 120,
+    "attack": 120,
+    "defense": 120,
+    "special_attack": 120,
+    "special_defense": 120,
+    "speed": 120
+  },
+  {
+    "pokemon_name": "arceus.water",
     "hp": 120,
     "attack": 120,
     "defense": 120,
@@ -622,6 +775,15 @@
   },
   {
     "pokemon_name": "basculegion.female",
+    "hp": 120,
+    "attack": 112,
+    "defense": 65,
+    "special_attack": 80,
+    "special_defense": 75,
+    "speed": 78
+  },
+  {
+    "pokemon_name": "basculegion.male",
     "hp": 120,
     "attack": 112,
     "defense": 65,
@@ -1899,6 +2061,33 @@
     "speed": 101
   },
   {
+    "pokemon_name": "deerling.autumn",
+    "hp": 60,
+    "attack": 60,
+    "defense": 50,
+    "special_attack": 40,
+    "special_defense": 50,
+    "speed": 75
+  },
+  {
+    "pokemon_name": "deerling.spring",
+    "hp": 60,
+    "attack": 60,
+    "defense": 50,
+    "special_attack": 40,
+    "special_defense": 50,
+    "speed": 75
+  },
+  {
+    "pokemon_name": "deerling.summer",
+    "hp": 60,
+    "attack": 60,
+    "defense": 50,
+    "special_attack": 40,
+    "special_defense": 50,
+    "speed": 75
+  },
+  {
     "pokemon_name": "deerling.winter",
     "hp": 60,
     "attack": 60,
@@ -1942,6 +2131,33 @@
     "special_attack": 114,
     "special_defense": 100,
     "speed": 104
+  },
+  {
+    "pokemon_name": "deoxys",
+    "hp": 50,
+    "attack": 150,
+    "defense": 50,
+    "special_attack": 150,
+    "special_defense": 50,
+    "speed": 150
+  },
+  {
+    "pokemon_name": "deoxys.attack",
+    "hp": 50,
+    "attack": 150,
+    "defense": 50,
+    "special_attack": 150,
+    "special_defense": 50,
+    "speed": 150
+  },
+  {
+    "pokemon_name": "deoxys.defense",
+    "hp": 50,
+    "attack": 150,
+    "defense": 50,
+    "special_attack": 150,
+    "special_defense": 50,
+    "speed": 150
   },
   {
     "pokemon_name": "deoxys.speed",
@@ -2295,6 +2511,15 @@
     "speed": 55
   },
   {
+    "pokemon_name": "dudunsparce.two-segment",
+    "hp": 125,
+    "attack": 100,
+    "defense": 80,
+    "special_attack": 85,
+    "special_defense": 75,
+    "speed": 55
+  },
+  {
     "pokemon_name": "dugtrio",
     "hp": 35,
     "attack": 100,
@@ -2401,6 +2626,15 @@
     "special_attack": 105,
     "special_defense": 80,
     "speed": 50
+  },
+  {
+    "pokemon_name": "eevee",
+    "hp": 55,
+    "attack": 55,
+    "defense": 50,
+    "special_attack": 45,
+    "special_defense": 65,
+    "speed": 55
   },
   {
     "pokemon_name": "eevee.partner",
@@ -3294,6 +3528,15 @@
     "speed": 25
   },
   {
+    "pokemon_name": "gimmighoul.chest",
+    "hp": 45,
+    "attack": 30,
+    "defense": 70,
+    "special_attack": 75,
+    "special_defense": 70,
+    "speed": 10
+  },
+  {
     "pokemon_name": "gimmighoul.roaming",
     "hp": 45,
     "attack": 30,
@@ -3310,6 +3553,15 @@
     "special_attack": 90,
     "special_defense": 65,
     "speed": 85
+  },
+  {
+    "pokemon_name": "giratina.altered",
+    "hp": 150,
+    "attack": 100,
+    "defense": 120,
+    "special_attack": 100,
+    "special_defense": 120,
+    "speed": 90
   },
   {
     "pokemon_name": "giratina.origin",
@@ -3546,6 +3798,33 @@
     "speed": 91
   },
   {
+    "pokemon_name": "gourgeist.average",
+    "hp": 65,
+    "attack": 90,
+    "defense": 122,
+    "special_attack": 58,
+    "special_defense": 75,
+    "speed": 84
+  },
+  {
+    "pokemon_name": "gourgeist.large",
+    "hp": 65,
+    "attack": 90,
+    "defense": 122,
+    "special_attack": 58,
+    "special_defense": 75,
+    "speed": 84
+  },
+  {
+    "pokemon_name": "gourgeist.small",
+    "hp": 65,
+    "attack": 90,
+    "defense": 122,
+    "special_attack": 58,
+    "special_defense": 75,
+    "speed": 84
+  },
+  {
     "pokemon_name": "gourgeist.super",
     "hp": 65,
     "attack": 90,
@@ -3616,6 +3895,15 @@
     "special_attack": 55,
     "special_defense": 75,
     "speed": 20
+  },
+  {
+    "pokemon_name": "greninja",
+    "hp": 72,
+    "attack": 95,
+    "defense": 67,
+    "special_attack": 103,
+    "special_defense": 71,
+    "speed": 122
   },
   {
     "pokemon_name": "greninja.ash",
@@ -4248,6 +4536,15 @@
     "speed": 95
   },
   {
+    "pokemon_name": "indeedee.male",
+    "hp": 60,
+    "attack": 65,
+    "defense": 55,
+    "special_attack": 105,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
     "pokemon_name": "infernape",
     "hp": 76,
     "attack": 104,
@@ -4516,6 +4813,15 @@
     "special_attack": 60,
     "special_defense": 120,
     "speed": 40
+  },
+  {
+    "pokemon_name": "keldeo.ordinary",
+    "hp": 91,
+    "attack": 72,
+    "defense": 90,
+    "special_attack": 129,
+    "special_defense": 90,
+    "speed": 108
   },
   {
     "pokemon_name": "keldeo.resolute",
@@ -5094,6 +5400,24 @@
     "speed": 112
   },
   {
+    "pokemon_name": "lycanroc.midday",
+    "hp": 75,
+    "attack": 115,
+    "defense": 65,
+    "special_attack": 55,
+    "special_defense": 65,
+    "speed": 112
+  },
+  {
+    "pokemon_name": "lycanroc.midnight",
+    "hp": 75,
+    "attack": 115,
+    "defense": 65,
+    "special_attack": 55,
+    "special_defense": 65,
+    "speed": 112
+  },
+  {
     "pokemon_name": "mabosstiff",
     "hp": 80,
     "attack": 120,
@@ -5427,6 +5751,15 @@
     "speed": 34
   },
   {
+    "pokemon_name": "meloetta.aria",
+    "hp": 100,
+    "attack": 77,
+    "defense": 77,
+    "special_attack": 128,
+    "special_defense": 128,
+    "speed": 90
+  },
+  {
     "pokemon_name": "meloetta.pirouette",
     "hp": 100,
     "attack": 77,
@@ -5455,6 +5788,15 @@
   },
   {
     "pokemon_name": "meowstic.female",
+    "hp": 74,
+    "attack": 48,
+    "defense": 76,
+    "special_attack": 83,
+    "special_defense": 81,
+    "speed": 104
+  },
+  {
+    "pokemon_name": "meowstic.male",
     "hp": 74,
     "attack": 48,
     "defense": 76,
@@ -6057,6 +6399,15 @@
     "speed": 65
   },
   {
+    "pokemon_name": "oinkologne.male",
+    "hp": 110,
+    "attack": 100,
+    "defense": 75,
+    "special_attack": 59,
+    "special_defense": 80,
+    "speed": 65
+  },
+  {
     "pokemon_name": "okidogi",
     "hp": 88,
     "attack": 128,
@@ -6109,6 +6460,33 @@
     "special_attack": 80,
     "special_defense": 120,
     "speed": 90
+  },
+  {
+    "pokemon_name": "oricorio.baile",
+    "hp": 75,
+    "attack": 70,
+    "defense": 70,
+    "special_attack": 98,
+    "special_defense": 70,
+    "speed": 93
+  },
+  {
+    "pokemon_name": "oricorio.pau",
+    "hp": 75,
+    "attack": 70,
+    "defense": 70,
+    "special_attack": 98,
+    "special_defense": 70,
+    "speed": 93
+  },
+  {
+    "pokemon_name": "oricorio.pom-pom",
+    "hp": 75,
+    "attack": 70,
+    "defense": 70,
+    "special_attack": 98,
+    "special_defense": 70,
+    "speed": 93
   },
   {
     "pokemon_name": "oricorio.sensu",
@@ -6166,6 +6544,24 @@
   },
   {
     "pokemon_name": "paldea.tauros.aqua",
+    "hp": 75,
+    "attack": 110,
+    "defense": 105,
+    "special_attack": 30,
+    "special_defense": 70,
+    "speed": 100
+  },
+  {
+    "pokemon_name": "paldea.tauros.blaze",
+    "hp": 75,
+    "attack": 110,
+    "defense": 105,
+    "special_attack": 30,
+    "special_defense": 70,
+    "speed": 100
+  },
+  {
+    "pokemon_name": "paldea.tauros.combat",
     "hp": 75,
     "attack": 110,
     "defense": 105,
@@ -6462,6 +6858,15 @@
     "speed": 55
   },
   {
+    "pokemon_name": "pikachu",
+    "hp": 35,
+    "attack": 55,
+    "defense": 40,
+    "special_attack": 50,
+    "special_defense": 50,
+    "speed": 90
+  },
+  {
     "pokemon_name": "pikachu.partner",
     "hp": 35,
     "attack": 55,
@@ -6588,6 +6993,15 @@
     "speed": 50
   },
   {
+    "pokemon_name": "poltchageist.counterfeit",
+    "hp": 40,
+    "attack": 45,
+    "defense": 45,
+    "special_attack": 74,
+    "special_defense": 54,
+    "speed": 50
+  },
+  {
     "pokemon_name": "polteageist",
     "hp": 60,
     "attack": 65,
@@ -6694,6 +7108,33 @@
     "special_attack": 65,
     "special_defense": 50,
     "speed": 55
+  },
+  {
+    "pokemon_name": "pumpkaboo.average",
+    "hp": 49,
+    "attack": 66,
+    "defense": 70,
+    "special_attack": 44,
+    "special_defense": 55,
+    "speed": 51
+  },
+  {
+    "pokemon_name": "pumpkaboo.large",
+    "hp": 49,
+    "attack": 66,
+    "defense": 70,
+    "special_attack": 44,
+    "special_defense": 55,
+    "speed": 51
+  },
+  {
+    "pokemon_name": "pumpkaboo.small",
+    "hp": 49,
+    "attack": 66,
+    "defense": 70,
+    "special_attack": 44,
+    "special_defense": 55,
+    "speed": 51
   },
   {
     "pokemon_name": "pumpkaboo.super",
@@ -7137,7 +7578,43 @@
     "speed": 90
   },
   {
+    "pokemon_name": "rotom.fan",
+    "hp": 50,
+    "attack": 50,
+    "defense": 77,
+    "special_attack": 95,
+    "special_defense": 77,
+    "speed": 91
+  },
+  {
+    "pokemon_name": "rotom.frost",
+    "hp": 50,
+    "attack": 50,
+    "defense": 77,
+    "special_attack": 95,
+    "special_defense": 77,
+    "speed": 91
+  },
+  {
+    "pokemon_name": "rotom.heat",
+    "hp": 50,
+    "attack": 50,
+    "defense": 77,
+    "special_attack": 95,
+    "special_defense": 77,
+    "speed": 91
+  },
+  {
     "pokemon_name": "rotom.mow",
+    "hp": 50,
+    "attack": 50,
+    "defense": 77,
+    "special_attack": 95,
+    "special_defense": 77,
+    "speed": 91
+  },
+  {
+    "pokemon_name": "rotom.wash",
     "hp": 50,
     "attack": 50,
     "defense": 77,
@@ -7279,6 +7756,33 @@
     "special_attack": 30,
     "special_defense": 75,
     "speed": 85
+  },
+  {
+    "pokemon_name": "sawsbuck.autumn",
+    "hp": 80,
+    "attack": 100,
+    "defense": 70,
+    "special_attack": 60,
+    "special_defense": 70,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "sawsbuck.spring",
+    "hp": 80,
+    "attack": 100,
+    "defense": 70,
+    "special_attack": 60,
+    "special_defense": 70,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "sawsbuck.summer",
+    "hp": 80,
+    "attack": 100,
+    "defense": 70,
+    "special_attack": 60,
+    "special_defense": 70,
+    "speed": 95
   },
   {
     "pokemon_name": "sawsbuck.winter",
@@ -7488,6 +7992,15 @@
     "speed": 95
   },
   {
+    "pokemon_name": "shaymin.land",
+    "hp": 100,
+    "attack": 100,
+    "defense": 100,
+    "special_attack": 100,
+    "special_defense": 100,
+    "speed": 100
+  },
+  {
     "pokemon_name": "shaymin.sky",
     "hp": 100,
     "attack": 100,
@@ -7641,7 +8154,160 @@
     "speed": 46
   },
   {
+    "pokemon_name": "silvally",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.bug",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.dark",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.dragon",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.electric",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
     "pokemon_name": "silvally.fairy",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.fighting",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.fire",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.flying",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.ghost",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.grass",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.ground",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.ice",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.poison",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.psychic",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.rock",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.steel",
+    "hp": 95,
+    "attack": 95,
+    "defense": 95,
+    "special_attack": 95,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "silvally.water",
     "hp": 95,
     "attack": 95,
     "defense": 95,
@@ -8109,7 +8775,34 @@
     "speed": 23
   },
   {
+    "pokemon_name": "squawkabilly.blue-plumage",
+    "hp": 82,
+    "attack": 96,
+    "defense": 51,
+    "special_attack": 45,
+    "special_defense": 51,
+    "speed": 92
+  },
+  {
+    "pokemon_name": "squawkabilly.green-plumage",
+    "hp": 82,
+    "attack": 96,
+    "defense": 51,
+    "special_attack": 45,
+    "special_defense": 51,
+    "speed": 92
+  },
+  {
     "pokemon_name": "squawkabilly.white-plumage",
+    "hp": 82,
+    "attack": 96,
+    "defense": 51,
+    "special_attack": 45,
+    "special_defense": 51,
+    "speed": 92
+  },
+  {
+    "pokemon_name": "squawkabilly.yellow-plumage",
     "hp": 82,
     "attack": 96,
     "defense": 51,
@@ -8793,6 +9486,15 @@
     "speed": 85
   },
   {
+    "pokemon_name": "toxtricity.amped",
+    "hp": 75,
+    "attack": 98,
+    "defense": 70,
+    "special_attack": 114,
+    "special_defense": 70,
+    "speed": 75
+  },
+  {
     "pokemon_name": "toxtricity.low-key",
     "hp": 75,
     "attack": 98,
@@ -9019,6 +9721,15 @@
   },
   {
     "pokemon_name": "urshifu.rapid-strike",
+    "hp": 100,
+    "attack": 130,
+    "defense": 100,
+    "special_attack": 63,
+    "special_defense": 60,
+    "speed": 97
+  },
+  {
+    "pokemon_name": "urshifu.single-strike",
     "hp": 100,
     "attack": 130,
     "defense": 100,
@@ -9486,6 +10197,24 @@
     "speed": 15
   },
   {
+    "pokemon_name": "wormadam.plant",
+    "hp": 60,
+    "attack": 59,
+    "defense": 85,
+    "special_attack": 79,
+    "special_defense": 105,
+    "speed": 36
+  },
+  {
+    "pokemon_name": "wormadam.sandy",
+    "hp": 60,
+    "attack": 59,
+    "defense": 85,
+    "special_attack": 79,
+    "special_defense": 105,
+    "speed": 36
+  },
+  {
     "pokemon_name": "wormadam.trash",
     "hp": 60,
     "attack": 59,
@@ -9727,6 +10456,42 @@
     "special_attack": 65,
     "special_defense": 70,
     "speed": 58
+  },
+  {
+    "pokemon_name": "zygarde.10",
+    "hp": 108,
+    "attack": 100,
+    "defense": 121,
+    "special_attack": 81,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "zygarde.10-power-construct",
+    "hp": 108,
+    "attack": 100,
+    "defense": 121,
+    "special_attack": 81,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "zygarde.50",
+    "hp": 108,
+    "attack": 100,
+    "defense": 121,
+    "special_attack": 81,
+    "special_defense": 95,
+    "speed": 95
+  },
+  {
+    "pokemon_name": "zygarde.50-power-construct",
+    "hp": 108,
+    "attack": 100,
+    "defense": 121,
+    "special_attack": 81,
+    "special_defense": 95,
+    "speed": 95
   },
   {
     "pokemon_name": "zygarde.complete",

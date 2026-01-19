@@ -1,8 +1,8 @@
 """Initial schema
 
-Revision ID: ec1669b28087
+Revision ID: 6d6aaf4e02f4
 Revises: 
-Create Date: 2025-12-14 13:16:04.287319
+Create Date: 2026-01-06 17:50:54.686464
 
 """
 from typing import Sequence, Union
@@ -13,7 +13,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'ec1669b28087'
+revision: str = '6d6aaf4e02f4'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -106,7 +106,7 @@ def upgrade() -> None:
     sa.Column('defender_type_id', GUID(length=16), nullable=False),
     sa.Column('attacker_type_id', GUID(length=16), nullable=False),
     sa.Column('multiplier', sa.Float(), nullable=True),
-    sa.CheckConstraint('multiplier IN (0, 0.5, 1, 2, 4)', name=op.f('ck_type_matchup_check_multiplier_valid')),
+    sa.CheckConstraint('multiplier IN (0, 0.25, 0.5, 1, 2, 4)', name=op.f('ck_type_matchup_check_multiplier_valid')),
     sa.ForeignKeyConstraint(['attacker_type_id'], ['type.id'], name=op.f('fk_type_matchup_attacker_type_id_type')),
     sa.ForeignKeyConstraint(['defender_type_id'], ['type.id'], name=op.f('fk_type_matchup_defender_type_id_type')),
     sa.PrimaryKeyConstraint('defender_type_id', 'attacker_type_id', name=op.f('pk_type_matchup'))
