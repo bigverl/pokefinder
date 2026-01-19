@@ -1,250 +1,237 @@
-# tests/api/test_pokemon_routes.py
-from litestar.testing import TestClient
-from backend.src.app import app
+# tests/unit/test_api.py
+# Unit tests - uses SQLite in-memory database (no external dependencies)
+import pytest
+import structlog
+logger = structlog.get_logger(__name__)
 
 # ========
 # /health
 # ========
-def test_health_check():
+@pytest.mark.unit
+def test_health_check(test_client):
     """Test the health check endpoint."""
-    with TestClient(app=app) as client:
-        response = client.get("/health")
+    response = test_client.get("/health")
 
-        assert response.status_code == 200
-        assert response.json() == {"status": "healthy"}
-
-# ========
-# /pokemon/{name}
-# ========
-
-def test_get_pokemon_info_success():
-    """Test getting info for a valid Pokemon."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon/bulbasaur")
-
-        assert response.status_code == 200
-
-        data = response.json()
-        assert data["name"] == "bulbasaur"
-        assert data["number"] == 1
-        assert "grass" in data["types"]
-        assert "poison" in data["types"]
-
-
-def test_get_pokemon_info_not_found():
-    """Test getting info for a non-existent Pokemon."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon/fakemon")
-
-        assert response.status_code == 404
-        assert "not found" in response.json()["detail"].lower()
-
+    assert response.status_code == 200
+    assert response.json() == {"status": "healthy"}
 
 # ========
-# /pokemon/
+# /search_pokemon/ (search endpoint)
 # ========
 
-# Case: No param 400
-def test_pokemon_no_params():
-    """Test /pokemon with no query params returns 400."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon")
+# Case: No param - returns 400 error
+@pytest.mark.unit
+def test_pokemon_no_params(test_client):
+    """Test /search_pokemon with no query params returns 400 error."""
+    response = test_client.get("/search_pokemon")
 
-        assert response.status_code == 400
-        assert "must specify" in response.json()["detail"].lower()
-
+    assert response.status_code == 400
 
 # ========
 # Move filter
 # ========
 
 # Case 1: Invalid move 400
-def test_pokemon_move_invalid():
-    """Test /pokemon with invalid move returns 400."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?move=fakemove")
+@pytest.mark.unit
+def test_pokemon_move_invalid(test_client):
+    """Test /search_pokemon with invalid move returns 400."""
+    response = test_client.get("/search_pokemon?move=fakemove")
 
-        assert response.status_code == 400
-        assert "invalid move" in response.text.lower()
-
-
-# Case 2: Failure - Pokemon not found 404
-def test_pokemon_move_not_found():
-    """Test /pokemon with move that has no learners returns 404."""
-    with TestClient(app=app) as client:
-        # Use a real move but filter out all Pokemon
-        response = client.get("/pokemon?move=tackle&include_legendary=false&include_mythical=false&include_ultra_beasts=false")
-
-        # This might return 200 with results, so we need a move that truly has no learners
-        # For now, this test may need adjustment based on actual data
-        # Placeholder assertion
-        assert response.status_code in [200, 404]
+    assert response.status_code == 400
+    assert "invalid move" in response.text.lower()
 
 
-# Case 3: Success - Found 200
-def test_pokemon_move_success():
-    """Test /pokemon with valid move returns 200."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?move=tackle")
+# Case 2: Success - Found 200
+@pytest.mark.unit
+def test_pokemon_move_success(test_client):
+    """Test /search_pokemon with valid move returns 200 with moves_table and types_table."""
+    response = test_client.get("/search_pokemon?move=tackle")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert "move_name" in data
-        assert data["move_name"] == "tackle"
-        assert "pokemon_list" in data
-        assert isinstance(data["pokemon_list"], dict)
+    assert response.status_code == 200
+    data = response.json()
 
+    # Should have moves_table populated
+    moves_table = data.get("moves_table")
+    assert moves_table is not None
+    assert "rows" in moves_table
+    assert len(moves_table["rows"]) > 0
 
-# Case 4: Test legendary filter
-def test_pokemon_move_exclude_legendary():
-    """Test /pokemon move filter excludes legendaries by default."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?move=tackle")
+    # Check row structure
+    first_row = moves_table["rows"][0]
+    assert "move_name" in first_row
+    assert "level_learned" in first_row
+    assert "machine" in first_row
+    assert "egg_move" in first_row
 
-        assert response.status_code == 200
-        data = response.json()
-        pokemon_list = data["pokemon_list"]
-        assert isinstance(pokemon_list, dict)
+    # Should always have types_table populated
+    types_table = data.get("types_table")
+    assert types_table is not None
+    assert len(types_table["rows"]) > 0
 
+# Case 3: Test legendary filter
+@pytest.mark.unit
+def test_pokemon_move_exclude_legendary(test_client):
+    """Test /search_pokemon move filter excludes legendaries by default."""
+    response = test_client.get("/search_pokemon?move=psychic")
 
-# Case 5: Test include legendary
-def test_pokemon_move_include_legendary():
-    """Test /pokemon move filter includes legendaries when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?move=tackle&include_legendary=true")
+    assert response.status_code == 200
+    data = response.json()
 
-        assert response.status_code == 200
-        data = response.json()
-        assert "pokemon_list" in data
-
-
-# Case 6: Test include mythical
-def test_pokemon_move_include_mythical():
-    """Test /pokemon move filter includes mythicals when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?move=tackle&include_mythical=true")
-
-        assert response.status_code == 200
-        data = response.json()
-        assert "pokemon_list" in data
+    # Check that legendary Pokemon are not in results
+    types_table = data.get("types_table")
+    pokemon_names = [row["name"] for row in types_table["rows"]]
+    assert "mewtwo" not in pokemon_names
+    assert "latias" not in pokemon_names
 
 
-# Case 7: Test include ultra beasts
-def test_pokemon_move_include_ultra_beasts():
-    """Test /pokemon move filter includes ultra beasts when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?move=tackle&include_ultra_beasts=true")
+# Case 4: Test include legendary
+@pytest.mark.unit
+def test_pokemon_move_include_legendary(test_client):
+    """Test /search_pokemon move filter includes legendaries when requested."""
+    response = test_client.get("/search_pokemon?move=psychic&include_legendary=true")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert "pokemon_list" in data
+    assert response.status_code == 200
+    data = response.json()
+
+    # Should have results
+    assert data.get("moves_table") is not None
+    moves_table = data.get("moves_table")
+    assert len(moves_table["rows"]) > 0
+
+
+# Case 5: Test include mythical
+@pytest.mark.unit
+def test_pokemon_move_include_mythical(test_client):
+    """Test /search_pokemon move filter includes mythicals when requested."""
+    response = test_client.get("/search_pokemon?move=psychic&include_mythical=true")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("moves_table") is not None
+
+
+# Case 6: Test include ultra beasts
+@pytest.mark.unit
+def test_pokemon_move_include_ultra_beasts(test_client):
+    """Test /search_pokemon move filter includes ultra beasts when requested."""
+    response = test_client.get("/search_pokemon?move=psychic&include_ultra_beasts=true")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("moves_table") is not None
 
 
 # ========
-# Type filter
+# Type filter (desired_type parameter)
 # ========
 
 # Case 1: Invalid type 400
-def test_pokemon_type_invalid():
-    """Test /pokemon with invalid type returns 400."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=faketype")
+@pytest.mark.unit
+def test_pokemon_type_invalid(test_client):
+    """Test /search_pokemon with invalid desired_type returns 400."""
+    response = test_client.get("/search_pokemon?desired_type=faketype")
 
-        assert response.status_code == 400
-        assert "invalid" in response.text.lower()
+    assert response.status_code == 400
+    assert "invalid" in response.text.lower()
 
 
 # Case 2: Too many types 400
-def test_pokemon_type_too_many():
-    """Test /pokemon with more than 2 types returns 400."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=fire-water-grass")
+@pytest.mark.unit
+def test_pokemon_type_too_many(test_client):
+    """Test /search_pokemon with more than 2 types returns 400."""
+    response = test_client.get("/search_pokemon?desired_type=fire-water-grass")
 
-        assert response.status_code == 400
-        assert "maximum 2 types" in response.text.lower()
+    assert response.status_code == 400
+    assert "maximum 2 types" in response.text.lower()
 
+# Case 3: Success - Single type 200
+@pytest.mark.unit
+def test_pokemon_type_success_single(test_client):
+    """Test /search_pokemon with single valid desired_type returns 200 with types_table."""
+    response = test_client.get("/search_pokemon?desired_type=fire")
+    logger.info("Response status: {response.status_code}")
+    logger.info(f"Response body: {response.text}")
+    data = response.json()
 
-# Case 3: Failure - Pokemon not found 404
-def test_pokemon_type_not_found():
-    """Test /pokemon with valid type combo that has no Pokemon returns 404."""
-    with TestClient(app=app) as client:
-        # Use a type combo that shouldn't exist
-        response = client.get("/pokemon?types=normal-ghost")
+    assert response.status_code == 200
 
-        # This might actually exist in the data, adjust as needed
-        assert response.status_code in [200, 404]
+    # Should have types_table populated
+    assert data.get("types_table") is not None
+    types_table = data.get("types_table")
+    assert len(types_table["rows"]) > 0
 
+    # Check that all returned Pokemon have fire type
+    for row in types_table["rows"]:
+        assert "fire" in [row["type1"], row["type2"]]
 
-# Case 4: Success - Found Pokemon 200
-def test_pokemon_type_success_single():
-    """Test /pokemon with single valid type returns 200."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=fire")
+# Case 4: Success - Dual types 200
+@pytest.mark.unit
+def test_pokemon_type_success_dual(test_client):
+    """Test /search_pokemon with dual desired_type returns 200."""
+    response = test_client.get("/search_pokemon?desired_type=fire-flying")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert "type_combo" in data
-        assert data["type_combo"] == "fire"
-        assert "pokemon_list" in data
-        assert isinstance(data["pokemon_list"], list)
+    assert response.status_code == 200
+    data = response.json()
 
+    # Should have types_table populated
+    assert data.get("types_table") is not None
+    types_table = data.get("types_table")
+    assert len(types_table["rows"]) > 0
 
-# Case 5: Test dual types success
-def test_pokemon_type_success_dual():
-    """Test /pokemon with dual types returns 200."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=fire-flying")
-
-        assert response.status_code == 200
-        data = response.json()
-        assert "type_combo" in data
-        assert data["type_combo"] == "fire-flying"
-        assert "pokemon_list" in data
-        assert isinstance(data["pokemon_list"], list)
-
-
-# Case 6: Test exclude legendary
-def test_pokemon_type_exclude_legendary():
-    """Test /pokemon type filter excludes legendaries by default."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=fire")
-
-        assert response.status_code == 200
-        data = response.json()
-        assert "pokemon_list" in data
+    # Check that all returned Pokemon have BOTH fire and flying
+    for row in types_table["rows"]:
+        types = [row["type1"], row["type2"]]
+        assert "fire" in types
+        assert "flying" in types
 
 
-# Case 7: Test include legendary
-def test_pokemon_type_include_legendary():
-    """Test /pokemon type filter includes legendaries when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=fire&include_legendary=true")
+# Case 5: Test exclude legendary
+@pytest.mark.unit
+def test_pokemon_type_exclude_legendary(test_client):
+    """Test /search_pokemon desired_type filter excludes legendaries by default."""
+    response = test_client.get("/search_pokemon?desired_type=psychic")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert "pokemon_list" in data
+    assert response.status_code == 200
+    data = response.json()
 
-
-# Case 8: Test include mythical
-def test_pokemon_type_include_mythical():
-    """Test /pokemon type filter includes mythicals when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=fire&include_mythical=true")
-
-        assert response.status_code == 200
-        data = response.json()
-        assert "pokemon_list" in data
+    # Check that legendary Pokemon are not in results
+    types_table = data.get("types_table")
+    pokemon_names = [row["name"] for row in types_table["rows"]]
+    assert "mewtwo" not in pokemon_names
+    assert "latias" not in pokemon_names
 
 
-# Case 9: Test include ultra beasts
-def test_pokemon_type_include_ultra_beasts():
-    """Test /pokemon type filter includes ultra beasts when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?types=fire&include_ultra_beasts=true")
+# Case 6: Test include legendary
+@pytest.mark.unit
+def test_pokemon_type_include_legendary(test_client):
+    """Test /search_pokemon desired_type filter includes legendaries when requested."""
+    response = test_client.get("/search_pokemon?desired_type=psychic&include_legendary=true")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert "pokemon_list" in data
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("types_table") is not None
+
+
+# Case 7: Test include mythical
+@pytest.mark.unit
+def test_pokemon_type_include_mythical(test_client):
+    """Test /search_pokemon desired_type filter includes mythicals when requested."""
+    response = test_client.get("/search_pokemon?desired_type=psychic&include_mythical=true")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("types_table") is not None
+
+
+# Case 8: Test include ultra beasts
+@pytest.mark.unit
+def test_pokemon_type_include_ultra_beasts(test_client):
+    """Test /search_pokemon desired_type filter includes ultra beasts when requested."""
+    response = test_client.get("/search_pokemon?desired_type=psychic&include_ultra_beasts=true")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("types_table") is not None
 
 
 # ========
@@ -252,133 +239,109 @@ def test_pokemon_type_include_ultra_beasts():
 # ========
 
 # Case 1: invalid primary_stat 400
-def test_pokemon_stats_invalid_primary():
-    """Test /pokemon with invalid primary_stat returns 400."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?primary_stat=fakestat&secondary_stat=speed")
+@pytest.mark.unit
+def test_pokemon_stats_invalid_primary(test_client):
+    """Test /search_pokemon with invalid primary_stat returns 400."""
+    response = test_client.get("/search_pokemon?primary_stat=fakestat&secondary_stat=speed")
 
-        assert response.status_code == 400
-        assert "invalid" in response.text.lower()
+    assert response.status_code == 400
+    assert "invalid" in response.text.lower()
 
 
 # Case 2: invalid secondary_stat 400
-def test_pokemon_stats_invalid_secondary():
-    """Test /pokemon with invalid secondary_stat returns 400."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?primary_stat=attack&secondary_stat=fakestat")
+@pytest.mark.unit
+def test_pokemon_stats_invalid_secondary(test_client):
+    """Test /search_pokemon with invalid secondary_stat returns 400."""
+    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=fakestat")
 
-        assert response.status_code == 400
-        assert "invalid" in response.text.lower()
+    assert response.status_code == 400
+    assert "invalid" in response.text.lower()
 
 
 # Case 3: Not found 404
-def test_pokemon_stats_not_found():
-    """Test /pokemon with stats that match no Pokemon returns 404."""
-    with TestClient(app=app) as client:
-        # Use impossibly high thresholds
-        response = client.get("/pokemon?primary_stat=attack&secondary_stat=speed&min_primary=999&min_secondary=999")
+@pytest.mark.unit
+def test_pokemon_stats_not_found(test_client):
+    """Test /search_pokemon with stats that match no Pokemon returns 404."""
+    # Use impossibly high thresholds
+    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&min_primary=999&min_secondary=999")
 
-        assert response.status_code == 404
-        assert "no pokemon found" in response.text.lower()
+    assert response.status_code == 404
+    assert "no pokemon found" in response.text.lower()
 
 
-# Case 4: found 200
-def test_pokemon_stats_success():
-    """Test /pokemon with valid stat filters returns 200."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?primary_stat=attack&secondary_stat=speed")
+# Case 4: Success 200
+@pytest.mark.unit
+def test_pokemon_stats_success(test_client):
+    """Test /search_pokemon with valid stat filters returns 200 with stats_table and types_table."""
+    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert isinstance(data, dict)
-        # Response is RootModel, so it's just the dict directly
-        # Should contain pokemon names as keys
-        assert len(data) > 0
+    assert response.status_code == 200
+    data = response.json()
+
+    # Should have stats_table populated
+    assert data.get("stats_table") is not None
+    stats_table = data.get("stats_table")
+    assert len(stats_table["rows"]) > 0
+
+    # Check row structure
+    first_row = stats_table["rows"][0]
+    assert "name" in first_row
+    assert "attack" in first_row
+    assert "defense" in first_row
+    assert "special_attack" in first_row
+    assert "special_defense" in first_row
+    assert "speed" in first_row
+
+    # Should always have types_table populated
+    assert data.get("types_table") is not None
+    types_table = data.get("types_table")
+    assert len(types_table["rows"]) > 0
 
 
 # Case 5: Test exclude legendary
-def test_pokemon_stats_exclude_legendary():
-    """Test /pokemon stats filter excludes legendaries by default."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?primary_stat=attack&secondary_stat=speed")
+@pytest.mark.unit
+def test_pokemon_stats_exclude_legendary(test_client):
+    """Test /search_pokemon stats filter excludes legendaries by default."""
+    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert isinstance(data, dict)
+    assert response.status_code == 200
+    data = response.json()
+
+    # Check that legendary Pokemon are not in results
+    stats_table = data.get("stats_table")
+    pokemon_names = [row["name"] for row in stats_table["rows"]]
+    assert "mewtwo" not in pokemon_names
+    assert "rayquaza" not in pokemon_names
 
 
 # Case 6: Test include legendary
-def test_pokemon_stats_include_legendary():
-    """Test /pokemon stats filter includes legendaries when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?primary_stat=attack&secondary_stat=speed&include_legendary=true")
+@pytest.mark.unit
+def test_pokemon_stats_include_legendary(test_client):
+    """Test /search_pokemon stats filter includes legendaries when requested."""
+    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&include_legendary=true")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert isinstance(data, dict)
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("stats_table") is not None
 
 
 # Case 7: Test include mythical
-def test_pokemon_stats_include_mythical():
-    """Test /pokemon stats filter includes mythicals when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?primary_stat=attack&secondary_stat=speed&include_mythical=true")
+@pytest.mark.unit
+def test_pokemon_stats_include_mythical(test_client):
+    """Test /search_pokemon stats filter includes mythicals when requested."""
+    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&include_mythical=true")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert isinstance(data, dict)
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("stats_table") is not None
 
 
 # Case 8: Test include ultra beasts
-def test_pokemon_stats_include_ultra_beasts():
-    """Test /pokemon stats filter includes ultra beasts when requested."""
-    with TestClient(app=app) as client:
-        response = client.get("/pokemon?primary_stat=attack&secondary_stat=speed&include_ultra_beasts=true")
+@pytest.mark.unit
+def test_pokemon_stats_include_ultra_beasts(test_client):
+    """Test /search_pokemon stats filter includes ultra beasts when requested."""
+    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&include_ultra_beasts=true")
 
-        assert response.status_code == 200
-        data = response.json()
-        assert isinstance(data, dict)
-
-
-# ========
-# /type-matchups
-# ========
-
-# Case 1: invalid type 400
-def test_type_matchups_invalid_type():
-    """Test /type-matchups with invalid type returns 400."""
-    with TestClient(app=app) as client:
-        response = client.get("/type-matchups?types=faketype")
-
-        assert response.status_code == 400
-        assert "invalid" in response.text.lower()
-
-
-# Case 2: success: single type 200
-def test_type_matchups_success_single():
-    """Test /type-matchups with single type returns 200."""
-    with TestClient(app=app) as client:
-        response = client.get("/type-matchups?types=fire")
-
-        assert response.status_code == 200
-        data = response.json()
-        assert isinstance(data, dict)
-        # Should have effectiveness categories
-        assert any(key in data for key in ["4x", "2x", "1x", "0.5x", "0.25x", "0x"])
-
-
-# Case 3: success: dual type 200
-def test_type_matchups_success_dual():
-    """Test /type-matchups with dual types returns 200."""
-    with TestClient(app=app) as client:
-        response = client.get("/type-matchups?types=fire-flying")
-
-        assert response.status_code == 200
-        data = response.json()
-        assert isinstance(data, dict)
-        # Should have effectiveness categories
-        assert any(key in data for key in ["4x", "2x", "1x", "0.5x", "0.25x", "0x"])
-
-
-
-
+    assert response.status_code == 200
+    data = response.json()
+    assert data.get("stats_table") is not None

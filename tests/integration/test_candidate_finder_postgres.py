@@ -16,15 +16,15 @@ import pprint
 # ============================
 
 # Case 2: Move does not exist
-@pytest.mark.unit
-def test_get_pokemon_by_move_invalid_pokemon_types(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_get_pokemon_by_move_invalid_pokemon_types(finder_postgres: CandidateFinderService):
     with pytest.raises(InvalidPokemonMoveError):
-        finder.repository.get_pokemon_by_move("definitely not a move")
+        finder_postgres.repository.get_pokemon_by_move("definitely not a move")
 
 # Case 3: Found
-@pytest.mark.unit
-def test_get_pokemon_by_move_found_single_type(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_move("hypnosis")
+@pytest.mark.integration
+def test_get_pokemon_by_move_found_single_type(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_move("hypnosis")
     # PokeRogue fixture data (current source of truth)
     assert result == {
         'bronzong': {'level-up': 20},
@@ -50,9 +50,9 @@ def test_get_pokemon_by_move_found_single_type(finder: CandidateFinderService):
     }
 
 # Case 4: Legendary/Mythical filtering - Default (exclude both)
-@pytest.mark.unit
-def test_get_pokemon_by_move_exclude_legendary_and_mythical_by_default(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_move("psychic")
+@pytest.mark.integration
+def test_get_pokemon_by_move_exclude_legendary_and_mythical_by_default(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_move("psychic")
     # Should NOT include legendaries
     assert "latias" not in result
     assert "latios" not in result
@@ -64,9 +64,9 @@ def test_get_pokemon_by_move_exclude_legendary_and_mythical_by_default(finder: C
     assert "alakazam" in result
 
 # Case 5: Include legendary and mythical
-@pytest.mark.unit
-def test_get_pokemon_by_move_include_legendary_and_mythical(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_move("psychic", include_legendary=True, include_mythical=True)
+@pytest.mark.integration
+def test_get_pokemon_by_move_include_legendary_and_mythical(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_move("psychic", include_legendary=True, include_mythical=True)
     # Should include legendaries
     assert "latias" in result
     assert "cresselia" in result
@@ -77,9 +77,9 @@ def test_get_pokemon_by_move_include_legendary_and_mythical(finder: CandidateFin
     assert "alakazam" in result
 
 # Case 6: Include all special Pokemon (legendary, mythical, ultra beasts)
-@pytest.mark.unit
-def test_get_pokemon_by_move_include_all_special_pokemon(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_move("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
+@pytest.mark.integration
+def test_get_pokemon_by_move_include_all_special_pokemon(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_move("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
     # Should include Ultra Beasts
     assert "nihilego" in result
     assert "blacephalon" in result
@@ -97,33 +97,33 @@ def test_get_pokemon_by_move_include_all_special_pokemon(finder: CandidateFinder
 # ============================
 
 # Case 2: Empty stat names (Caller mistake)
-@pytest.mark.unit
-def test_get_pokemon_by_stats_empty_primary_stat(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_get_pokemon_by_stats_empty_primary_stat(finder_postgres: CandidateFinderService):
     with pytest.raises(InvalidPokemonStatError, match="primary_stat cannot be empty"):
-        finder.repository.get_pokemon_by_stats("", "speed")
+        finder_postgres.repository.get_pokemon_by_stats("", "speed")
 
-@pytest.mark.unit
-def test_get_pokemon_by_stats_empty_secondary_stat(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_get_pokemon_by_stats_empty_secondary_stat(finder_postgres: CandidateFinderService):
     with pytest.raises(InvalidPokemonStatError, match="secondary_stat cannot be empty"):
-        finder.repository.get_pokemon_by_stats("attack", "")
+        finder_postgres.repository.get_pokemon_by_stats("attack", "")
 
 
 # Case 3: Invalid stat names (Caller mistake)
-@pytest.mark.unit
-def test_get_pokemon_by_stats_invalid_primary_stat(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_get_pokemon_by_stats_invalid_primary_stat(finder_postgres: CandidateFinderService):
     with pytest.raises(InvalidPokemonStatError, match="Invalid primary_stat"):
-        finder.repository.get_pokemon_by_stats("coolness", "speed")
+        finder_postgres.repository.get_pokemon_by_stats("coolness", "speed")
 
-@pytest.mark.unit
-def test_get_pokemon_by_stats_invalid_secondary_stat(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_get_pokemon_by_stats_invalid_secondary_stat(finder_postgres: CandidateFinderService):
     with pytest.raises(InvalidPokemonStatError, match="Invalid secondary_stat"):
-        finder.repository.get_pokemon_by_stats("attack", "badness")
+        finder_postgres.repository.get_pokemon_by_stats("attack", "badness")
 
 
 # Case 4: Valid search with default parameters
-@pytest.mark.unit
-def test_get_pokemon_by_stats_basic_attack_speed_search(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_stats("attack", "speed")
+@pytest.mark.integration
+def test_get_pokemon_by_stats_basic_attack_speed_search(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_stats("attack", "speed")
 
     # Should return a dict
     assert isinstance(result, dict)
@@ -136,17 +136,17 @@ def test_get_pokemon_by_stats_basic_attack_speed_search(finder: CandidateFinderS
 
 
 # Case 5: No Pokemon found (threshold too high)
-@pytest.mark.unit
-def test_get_pokemon_by_stats_no_pokemon_found_high_threshold(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_get_pokemon_by_stats_no_pokemon_found_high_threshold(finder_postgres: CandidateFinderService):
     with pytest.raises(NoPokemonFoundError):
         # No Pokemon has 200 attack and 200 speed
-        finder.repository.get_pokemon_by_stats("attack", "speed", min_primary=200, min_secondary=200)
+        finder_postgres.repository.get_pokemon_by_stats("attack", "speed", min_primary=200, min_secondary=200)
 
 
 # Case 6: Ranking order (weighted 70/30)
-@pytest.mark.unit
-def test_get_pokemon_by_stats_ranking_order(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_stats("attack", "speed")
+@pytest.mark.integration
+def test_get_pokemon_by_stats_ranking_order(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_stats("attack", "speed")
 
     # Slaking (Attack: 160, Speed: 100) should rank #1
     # Dragapult should also be in top results (high attack + speed)
@@ -162,9 +162,9 @@ def test_get_pokemon_by_stats_ranking_order(finder: CandidateFinderService):
 
 
 # Case 7: Default behavior (exclude legendary, mythical, ultra beasts)
-@pytest.mark.unit
-def test_get_pokemon_by_stats_exclude_special_pokemon_by_default(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_stats("attack", "speed")
+@pytest.mark.integration
+def test_get_pokemon_by_stats_exclude_special_pokemon_by_default(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_stats("attack", "speed")
 
     # Should NOT include legendaries
     assert "regigigas" not in result
@@ -177,9 +177,9 @@ def test_get_pokemon_by_stats_exclude_special_pokemon_by_default(finder: Candida
 
 
 # Case 8: Include all special Pokemon (legendary, mythical, ultra beasts)
-@pytest.mark.unit
-def test_get_pokemon_by_stats_include_all_special_pokemon(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_stats(
+@pytest.mark.integration
+def test_get_pokemon_by_stats_include_all_special_pokemon(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_stats(
         "attack", "speed",
         include_legendary=True,
         include_mythical=True,
@@ -199,9 +199,9 @@ def test_get_pokemon_by_stats_include_all_special_pokemon(finder: CandidateFinde
 
 
 # Case 9: min_primary filter
-@pytest.mark.unit
-def test_get_pokemon_by_stats_min_primary_threshold(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_stats("attack", "speed", min_primary=130)
+@pytest.mark.integration
+def test_get_pokemon_by_stats_min_primary_threshold(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_stats("attack", "speed", min_primary=130)
 
     # All results should have attack >= 130
     # Garchomp (Attack: 130) should be included
@@ -212,9 +212,9 @@ def test_get_pokemon_by_stats_min_primary_threshold(finder: CandidateFinderServi
 
 
 # Case 10: Explicit min_secondary
-@pytest.mark.unit
-def test_get_pokemon_by_stats_explicit_min_secondary(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_stats("attack", "speed", min_primary=100, min_secondary=100)
+@pytest.mark.integration
+def test_get_pokemon_by_stats_explicit_min_secondary(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_stats("attack", "speed", min_primary=100, min_secondary=100)
 
     # Should only include Pokemon with attack >= 100 AND speed >= 100
     assert len(result) > 0
@@ -223,9 +223,9 @@ def test_get_pokemon_by_stats_explicit_min_secondary(finder: CandidateFinderServ
     assert "garchomp" in result
 
 # Case 11: min_speed filter
-@pytest.mark.unit
-def test_get_pokemon_by_stats_min_speed_filter(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_stats("attack", "defense", min_primary=100, min_speed=100)
+@pytest.mark.integration
+def test_get_pokemon_by_stats_min_speed_filter(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_stats("attack", "defense", min_primary=100, min_speed=100)
 
     # Should only include Pokemon with attack >= 100, AND speed >= 100
     # Garchomp (Attack: 130, Defense: 95, Speed: 102) should be included
@@ -242,15 +242,15 @@ def test_get_pokemon_by_stats_min_speed_filter(finder: CandidateFinderService):
 # ============================
 
 # Case 1: Invalid type (Caller mistake)
-@pytest.mark.unit
-def test_get_pokemon_by_type_invalid_type(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_get_pokemon_by_type_invalid_type(finder_postgres: CandidateFinderService):
     with pytest.raises(InvalidPokemonTypeError):
-        finder.repository.get_pokemon_by_type("definitely-not-a-type")
+        finder_postgres.repository.get_pokemon_by_type("definitely-not-a-type")
 
 # Case 2: Single type search
-@pytest.mark.unit
-def test_get_pokemon_by_type_single_type(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_type("fire")
+@pytest.mark.integration
+def test_get_pokemon_by_type_single_type(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_type("fire")
 
     # Should be a frozenset
     assert isinstance(result, frozenset)
@@ -263,9 +263,9 @@ def test_get_pokemon_by_type_single_type(finder: CandidateFinderService):
     assert "pikachu" not in result
 
 # Case 3: Dual type search
-@pytest.mark.unit
-def test_get_pokemon_by_type_dual_type(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_type("fire", "flying")
+@pytest.mark.integration
+def test_get_pokemon_by_type_dual_type(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_type("fire", "flying")
 
     # Should only include Pokemon with BOTH fire AND flying
     assert "charizard" in result
@@ -275,9 +275,9 @@ def test_get_pokemon_by_type_dual_type(finder: CandidateFinderService):
     assert "pidgeot" not in result  # Flying only
 
 # Case 4: Default behavior (exclude legendary, mythical, ultra beasts)
-@pytest.mark.unit
-def test_get_pokemon_by_type_exclude_special_pokemon_by_default(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_type("psychic")
+@pytest.mark.integration
+def test_get_pokemon_by_type_exclude_special_pokemon_by_default(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_type("psychic")
 
     # Should NOT include legendaries
     assert "mewtwo" not in result
@@ -287,9 +287,9 @@ def test_get_pokemon_by_type_exclude_special_pokemon_by_default(finder: Candidat
     assert "alakazam" in result
 
 # Case 5: Include all special Pokemon
-@pytest.mark.unit
-def test_get_pokemon_by_type_include_all_special_pokemon(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_type("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
+@pytest.mark.integration
+def test_get_pokemon_by_type_include_all_special_pokemon(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_pokemon_by_type("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
 
     # Should include legendaries
     assert "mewtwo" in result
@@ -306,9 +306,9 @@ def test_get_pokemon_by_type_include_all_special_pokemon(finder: CandidateFinder
 # ============================
 
 # Case 1: Single type effectiveness
-@pytest.mark.unit
-def test_get_type_effectiveness_single_type(finder: CandidateFinderService):
-    result = finder.repository.get_type_effectiveness("fire")
+@pytest.mark.integration
+def test_get_type_effectiveness_single_type(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_type_effectiveness("fire")
 
     # Should be a dict
     assert isinstance(result, dict)
@@ -323,9 +323,9 @@ def test_get_type_effectiveness_single_type(finder: CandidateFinderService):
     assert "grass" in result["0.5x"]
 
 # Case 2: Dual type effectiveness (stacking)
-@pytest.mark.unit
-def test_get_type_effectiveness_dual_type(finder: CandidateFinderService):
-    result = finder.repository.get_type_effectiveness("fire", "flying")
+@pytest.mark.integration
+def test_get_type_effectiveness_dual_type(finder_postgres: CandidateFinderService):
+    result = finder_postgres.repository.get_type_effectiveness("fire", "flying")
 
     # Fire/Flying is 4x weak to rock (2x from fire * 2x from flying = 4x)
     assert "rock" in result["4x"]
@@ -341,15 +341,15 @@ def test_get_type_effectiveness_dual_type(finder: CandidateFinderService):
 # ============================
 
 # Case 1: No filters raises ValueError
-@pytest.mark.unit
-def test_search_pokemon_no_filters(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_search_pokemon_no_filters(finder_postgres: CandidateFinderService):
     with pytest.raises(ValueError, match="At least one filter parameter is required"):
-        finder.search_pokemon()
+        finder_postgres.search_pokemon()
 
 # Case 2: Move filter returns frozenset of names
-@pytest.mark.unit
-def test_search_pokemon_move_only(finder: CandidateFinderService):
-    result = finder.search_pokemon(move="tackle")
+@pytest.mark.integration
+def test_search_pokemon_move_only(finder_postgres: CandidateFinderService):
+    result = finder_postgres.search_pokemon(move="tackle")
 
     assert isinstance(result, frozenset)
     assert len(result) > 0
@@ -357,9 +357,9 @@ def test_search_pokemon_move_only(finder: CandidateFinderService):
     assert "pikachu" in result or "rattata" in result
 
 # Case 3: Type filter returns frozenset of names
-@pytest.mark.unit
-def test_search_pokemon_type_only(finder: CandidateFinderService):
-    result = finder.search_pokemon(desired_type="fire")
+@pytest.mark.integration
+def test_search_pokemon_type_only(finder_postgres: CandidateFinderService):
+    result = finder_postgres.search_pokemon(desired_type="fire")
 
     assert isinstance(result, frozenset)
     assert len(result) > 0
@@ -367,22 +367,22 @@ def test_search_pokemon_type_only(finder: CandidateFinderService):
     assert "typhlosion" in result
 
 # Case 4: Stats filter returns frozenset of names
-@pytest.mark.unit
-def test_search_pokemon_stats_only(finder: CandidateFinderService):
-    result = finder.search_pokemon(primary_stat="attack", secondary_stat="speed")
+@pytest.mark.integration
+def test_search_pokemon_stats_only(finder_postgres: CandidateFinderService):
+    result = finder_postgres.search_pokemon(primary_stat="attack", secondary_stat="speed")
 
     assert isinstance(result, frozenset)
     assert len(result) > 0
 
 # Case 5: Multiple filters combine with AND logic (intersection)
-@pytest.mark.unit
-def test_search_pokemon_multiple_filters_intersection(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_search_pokemon_multiple_filters_intersection(finder_postgres: CandidateFinderService):
     # Fire type that learns a specific move
-    result = finder.search_pokemon(move="flamethrower", desired_type="fire")
+    result = finder_postgres.search_pokemon(move="flamethrower", desired_type="fire")
 
     assert isinstance(result, frozenset)
     # Should be smaller than just fire types or just flamethrower users
-    fire_only = finder.search_pokemon(desired_type="fire")
+    fire_only = finder_postgres.search_pokemon(desired_type="fire")
     assert len(result) <= len(fire_only)
 
     # All results must be fire type AND learn flamethrower
@@ -391,19 +391,19 @@ def test_search_pokemon_multiple_filters_intersection(finder: CandidateFinderSer
         pass
 
 # Case 6: Legendary filtering applies to all filter types
-@pytest.mark.unit
-def test_search_pokemon_exclude_legendary_default(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_search_pokemon_exclude_legendary_default(finder_postgres: CandidateFinderService):
     # Psychic type search should exclude legendaries by default
-    result = finder.search_pokemon(desired_type="psychic")
+    result = finder_postgres.search_pokemon(desired_type="psychic")
 
     assert "mewtwo" not in result
     assert "latias" not in result
     assert "alakazam" in result  # Non-legendary psychic
 
 # Case 7: Include legendary flag works
-@pytest.mark.unit
-def test_search_pokemon_include_legendary(finder: CandidateFinderService):
-    result = finder.search_pokemon(desired_type="psychic", include_legendary=True)
+@pytest.mark.integration
+def test_search_pokemon_include_legendary(finder_postgres: CandidateFinderService):
+    result = finder_postgres.search_pokemon(desired_type="psychic", include_legendary=True)
 
     # Should include at least some legendary psychic types
     # Note: Actual legendary Pokemon in test data may vary
@@ -412,9 +412,9 @@ def test_search_pokemon_include_legendary(finder: CandidateFinderService):
 # ===========================
 # test_build_response.py
 # ============================
-def test_print_all_tables(finder: CandidateFinderService):
+def test_print_all_tables(finder_postgres: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "exeggutor", "gallade"])
-    response = finder.build_response(pokemon_names)
+    response = finder_postgres.build_response(pokemon_names)
 
     tables = [
         ("moves_table", response.moves_table),
@@ -430,10 +430,10 @@ def test_print_all_tables(finder: CandidateFinderService):
 
 
 # Case 1: Response has all tables populated
-@pytest.mark.unit
-def test_build_response_all_tables_populated(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_build_response_all_tables_populated(finder_postgres: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "exeggutor", "gallade"])
-    response = finder.build_response(pokemon_names)
+    response = finder_postgres.build_response(pokemon_names)
 
     # All tables should be present
     assert response.moves_table is not None
@@ -441,10 +441,10 @@ def test_build_response_all_tables_populated(finder: CandidateFinderService):
     assert response.types_table is not None
 
 # Case 2: Tables contain correct Pokemon
-@pytest.mark.unit
-def test_build_response_correct_pokemon(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_build_response_correct_pokemon(finder_postgres: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "haunter"])
-    response = finder.build_response(pokemon_names)
+    response = finder_postgres.build_response(pokemon_names)
 
     # Types table should have both Pokemon
     assert response.types_table is not None
@@ -460,10 +460,10 @@ def test_build_response_correct_pokemon(finder: CandidateFinderService):
     assert "haunter" in stats_names
 
 # Case 3: Type data is accurate
-@pytest.mark.unit
-def test_build_response_type_data_accurate(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_build_response_type_data_accurate(finder_postgres: CandidateFinderService):
     pokemon_names = frozenset(["haunter"])
-    response = finder.build_response(pokemon_names)
+    response = finder_postgres.build_response(pokemon_names)
 
     # Haunter should be Ghost/Poison type
     assert response.types_table is not None
@@ -472,10 +472,10 @@ def test_build_response_type_data_accurate(finder: CandidateFinderService):
     assert "ghost" in [haunter_row.type1, haunter_row.type2]
 
 # Case 4: Stats data is accurate
-@pytest.mark.unit
-def test_build_response_stats_data_accurate(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_build_response_stats_data_accurate(finder_postgres: CandidateFinderService):
     pokemon_names = frozenset(["haunter"])
-    response = finder.build_response(pokemon_names)
+    response = finder_postgres.build_response(pokemon_names)
 
     # Find haunter in stats table
     assert response.stats_table is not None
@@ -493,10 +493,10 @@ def test_build_response_stats_data_accurate(finder: CandidateFinderService):
 # ============================
 
 # Test that dual-type Pokemon are normalized to canonical ordering
-@pytest.mark.unit
-def test_type_index_has_single_types(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_type_index_has_single_types(finder_postgres: CandidateFinderService):
     """Test that type index contains single-type entries."""
-    type_index = finder.repository.get_type_index()
+    type_index = finder_postgres.repository.get_type_index()
 
     # Should only have single-type keys (no "/" in key)
     single_types = [k for k in type_index.keys() if "/" not in k]
@@ -507,10 +507,10 @@ def test_type_index_has_single_types(finder: CandidateFinderService):
     assert "water" in type_index
     assert "psychic" in type_index
 
-@pytest.mark.unit
-def test_type_index_dual_types_under_both(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_type_index_dual_types_under_both(finder_postgres: CandidateFinderService):
     """Test that dual-type Pokemon appear under both of their types."""
-    type_index = finder.repository.get_type_index()
+    type_index = finder_postgres.repository.get_type_index()
 
     # Charizard is fire/flying, should be under both
     assert "charizard" in type_index["fire"]
@@ -525,10 +525,10 @@ def test_type_index_dual_types_under_both(finder: CandidateFinderService):
 # test_opponent_weakness_type_index.py
 # ============================
 
-@pytest.mark.unit
-def test_opponent_weakness_fire_flying(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_opponent_weakness_fire_flying(finder_postgres: CandidateFinderService):
     """Test fire/flying has 4x weakness to rock."""
-    index = finder.repository.get_opponent_weakness_type_index()
+    index = finder_postgres.repository.get_opponent_weakness_type_index()
 
     assert "fire/flying" in index
     fire_flying = index["fire/flying"]
@@ -540,10 +540,10 @@ def test_opponent_weakness_fire_flying(finder: CandidateFinderService):
     assert "water" in fire_flying["2x"]
     assert "electric" in fire_flying["2x"]
 
-@pytest.mark.unit
-def test_opponent_weakness_single_type(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_opponent_weakness_single_type(finder_postgres: CandidateFinderService):
     """Test single-type matchups work correctly."""
-    index = finder.repository.get_opponent_weakness_type_index()
+    index = finder_postgres.repository.get_opponent_weakness_type_index()
 
     fire = index["fire"]
 
@@ -555,10 +555,10 @@ def test_opponent_weakness_single_type(finder: CandidateFinderService):
     # Fire's resistances
     assert "fire" in fire["0.5x"] or "grass" in fire["0.5x"]
 
-@pytest.mark.unit
-def test_opponent_weakness_has_all_effectiveness_keys(finder: CandidateFinderService):
+@pytest.mark.integration
+def test_opponent_weakness_has_all_effectiveness_keys(finder_postgres: CandidateFinderService):
     """Test that all effectiveness keys exist."""
-    index = finder.repository.get_opponent_weakness_type_index()
+    index = finder_postgres.repository.get_opponent_weakness_type_index()
 
     fire_flying = index["fire/flying"]
 

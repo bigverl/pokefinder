@@ -31,25 +31,26 @@ async def _db_engine():
     await engine.dispose()
 
 # ==================
-# PostgreSQL Function-Scoped Setup (slower, but avoids concurrent operation errors)
+# PostgreSQL Session-Scoped Setup (seeds once, shared across tests)
 # ==================
-@pytest_asyncio.fixture(scope="function")
+@pytest_asyncio.fixture(scope="session")
 async def _db_engine_postgres():
-    """Function-scoped engine for PostgreSQL (creates fresh DB per test)"""
+    """Session-scoped engine for PostgreSQL (seeds once, shared across tests)"""
     db_url = settings.db_url
     engine = create_async_engine(db_url, echo=False)
 
     async_session_maker = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
-    # Create tables + seed for each test
+    # Create tables + seed once
     async with engine.begin() as conn:
+        await conn.run_sync(UUIDBase.metadata.drop_all)
         await conn.run_sync(UUIDBase.metadata.create_all)
     async with async_session_maker() as session:
         await seed_database(session)
 
     yield async_session_maker
 
-    # Cleanup: drop all tables after each test
+    # Cleanup at end of session
     async with engine.begin() as conn:
         await conn.run_sync(UUIDBase.metadata.drop_all)
     await engine.dispose()

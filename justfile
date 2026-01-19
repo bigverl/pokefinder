@@ -48,3 +48,6 @@ frontend:
 
 serve:
     textual serve frontend/app.py
+
+backend:
+    litestar --app=backend.src.app:app run --debug --reload

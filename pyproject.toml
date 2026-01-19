@@ -27,6 +27,8 @@ dependencies = [
     "textual-serve>=1.1.3",
 ]
 
+
+
 [dependency-groups]
 dev = [
     "pytest>=9.0.0",
@@ -45,6 +47,7 @@ markers = [
     "unit: Unit tests using SQLite in-memory",
     "unit_postgres: Unit tests using PostgreSQL (slow, function-scoped)",
     "integration: Integration tests using PostgreSQL test database",
+    "api: test http requests to backend",
 ]
 
 
