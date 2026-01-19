@@ -1,6 +1,6 @@
 # PokeFinder
 
-Pokedex-style tool for use with pokerogue or pokemon unbound.
+Pokedex-style tool for use with pokerogue.
 
 Features:
 - Candidate Finder: Find pokemon by filtering for stats, type matchup, moves
