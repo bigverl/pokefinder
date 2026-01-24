@@ -96,9 +96,9 @@ class CandidateFinderController(Controller):
         desired_type: str | None = None,
         primary_stat: str | None = None,
         secondary_stat: str | None = None,
-        min_primary: int = 0,
-        min_secondary: int | None = None,
-        min_speed: int | None = None,
+        min_primary: str | None = None,
+        min_secondary: str | None = None,
+        min_speed: str | None = None,
         include_mythical: bool = False,
         include_legendary: bool = False,
         include_ultra_beasts: bool = False
@@ -107,16 +107,16 @@ class CandidateFinderController(Controller):
         # Case 1: No params
         if not any([move, desired_type, primary_stat, secondary_stat]):
             raise ClientException(detail="Must provide at least one search parameter")
-        
+
         # Get results
         response: frozenset[str] = finder.search_pokemon(
             move=move,
             desired_type=desired_type,
             primary_stat=primary_stat,
             secondary_stat=secondary_stat,
-            min_primary=min_primary,
-            min_secondary=min_secondary,
-            min_speed=min_speed,
+            min_primary=int(min_primary) if min_primary else 0,
+            min_secondary=int(min_secondary) if min_secondary else None,
+            min_speed=int(min_speed) if min_speed else None,
             include_legendary=include_legendary,
             include_mythical=include_mythical,
             include_ultra_beasts=include_ultra_beasts

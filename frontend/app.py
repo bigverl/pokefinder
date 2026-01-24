@@ -12,24 +12,31 @@ from textual.containers import (
     )
 
 from textual.widgets import (
+    Button,
     Footer,
     TabbedContent,
     TabPane,
     )
 
-from frontend.widgets.candidate_finder.search import CandidateFinderSearch
-from frontend.widgets.candidate_finder.results import CandidateFinderResults
+from frontend.api_client import BackendClient
 
-from frontend.widgets.pokedex.search import PokedexSearch
-from frontend.widgets.pokedex.results import PokedexResults
+from frontend.modules.candidate_finder.widgets.search import CandidateFinderSearch
+from frontend.modules.candidate_finder.widgets.results import CandidateFinderResults
 
-from frontend.widgets.coverage_analyzer.search import CoverageAnalyzerSearch
-from frontend.widgets.coverage_analyzer.results import CoverageAnalyzerResults
+from frontend.modules.pokedex.widgets.search import PokedexSearch
+from frontend.modules.pokedex.widgets.results import PokedexResults
+
+from frontend.modules.coverage_analyzer.widgets.search import CoverageAnalyzerSearch
+from frontend.modules.coverage_analyzer.widgets.results import CoverageAnalyzerResults
 
 from frontend.libs.feature_flags import FEATURE_FLAGS
 
 class Pokefinder(App):
     CSS_PATH = "libs/main.tcss"
+
+    def __init__(self):
+        super().__init__()
+        self.api_client = BackendClient()
 
     def compose(self) -> ComposeResult:
         with Horizontal():
@@ -71,6 +78,23 @@ class Pokefinder(App):
 
     def on_mount(self) -> None:
         pass
+
+    # ===================
+    # Candidate Finder
+    # ===================
+
+    @on(Button.Pressed, ".go_button")
+    async def on_candidate_finder_search(self, event: Button.Pressed) -> None:
+        search_widget = self.query_one(CandidateFinderSearch)
+        try:
+            params = search_widget._collect_search_params()
+            response = await self.api_client.search_pokemon(**params)
+            results_widget = self.query_one(CandidateFinderResults)
+            results_widget.populate_results_table(response)
+        except ValueError as e:
+            self.notify(str(e), severity="error")
+        except Exception as e:
+            self.notify(f"Search failed: {e}", severity="error")
 
 if __name__ == "__main__":
     app = Pokefinder()
