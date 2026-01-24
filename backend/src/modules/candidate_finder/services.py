@@ -13,9 +13,7 @@ from backend.src.modules.candidate_finder.schemas import (
     StatsTable,
     StatsTableRow,
     TypesTable,
-    TypesTableRow,
-    VersusTypesTable,
-    VersusTypesTableRow,
+    TypesTableRow
 )
 
 # Logger
@@ -114,22 +112,6 @@ class CandidateFinderService():
             )
             stat_names = frozenset(stat_results.keys())
             results = stat_names if results is None else results & stat_names
-            # except InvalidPokemonStatsError as e:
-            #     raise HTTPException(status_code=400, detail=str(e))
-            
-
-            # Convert dict to set of names for intersection
-
-
-        # # Apply versus_type filter
-        # if versus_type:
-        #     effective_results = self.get_pokemon_versus_type(
-        #         versus_type,
-        #         include_legendary=include_legendary,
-        #         include_mythical=include_mythical,
-        #         include_ultra_beasts=include_ultra_beasts
-        #     )
-        #     results = effective_results if results is None else results & effective_results
 
         # If no filters applied, raise error
         if results is None:
@@ -203,33 +185,6 @@ class CandidateFinderService():
             ))
         return StatsTable(rows=stats_rows)
 
-    def _build_versus_types_table(self, pokemon_names: frozenset[str]) -> VersusTypesTable:
-        """Build versus types table showing offensive type matchups for each pokemon."""
-        versus_rows = []
-        for name in sorted(pokemon_names):
-            # Find which types this Pokemon has
-            pokemon_types = []
-            type_index = self.repository.get_type_index()
-            for type_name, pokemon_set in type_index.items():
-                if name in pokemon_set:
-                    pokemon_types.append(type_name)
-
-            type_str = "/".join(pokemon_types)
-            effectiveness = self.repository.get_type_effectiveness(*pokemon_types)
-
-            versus_rows.append(VersusTypesTableRow(
-                name=name,
-                type_combo=type_str,
-                four_x=", ".join(sorted(effectiveness.get("4x", []))) or "-",
-                two_x=", ".join(sorted(effectiveness.get("2x", []))) or "-",
-                one_x=", ".join(sorted(effectiveness.get("1x", []))) or "-",
-                half_x=", ".join(sorted(effectiveness.get("0.5x", []))) or "-",
-                zero_x=", ".join(sorted(effectiveness.get("0x", []))) or "-"
-            ))
-            # THIS NEEDS TO BE CHANGED TO BE REVERSED AND PROBABLY RENAMED TO "OFFENSIVE"
-            # ALSO, I THINK WE NEED TO REEXAMINE THE TYPE MATCHUPS FIXTURE SCRIPT BECAUSE IT
-            # DOESNT INCLUDE 0.25. RIP
-        return VersusTypesTable(rows=versus_rows)
 
     def build_response(self, pokemon_names: frozenset[str]) -> CandidateFinderResponse:
         """Build full CandidateFinderResponse with all tables populated."""
@@ -239,5 +194,4 @@ class CandidateFinderService():
             types_table=self._build_types_table(pokemon_names),
             moves_table=self._build_moves_table(pokemon_names),
             stats_table=self._build_stats_table(pokemon_names),
-            versus_types_table=self._build_versus_types_table(pokemon_names)
         )
