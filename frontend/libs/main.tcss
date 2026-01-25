@@ -101,6 +101,7 @@ RadioButton.-on > .toggle--button {
 
 #right_pane {
     width: 5fr;
+    height: 100%;
     background: #1e1e2e;
     border: round #6272a4;
     border-title-color: #8be9fd;
@@ -132,6 +133,7 @@ DataTable {
     background: #282a36;
     color: #f8f8f2;
     padding: 0 1;
+    height: 1fr;
 }
 
 Footer {

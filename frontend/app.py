@@ -4,6 +4,7 @@ from textual.app import (
     )
 
 from textual import on, log
+import logging
 
 from textual.containers import (
     Horizontal,
@@ -31,12 +32,16 @@ from frontend.modules.coverage_analyzer.widgets.results import CoverageAnalyzerR
 
 from frontend.libs.feature_flags import FEATURE_FLAGS
 
+
+logger = logging.getLogger(__name__)
+
 class Pokefinder(App):
     CSS_PATH = "libs/main.tcss"
 
     def __init__(self):
         super().__init__()
         self.api_client = BackendClient()
+        self._previous_search_params: dict = {}
 
     def compose(self) -> ComposeResult:
         with Horizontal():
@@ -88,13 +93,19 @@ class Pokefinder(App):
         search_widget = self.query_one(CandidateFinderSearch)
         try:
             params = search_widget._collect_search_params()
-            response = await self.api_client.search_pokemon(**params)
-            results_widget = self.query_one(CandidateFinderResults)
-            results_widget.populate_results_table(response)
+            # Only send api request if params are different
+            if params != self._previous_search_params:
+                response = await self.api_client.search_pokemon(**params)
+                results_widget = self.query_one(CandidateFinderResults)
+                results_widget.populate_results_table(response)
+                self._previous_search_params = params
+            else:
+                self.notify("Request not sent: Search parameters unchanged.")
         except ValueError as e:
+            # Interpret 400 here
             self.notify(str(e), severity="error")
-        except Exception as e:
-            self.notify(f"Search failed: {e}", severity="error")
+        except Exception:
+            self.notify("Generic Error: Something very strange happened.")
 
 if __name__ == "__main__":
     app = Pokefinder()

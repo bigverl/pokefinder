@@ -23,7 +23,6 @@ class BackendClient:
     def __init__(self, base_url: str = API_CONFIG.backend_url):
         self.client = httpx.AsyncClient(base_url=base_url, timeout=3.0)
 
-
     async def search_pokemon(
         self,
         move: str | None = None,
@@ -51,7 +50,12 @@ class BackendClient:
         }
         params = {k: v for k, v in params.items() if v is not None}
         response = await self.client.get("/search_pokemon", params=params)
-        response.raise_for_status()
+
+        # If status raised, send proper error message
+        try:
+            response.raise_for_status()
+        except httpx.HTTPStatusError as e:
+            raise ValueError(e.response.text) from e        
 
         return CandidateFinderResponse(**response.json())
 

@@ -64,26 +64,39 @@ class CandidateFinderSearch(Vertical):
     """
 
     def _parse_int(self, value: str) -> int | None:
-        """Parse string to int, rejecting floats."""
         if not value:
             return None
         if "." in value:
             raise ValueError(f"Expected integer, got float: {value}")
-        return int(value)
-
+        try:
+            result = int(value)
+        except ValueError:
+            raise ValueError("Stat field must be a number between 1 and 255")
+        
+        if result < 1 or result > 255:
+            raise ValueError("Stat field must be a number between 1 and 255")
+        
+        return result
+    
     def _collect_search_params(self):
         move_enabled = self.query_one("#move_radio_button", RadioButton).value
         stats_enabled = self.query_one("#stats_radio_button", RadioButton).value
         desired_type_enabled = self.query_one("#desired_type_radio_button", RadioButton).value
 
+
         desired_type = ""
         if desired_type_enabled:
-            type1 = self.query_one("#type1_input", Input).value
-            type2 = self.query_one("#type2_input", Input).value
+            type1 = self.query_one("#type1_input", Input).value.lower()
+            type2 = self.query_one("#type2_input", Input).value.lower()
             desired_type = f"{type1}-{type2}" if type2 else type1
 
+        move = ""
+        if move_enabled:
+            move_input = self.query_one("#move_input", Input).value.lower()
+            move = move_input.replace(" ", "_")
+
         params = {
-            "move": self.query_one("#move_input", Input).value if move_enabled else None,
+            "move": move if move_enabled else None,
             "desired_type": desired_type if desired_type_enabled else None,
             "primary_stat": self.query_one("#primary_stat_select", Select).value if stats_enabled else None,
             "secondary_stat":  self.query_one("#secondary_stat_select", Select).value if stats_enabled else None,
@@ -94,12 +107,9 @@ class CandidateFinderSearch(Vertical):
             "include_legendary": self.query_one("#legendary_radio_button", RadioButton).value,
             "include_ultra_beasts": self.query_one("#ultra_beast_radio_button", RadioButton).value,
         }
-
         return params
 
-
     def compose(self) -> ComposeResult:
-
         # Checkboxes
         with VerticalGroup(id="special_pokemon_box", classes="box"):
             yield RadioButton("legendary", id="legendary_radio_button")

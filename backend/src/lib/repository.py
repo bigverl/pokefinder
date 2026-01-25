@@ -415,8 +415,6 @@ class SQLAlchemyRepository():
     def get_machine_moves_index(self) -> dict:
         return self._machine_moves_index
 
-
-
     def get_pokemon_by_name(
         self,
         name: str
