@@ -27,6 +27,7 @@ from backend.src.lib.exceptions import (
     InvalidPokemonStatError,
     NoPokemonFoundError,
     TooManyTypesError,
+    NoSearchParamsError
 )
 
 from backend.src.modules.candidate_finder.schemas import CandidateFinderResponse
@@ -71,6 +72,12 @@ def invalid_pokemon_stat_error_handler(_: Request, exc: InvalidPokemonStatError)
         status_code=HTTP_400_BAD_REQUEST,
     )
 
+def no_search_params_error_handler(_: Request, exc: NoSearchParamsError) -> Response:
+    return Response(
+        media_type=MediaType.TEXT,
+        content=str(exc),
+        status_code=HTTP_400_BAD_REQUEST,
+    )
 
 class CandidateFinderController(Controller):
     path = ""  # Routes already have full paths from urls.py
@@ -81,14 +88,14 @@ class CandidateFinderController(Controller):
         InvalidPokemonTypeError: invalid_pokemon_type_error_handler,        
         NoPokemonFoundError: no_pokemon_found_error_handler,
         TooManyTypesError: too_many_types_error_handler,
+        NoSearchParamsError: no_search_params_error_handler
     }
 
     @get(HEALTH)
     async def health_check(self) -> dict:
         return { "status": "healthy" }
     
-    # @get(SEARCH_POKEMON)
-    @get("/search_pokemon")
+    @get(SEARCH_POKEMON)
     async def search_pokemon(
         self,
         finder: CandidateFinderService,
@@ -106,8 +113,8 @@ class CandidateFinderController(Controller):
 
         # Case 1: No params
         if not any([move, desired_type, primary_stat, secondary_stat]):
-            raise ClientException(detail="Must provide at least one search parameter")
-
+            raise NoSearchParamsError("Must provide at least one search parameter")
+        
         # Get results
         response: frozenset[str] = finder.search_pokemon(
             move=move,
@@ -127,9 +134,10 @@ class CandidateFinderController(Controller):
             raise NotFoundException(
                 detail="No pokemon found. Try loosening filters."
                 )
-        
+
         # Populate tables
-        results = finder.build_response(response)
+        params = {"move": move}
+        results = finder.build_response(response, params)
 
         # Return tables
         return results

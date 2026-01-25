@@ -12832,7 +12832,7 @@
     "sprite_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/845.png",
     "description": "It\u2019s so strong that it can knock out some opponents in a single hit, but it also may forget what it\u2019s battling midfight.",
     "genus": "Gulp Pok\u00e9mon",
-    "type_display": "flying/water",
+    "type_display": "water/flying",
     "is_legendary": false,
     "is_mythical": false,
     "is_ultra_beast": false

@@ -47,7 +47,7 @@ frontend:
     uv run textual run --dev frontend/app.py
 
 serve:
-    textual serve frontend/app.py --port 8080
+    textual serve --dev frontend/app.py --port 8080
 
 backend:
     litestar --app=backend.src.app:app run --debug --reload

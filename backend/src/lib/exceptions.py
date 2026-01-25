@@ -6,32 +6,35 @@
 # =============
 # Service layer
 # =============
+
+# Generic
 class PokemonSearchError(Exception):
-    """Base exception for Pokemon search errors."""
     pass
 
+# Stat not found on list (invalid stat)
 class InvalidPokemonStatError(PokemonSearchError):
-    """Raised when an invalid Pokemon stat is provided."""
     pass
     
-
+# Pokemon type not found on list (invalid type)
 class InvalidPokemonTypeError(PokemonSearchError):
-    """Raised when an invalid Pokemon type is provided."""
     pass
 
+# Search returns no results
 class NoPokemonFoundError(PokemonSearchError):
-    """Raised when search returns no results."""
     pass
 
+# > 2 types provided
 class TooManyTypesError(PokemonSearchError):
-    """Raised when more than 2 types are provided."""
     pass
 
-
+# Invalid pokemon move
 class InvalidPokemonMoveError(PokemonSearchError):
-    """Raised when invalid pokemon move provided"""
     pass
 
+# Invalid pokemon nmae
 class InvalidPokemonNameError(PokemonSearchError):
-    """Raised when invalid pokemon name provided"""
+    pass
+
+# No search params
+class NoSearchParamsError(PokemonSearchError):
     pass

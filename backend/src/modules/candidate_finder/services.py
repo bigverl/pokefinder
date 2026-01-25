@@ -40,26 +40,7 @@ class CandidateFinderService():
         include_mythical: bool = False,
         include_ultra_beasts: bool = False
     ) -> frozenset[str]:
-        """
-        Search for Pokemon using multiple filters combined with AND logic.
 
-        All provided filters are combined - Pokemon must match ALL criteria.
-
-        Args:
-            move: Move name filter
-            desired_type: Desired Pokemon type filter (e.g., "fire" or "fire-flying")
-            primary_stat: Primary stat for stat search
-            secondary_stat: Secondary stat for stat search
-            min_primary: Minimum primary stat value
-            min_secondary: Minimum secondary stat value
-            min_speed: Minimum speed value
-            include_legendary: Include legendary Pokemon
-            include_mythical: Include mythical Pokemon
-            include_ultra_beasts: Include Ultra Beasts
-
-        Returns:
-            frozenset of Pokemon names matching all filters
-        """
         logger.debug(
             "Searching pokemon with:",
             move=move,
@@ -124,49 +105,55 @@ class CandidateFinderService():
         """Build types table for given Pokemon names."""
         types_rows = []
         for name in sorted(pokemon_names):
-            # Get type
-            pokemon_types = []
-            type_index = self.repository.get_type_index()
-            for type_name, pokemon_set in type_index.items():
-                if name in pokemon_set:
-                    pokemon_types.append(type_name)
-
+            display_name = self.repository.get_pokemon_by_name(name)["display_name"]
+            type_display = self.repository.get_pokemon_by_name(name)["type_display"]
+            types = type_display.split("/")
             types_rows.append(TypesTableRow(
-                name=name,
-                type1=pokemon_types[0],
-                type2=pokemon_types[1] if len(pokemon_types) > 1 else None
+                name=display_name,
+                type1=types[0],
+                type2=types[1] if len(types) > 1 else None
             ))
         return TypesTable(rows=types_rows)
 
-    def _build_moves_table(self, pokemon_names: frozenset[str]) -> MovesTable:
+    def _build_moves_table(self, pokemon_names: frozenset[str], move: str | None = None) -> MovesTable:
         """Build moves table for given Pokemon names."""
         moves_rows = []
         move_index = self.repository.get_move_index()
         machine_moves_index = self.repository.get_machine_moves_index()
+
         for pokemon_name in sorted(pokemon_names):
-            # get all moves for this Pokemon from the moves index
+            display_name = self.repository.get_pokemon_by_name(pokemon_name)["display_name"]
 
-            for move_name, learners in move_index.items():
-                if pokemon_name in learners:
-                    learn_method = learners[pokemon_name]
-                    
-                    # set move categories
-                    level_learned = learn_method.get("level-up") if learn_method.get("level-up") else "x"
-                    machine = machine_moves_index.get(move_name) if learn_method.get("machine") else "x"
-                    egg_move = "yes" if learn_method.get("egg") else "x"
+            # If no move provided, just show pokemon name with empty move info
+            if not move:
+                moves_rows.append(MovesTableRow(
+                    pokemon_name=display_name,
+                    move_name="",
+                    level_learned="",
+                    machine="",
+                    egg_move="",
+                ))
+                continue
 
-                    # catch evolution move data error
-                    if level_learned == "x" and machine == "x" and egg_move == "x":
-                        level_learned = "evolution"
+            # If move provided but pokemon doesn't learn it, skip
+            if move not in move_index or pokemon_name not in move_index[move]:
+                continue
 
-                    # insert row
-                    moves_rows.append(MovesTableRow(
-                        pokemon_name=pokemon_name,
-                        move_name=move_name,
-                        level_learned=level_learned,
-                        machine=machine,
-                        egg_move= egg_move,
-                    ))
+            learn_method = move_index[move][pokemon_name]
+            level_learned = learn_method.get("level-up") if learn_method.get("level-up") else "x"
+            machine = machine_moves_index.get(move) if learn_method.get("machine") else "x"
+            egg_move = "yes" if learn_method.get("egg") else "x"
+
+            if level_learned == "x" and machine == "x" and egg_move == "x":
+                level_learned = "evolution"
+
+            moves_rows.append(MovesTableRow(
+                pokemon_name=display_name,
+                move_name=move,
+                level_learned=level_learned,
+                machine=machine,
+                egg_move=egg_move,
+            ))
         return MovesTable(rows=moves_rows)
 
     def _build_stats_table(self, pokemon_names: frozenset[str]) -> StatsTable:
@@ -174,9 +161,10 @@ class CandidateFinderService():
         stats_rows = []
         stat_index = self.repository.get_stat_index()
         for name in sorted(pokemon_names):
+            display_name = self.repository.get_pokemon_by_name(name)["display_name"]
             stats = stat_index[name]
             stats_rows.append(StatsTableRow(
-                name=name,
+                name=display_name,
                 attack=stats["attack"],
                 defense=stats["defense"],
                 special_attack=stats["special_attack"],
@@ -186,12 +174,12 @@ class CandidateFinderService():
         return StatsTable(rows=stats_rows)
 
 
-    def build_response(self, pokemon_names: frozenset[str]) -> CandidateFinderResponse:
+    def build_response(self, pokemon_names: frozenset[str], params: dict) -> CandidateFinderResponse:
         """Build full CandidateFinderResponse with all tables populated."""
         logger.info("Building response tables", count=len(pokemon_names))
 
         return CandidateFinderResponse(
             types_table=self._build_types_table(pokemon_names),
-            moves_table=self._build_moves_table(pokemon_names),
+            moves_table=self._build_moves_table(pokemon_names, params.get("move")),
             stats_table=self._build_stats_table(pokemon_names),
         )
