@@ -1,7 +1,7 @@
 from pydantic import BaseModel as _BaseModel
 
 class BaseModel(_BaseModel):
-    # Evidently, this has to be done to enable ORM Mode
+    # evidently, this has to be done to enable ORM Mode
     model_config = {"from_attributes": True}
 
 # =============
@@ -9,7 +9,6 @@ class BaseModel(_BaseModel):
 # ===========
 
 class MovesTableRow(BaseModel):
-    """Row for moves DataTable: [name, level_learned, machine, egg_move]"""
     pokemon_name: str
     move_name: str
     level_learned: str | int | None
@@ -17,7 +16,6 @@ class MovesTableRow(BaseModel):
     egg_move: str | None
 
 class StatsTableRow(BaseModel):
-    """Row for stats DataTable: [name, attack, defense, special_attack, special_defense, speed]"""
     name: str
     attack: int
     defense: int
@@ -26,11 +24,9 @@ class StatsTableRow(BaseModel):
     speed: int
 
 class TypesTableRow(BaseModel):
-    """Row for types DataTable: [name, type1, type2]"""
     name: str
     type1: str
     type2: str | None
-
 
 # =========
 # Table models
@@ -44,7 +40,6 @@ class StatsTable(BaseModel):
 
 class TypesTable(BaseModel):
     rows: list[TypesTableRow]
-
 
 # =======
 # Full response for frontend

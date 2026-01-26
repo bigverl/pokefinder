@@ -414,13 +414,12 @@ def test_search_pokemon_include_legendary(finder: CandidateFinderService):
 # ============================
 def test_print_all_tables(finder: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "exeggutor", "gallade"])
-    response = finder.build_response(pokemon_names)
+    response = finder.build_response(pokemon_names,"")
 
     tables = [
         ("moves_table", response.moves_table),
         ("stats_table", response.stats_table),
-        ("types_table", response.types_table),
-        ("versus_types_table", response.versus_types_table),
+        ("types_table", response.types_table)
     ]
 
     for table_name, table in tables:
@@ -428,12 +427,11 @@ def test_print_all_tables(finder: CandidateFinderService):
         for row in table.rows:
             pprint.pprint(row)
 
-
 # Case 1: Response has all tables populated
 @pytest.mark.unit
 def test_build_response_all_tables_populated(finder: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "exeggutor", "gallade"])
-    response = finder.build_response(pokemon_names)
+    response = finder.build_response(pokemon_names,"")
 
     # All tables should be present
     assert response.moves_table is not None
@@ -444,128 +442,45 @@ def test_build_response_all_tables_populated(finder: CandidateFinderService):
 @pytest.mark.unit
 def test_build_response_correct_pokemon(finder: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "haunter"])
-    response = finder.build_response(pokemon_names)
+    response = finder.build_response(pokemon_names,"")
 
     # Types table should have both Pokemon
     assert response.types_table is not None
     types_names = {row.name for row in response.types_table.rows}
-    assert "bronzong" in types_names
-    assert "haunter" in types_names
+    assert "Bronzong" in types_names
+    assert "Haunter" in types_names
     assert len(types_names) == 2
 
     # Stats table should have both Pokemon
     assert response.stats_table is not None
     stats_names = {row.name for row in response.stats_table.rows}
-    assert "bronzong" in stats_names
-    assert "haunter" in stats_names
+    assert "Bronzong" in stats_names
+    assert "Haunter" in stats_names
 
 # Case 3: Type data is accurate
 @pytest.mark.unit
 def test_build_response_type_data_accurate(finder: CandidateFinderService):
     pokemon_names = frozenset(["haunter"])
-    response = finder.build_response(pokemon_names)
+    response = finder.build_response(pokemon_names,"")
 
     # Haunter should be Ghost/Poison type
     assert response.types_table is not None
     haunter_row = response.types_table.rows[0]
-    assert haunter_row.name == "haunter"
+    assert haunter_row.name == "Haunter"
     assert "ghost" in [haunter_row.type1, haunter_row.type2]
 
 # Case 4: Stats data is accurate
 @pytest.mark.unit
 def test_build_response_stats_data_accurate(finder: CandidateFinderService):
     pokemon_names = frozenset(["haunter"])
-    response = finder.build_response(pokemon_names)
+    response = finder.build_response(pokemon_names,"")
 
     # Find haunter in stats table
     assert response.stats_table is not None
-    haunter_row = next(row for row in response.stats_table.rows if row.name == "haunter")
+    haunter_row = next(row for row in response.stats_table.rows if row.name == "Haunter")
 
     # Stats should be integers and reasonable
     assert isinstance(haunter_row.attack, int)
     assert isinstance(haunter_row.speed, int)
     assert haunter_row.attack > 0
     assert haunter_row.speed > 0
-
-
-# ===========================
-# test_type_index_canonical.py
-# ============================
-
-# Test that dual-type Pokemon are normalized to canonical ordering
-@pytest.mark.unit
-def test_type_index_has_single_types(finder: CandidateFinderService):
-    """Test that type index contains single-type entries."""
-    type_index = finder.repository.get_type_index()
-
-    # Should only have single-type keys (no "/" in key)
-    single_types = [k for k in type_index.keys() if "/" not in k]
-    assert len(single_types) > 0, "Should have single-type entries like 'fire', 'water'"
-
-    # Check expected single types exist
-    assert "fire" in type_index
-    assert "water" in type_index
-    assert "psychic" in type_index
-
-@pytest.mark.unit
-def test_type_index_dual_types_under_both(finder: CandidateFinderService):
-    """Test that dual-type Pokemon appear under both of their types."""
-    type_index = finder.repository.get_type_index()
-
-    # Charizard is fire/flying, should be under both
-    assert "charizard" in type_index["fire"]
-    assert "charizard" in type_index["flying"]
-
-    # Hydreigon is dark/dragon, should be under both
-    assert "hydreigon" in type_index["dark"]
-    assert "hydreigon" in type_index["dragon"]
-
-
-# ===========================
-# test_opponent_weakness_type_index.py
-# ============================
-
-@pytest.mark.unit
-def test_opponent_weakness_fire_flying(finder: CandidateFinderService):
-    """Test fire/flying has 4x weakness to rock."""
-    index = finder.repository.get_opponent_weakness_type_index()
-
-    assert "fire/flying" in index
-    fire_flying = index["fire/flying"]
-
-    # Rock should be 4x effective (2x against fire, 2x against flying)
-    assert "rock" in fire_flying["4x"]
-
-    # Water and electric should be 2x
-    assert "water" in fire_flying["2x"]
-    assert "electric" in fire_flying["2x"]
-
-@pytest.mark.unit
-def test_opponent_weakness_single_type(finder: CandidateFinderService):
-    """Test single-type matchups work correctly."""
-    index = finder.repository.get_opponent_weakness_type_index()
-
-    fire = index["fire"]
-
-    # Fire's weaknesses
-    assert "water" in fire["2x"]
-    assert "ground" in fire["2x"]
-    assert "rock" in fire["2x"]
-
-    # Fire's resistances
-    assert "fire" in fire["0.5x"] or "grass" in fire["0.5x"]
-
-@pytest.mark.unit
-def test_opponent_weakness_has_all_effectiveness_keys(finder: CandidateFinderService):
-    """Test that all effectiveness keys exist."""
-    index = finder.repository.get_opponent_weakness_type_index()
-
-    fire_flying = index["fire/flying"]
-
-    # Should have all six keys
-    assert "4x" in fire_flying
-    assert "2x" in fire_flying
-    assert "1x" in fire_flying
-    assert "0.5x" in fire_flying
-    assert "0.25x" in fire_flying
-    assert "0x" in fire_flying

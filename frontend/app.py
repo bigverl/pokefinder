@@ -2,16 +2,12 @@ from textual.app import (
     App, 
     ComposeResult,
     )
-
-from textual import on, log
-import logging
-
+from textual import on
 from textual.containers import (
     Horizontal,
     Vertical,
     VerticalScroll,
     )
-
 from textual.widgets import (
     Button,
     Footer,
@@ -19,21 +15,15 @@ from textual.widgets import (
     TabPane,
     )
 
+# custom imports
 from frontend.api_client import BackendClient
-
 from frontend.modules.candidate_finder.widgets.search import CandidateFinderSearch
 from frontend.modules.candidate_finder.widgets.results import CandidateFinderResults
-
 from frontend.modules.pokedex.widgets.search import PokedexSearch
 from frontend.modules.pokedex.widgets.results import PokedexResults
-
 from frontend.modules.coverage_analyzer.widgets.search import CoverageAnalyzerSearch
 from frontend.modules.coverage_analyzer.widgets.results import CoverageAnalyzerResults
-
 from frontend.libs.feature_flags import FEATURE_FLAGS
-
-
-logger = logging.getLogger(__name__)
 
 class Pokefinder(App):
     CSS_PATH = "libs/main.tcss"
@@ -87,12 +77,12 @@ class Pokefinder(App):
     # ===================
     # Candidate Finder
     # ===================
-
     @on(Button.Pressed, ".go_button")
     async def on_candidate_finder_search(self, event: Button.Pressed) -> None:
         search_widget = self.query_one(CandidateFinderSearch)
         try:
             params = search_widget._collect_search_params()
+            
             # Only send api request if params are different
             if params != self._previous_search_params:
                 response = await self.api_client.search_pokemon(**params)

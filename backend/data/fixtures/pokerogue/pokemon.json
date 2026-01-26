@@ -13532,7 +13532,7 @@
     "sprite_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10191.png",
     "description": "This form of Urshifu is a strong believer in the one-hit KO. Its strategy is to leap in close to foes and land a devastating blow with a hardened fist.",
     "genus": "Wushu Pok\u00e9mon",
-    "type_display": "fighting/water",
+    "type_display": "water/fighting",
     "is_legendary": true,
     "is_mythical": false,
     "is_ultra_beast": false
@@ -16304,7 +16304,7 @@
     "sprite_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10252.png",
     "description": "When it targets an enemy, it charges furiously while whipping its body with its long tails.",
     "genus": "Wild Bull Pok\u00e9mon",
-    "type_display": "fighting/water",
+    "type_display": "water/fighting",
     "is_legendary": false,
     "is_mythical": false,
     "is_ultra_beast": false

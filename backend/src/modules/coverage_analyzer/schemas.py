@@ -1,7 +1,7 @@
 from pydantic import BaseModel as _BaseModel
 
 class BaseModel(_BaseModel):
-    # Evidently, this has to be done to enable ORM Mode
+    # evidently, this has to be done to enable ORM Mode
     model_config = {"from_attributes": True}
 
 # =============
@@ -9,7 +9,6 @@ class BaseModel(_BaseModel):
 # ===========
 
 class VersusTypesTableRow(BaseModel):
-    """Row for versus types DataTable: [name, type_combo, 4x, 2x, 1x, 0.5x, 0x]"""
     name: str
     type_combo: str
     four_x: str

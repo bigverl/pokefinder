@@ -1,6 +1,4 @@
 import logging
-from typing import Any
-
 from litestar import (
     get, 
     Controller, 
@@ -8,19 +6,15 @@ from litestar import (
     Response, 
     MediaType
 )
-
 from litestar.status_codes import (
     HTTP_400_BAD_REQUEST, 
     HTTP_404_NOT_FOUND
 ) 
-
-from litestar.exceptions import NotFoundException, ClientException
-
+from litestar.exceptions import NotFoundException
 from backend.src.modules.candidate_finder.urls import (
     HEALTH,
     SEARCH_POKEMON,
 )
-
 from backend.src.lib.exceptions import (
     InvalidPokemonMoveError,
     InvalidPokemonTypeError,
@@ -29,10 +23,8 @@ from backend.src.lib.exceptions import (
     TooManyTypesError,
     NoSearchParamsError
 )
-
 from backend.src.modules.candidate_finder.schemas import CandidateFinderResponse
-
-from backend.src.modules.candidate_finder.deps import CandidateFinderService
+from backend.src.modules.candidate_finder.services import CandidateFinderService
 
 logger = logging.getLogger(__name__)
 
@@ -135,9 +127,7 @@ class CandidateFinderController(Controller):
                 detail="No pokemon found. Try loosening filters."
                 )
 
-        # Populate tables
-        params = {"move": move}
-        results = finder.build_response(response, params)
+        results = finder.build_response(response, move)
 
         # Return tables
         return results
