@@ -1,13 +1,11 @@
 from typing import TYPE_CHECKING
 from textual import on
 from textual.app import ComposeResult
-
 from textual.containers import (
     HorizontalGroup,
     VerticalGroup,
     Vertical
     )
-
 from textual.widgets import (
     RadioButton,
     Select,
@@ -15,41 +13,18 @@ from textual.widgets import (
     Label,
     Button
     )
-
 from textual.suggester import SuggestFromList
 
 if TYPE_CHECKING:
     from frontend.app import Pokefinder
 
-
-type_selections = [
-    ("normal", "normal"),
-    ("fire", "fire"),
-    ("water", "water"),
-    ("electric", "electric"),
-    ("grass", "grass"),
-    ("ice", "ice"),
-    ("fighting", "fighting"),
-    ("poison", "poison"),
-    ("ground", "ground"),
-    ("flying", "flying"),
-    ("psychic", "psychic"),
-    ("bug", "bug"),
-    ("rock", "rock"),
-    ("ghost", "ghost"),
-    ("dragon", "dragon"),
-    ("dark", "dark"),
-    ("steel", "steel"),
-    ("fairy", "fairy")
-    ]
-
-type_suggestions = [
+TYPE_SUGGESTIONS = [
     "normal", "fire", "water", "electric", "grass", "ice",
     "fighting", "poison", "ground", "flying", "psychic", "bug",
     "rock", "ghost", "dragon", "dark", "steel", "fairy"
 ]
 
-stat_selections = [
+STAT_SELECTIONS = [
     ("attack","attack"),
     ("defense","defense"),
     ("special attack","special_attack"),
@@ -57,11 +32,8 @@ stat_selections = [
     ("speed","speed")
     ]
 
-
+# Left tab pane
 class CandidateFinderSearch(Vertical):
-    """
-    Left Tab Pane representing candidate finder feature
-    """
 
     def _parse_int(self, value: str) -> int | None:
         if not value:
@@ -71,8 +43,7 @@ class CandidateFinderSearch(Vertical):
         try:
             result = int(value)
         except ValueError:
-            raise ValueError("Stat field must be a number between 1 and 255")
-        
+            raise ValueError("Stat field must be a number between 1 and 255") 
         if result < 1 or result > 255:
             raise ValueError("Stat field must be a number between 1 and 255")
         
@@ -82,7 +53,6 @@ class CandidateFinderSearch(Vertical):
         move_enabled = self.query_one("#move_radio_button", RadioButton).value
         stats_enabled = self.query_one("#stats_radio_button", RadioButton).value
         desired_type_enabled = self.query_one("#desired_type_radio_button", RadioButton).value
-
 
         desired_type = ""
         if desired_type_enabled:
@@ -134,7 +104,7 @@ class CandidateFinderSearch(Vertical):
                     yield Label(content="stat name")
                     yield Select(
                         prompt="select stat",
-                        options=(stat_selections),
+                        options=(STAT_SELECTIONS),
                         id="primary_stat_select")
                 # minimum: <input>
                 with HorizontalGroup():
@@ -146,7 +116,7 @@ class CandidateFinderSearch(Vertical):
                     yield Label(content="stat name")
                     yield Select(
                         prompt="select stat",
-                        options=(stat_selections),
+                        options=(STAT_SELECTIONS),
                         id="secondary_stat_select")
                 # minimum: <input>
                 with HorizontalGroup():
@@ -167,7 +137,7 @@ class CandidateFinderSearch(Vertical):
                     id="type1_input",
                     classes="type_input",
                     suggester=SuggestFromList(
-                    type_suggestions, case_sensitive=False)
+                    TYPE_SUGGESTIONS, case_sensitive=False)
                     )
             with HorizontalGroup(classes="aligned_inputs"):
                 yield Label(content="type 2")
@@ -175,11 +145,10 @@ class CandidateFinderSearch(Vertical):
                     id="type2_input",
                     classes="type_input",
                     suggester=SuggestFromList(
-                    type_suggestions, case_sensitive=False)
+                    TYPE_SUGGESTIONS, case_sensitive=False)
                     )
 
         yield Button(label="Catch 'em all!", classes="go_button")
-
 
     def on_mount(self) -> None:
 

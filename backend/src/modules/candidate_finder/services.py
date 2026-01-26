@@ -1,8 +1,6 @@
 # Imports
 import structlog
 
-from typing import Any
-
 from backend.src.lib.repository import SQLAlchemyRepository
 
 # Schemas
@@ -18,6 +16,7 @@ from backend.src.modules.candidate_finder.schemas import (
 
 # Logger
 logger = structlog.get_logger(__name__)
+
 
 class CandidateFinderService():
 
@@ -41,16 +40,16 @@ class CandidateFinderService():
         include_ultra_beasts: bool = False
     ) -> frozenset[str]:
 
-        logger.debug(
-            "Searching pokemon with:",
-            move=move,
-            desired_type=desired_type,
-            primary_stat=primary_stat,
-            secondary_stat=secondary_stat,
-            include_legendary=include_legendary,
-            include_mythical=include_mythical,
-            include_ultra_beasts=include_ultra_beasts
-        )
+        # logger.debug(
+        #     "Searching pokemon with:",
+        #     move=move,
+        #     desired_type=desired_type,
+        #     primary_stat=primary_stat,
+        #     secondary_stat=secondary_stat,
+        #     include_legendary=include_legendary,
+        #     include_mythical=include_mythical,
+        #     include_ultra_beasts=include_ultra_beasts
+        # )
 
         results = None
 
@@ -116,7 +115,6 @@ class CandidateFinderService():
         return TypesTable(rows=types_rows)
 
     def _build_moves_table(self, pokemon_names: frozenset[str], move: str | None = None) -> MovesTable:
-        """Build moves table for given Pokemon names."""
         moves_rows = []
         move_index = self.repository.get_move_index()
         machine_moves_index = self.repository.get_machine_moves_index()
@@ -157,7 +155,6 @@ class CandidateFinderService():
         return MovesTable(rows=moves_rows)
 
     def _build_stats_table(self, pokemon_names: frozenset[str]) -> StatsTable:
-        """Build stats table for given Pokemon names."""
         stats_rows = []
         stat_index = self.repository.get_stat_index()
         for name in sorted(pokemon_names):
@@ -173,13 +170,13 @@ class CandidateFinderService():
             ))
         return StatsTable(rows=stats_rows)
 
-
-    def build_response(self, pokemon_names: frozenset[str], params: dict) -> CandidateFinderResponse:
-        """Build full CandidateFinderResponse with all tables populated."""
+    def build_response(self, pokemon_names: frozenset[str], move: str | None) -> CandidateFinderResponse:
         logger.info("Building response tables", count=len(pokemon_names))
 
-        return CandidateFinderResponse(
+        response = CandidateFinderResponse(
             types_table=self._build_types_table(pokemon_names),
-            moves_table=self._build_moves_table(pokemon_names, params.get("move")),
+            moves_table=self._build_moves_table(pokemon_names, move),
             stats_table=self._build_stats_table(pokemon_names),
         )
+
+        return response

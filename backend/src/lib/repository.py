@@ -420,10 +420,10 @@ class SQLAlchemyRepository():
         name: str
     ) -> dict[str, Any]:
         
-        logger.debug(
-            "Searching pokemon by name", 
-            name=name
-            )
+        # logger.debug(
+        #     "Searching pokemon by name", 
+        #     name=name
+        #     )
         
         # Validation
         
@@ -438,7 +438,7 @@ class SQLAlchemyRepository():
         # Case 4: Success
         results = self._pokemon_index[name]
 
-        logger.info("Found pokemon by name", name=name)
+        # logger.info("Found pokemon by name", name=name)
         return results
 
     def get_pokemon_by_move(
@@ -449,13 +449,13 @@ class SQLAlchemyRepository():
         include_ultra_beasts: bool = False
     ) -> dict[str, dict[str, Any]]:
      
-        logger.debug(
-            "Searching pokemon by move", 
-            move=move,
-            include_mythical=include_mythical,
-            include_legendary=include_legendary,
-            include_ultra_beasts=include_ultra_beasts
-            )
+        # logger.debug(
+        #     "Searching pokemon by move", 
+        #     move=move,
+        #     include_mythical=include_mythical,
+        #     include_legendary=include_legendary,
+        #     include_ultra_beasts=include_ultra_beasts
+        #     )
 
         # Validation
         # Case 1: Invalid argument datatype
@@ -497,17 +497,17 @@ class SQLAlchemyRepository():
         include_ultra_beasts: bool = False
     ) -> dict[str,dict]:
 
-        logger.debug(
-            "Searching pokemon by stats",
-            primary_stat=primary_stat,
-            secondary_stat=secondary_stat,
-            min_primary=min_primary,
-            min_secondary=min_secondary,
-            min_speed=min_speed,
-            include_legendary=include_legendary,
-            include_mythical=include_mythical,
-            include_ultra_beasts=include_ultra_beasts
-            )
+        # logger.debug(
+        #     "Searching pokemon by stats",
+        #     primary_stat=primary_stat,
+        #     secondary_stat=secondary_stat,
+        #     min_primary=min_primary,
+        #     min_secondary=min_secondary,
+        #     min_speed=min_speed,
+        #     include_legendary=include_legendary,
+        #     include_mythical=include_mythical,
+        #     include_ultra_beasts=include_ultra_beasts
+        #     )
         
         # Case 2: Empty stat names (Caller mistake)
         if not primary_stat:
@@ -599,43 +599,14 @@ class SQLAlchemyRepository():
         include_mythical: bool = False,
         include_ultra_beasts: bool = False
     ) -> frozenset[str]:
-        """
-        Search for Pokemon by type(s).
 
-        Args:
-            *types: One or two Pokemon type names (e.g., "fire", "flying")
-            include_legendary: Include legendary Pokemon in results
-            include_mythical: Include mythical Pokemon in results
-            include_ultra_beasts: Include Ultra Beasts in results (postgame only)
-
-        Returns:
-            frozenset of Pokemon names matching the type(s)
-
-        Raises:
-            TypeError: If arguments are not strings (programmer error)
-            ValueError: If no types provided (caller error)
-            TooManyTypesError: If more than 2 types provided
-            InvalidPokemonTypeError: If any type is not valid
-            NoPokemonFoundError: If no Pokemon match the criteria
-
-        Examples:
-            >>> get_pokemon_by_type("fire")
-            frozenset({'charizard', 'typhlosion', ...})
-
-            >>> get_pokemon_by_type("fire", "flying")
-            frozenset({'charizard', 'moltres', ...})
-
-            >>> get_pokemon_by_type("fire", include_legendary=True)
-            frozenset({'charizard', 'moltres', 'entei', ...})
-        """
-        
-        logger.debug(
-            "Searching pokemon by type", 
-            types=types,
-            include_legendary=include_legendary,
-            include_mythical=include_mythical,
-            include_ultra_beasts=include_ultra_beasts
-            )
+        # logger.debug(
+        #     "Searching pokemon by type", 
+        #     types=types,
+        #     include_legendary=include_legendary,
+        #     include_mythical=include_mythical,
+        #     include_ultra_beasts=include_ultra_beasts
+        #     )
         
         # Case 1: Incorrect arg datatype (Programmer mistake)
         for t in types:
@@ -699,10 +670,10 @@ class SQLAlchemyRepository():
         return filtered
     
     def get_type_effectiveness(self, *types: str) -> dict[str, frozenset[str]]:
-        logger.debug(
-            "Searching type matchups",
-            types=types
-        )
+        # logger.debug(
+        #     "Searching type matchups",
+        #     types=types
+        # )
 
         # Validation
 

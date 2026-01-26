@@ -1,5 +1,5 @@
 import structlog
-from litestar import Litestar
+from litestar import Litestar, Request
 from litestar.di import Provide
 from litestar.config.cors import CORSConfig
 from litestar.middleware.rate_limit import RateLimitConfig
@@ -9,11 +9,12 @@ from advanced_alchemy.extensions.litestar import (
     AsyncSessionConfig,
     SQLAlchemyAsyncConfig
 )
-from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy import text
 
 # Custom Modules
-from backend.src.modules.candidate_finder.deps import provide_candidate_finder
+from backend.src.lib.repository import SQLAlchemyRepository
+from backend.src.modules.candidate_finder.services import CandidateFinderService
 from backend.src.config.settings import settings
 
 # Controllers
@@ -37,9 +38,9 @@ alchemy_config = SQLAlchemyAsyncConfig(
     session_config=AsyncSessionConfig(expire_on_commit=False)
 )
 
-# Startup hook to verify DB connection
-async def check_db_connection(app: Litestar) -> None:
-    """Verify database is reachable on startup."""
+# Startup hook to verify DB connection and init repository
+async def startup(app: Litestar) -> None:
+    # Check DB connection
     try:
         async with engine.connect() as conn:
             await conn.execute(text("SELECT 1"))
@@ -55,16 +56,26 @@ async def check_db_connection(app: Litestar) -> None:
             "Is the database container running?"
         ) from e
 
+    # Initialize singleton repository (load indexes once)
+    async with AsyncSession(engine) as session:
+        repo = await SQLAlchemyRepository.create(session=session)
+        app.state.candidate_finder_service = CandidateFinderService(repository=repo)
+        logger.info("CandidateFinderService initialized (singleton)")
+
+
+def provide_candidate_finder(request: Request) -> CandidateFinderService:
+    return request.app.state.candidate_finder_service
+
 # App
 app = Litestar(
     route_handlers=[CandidateFinderController],
     dependencies={
-        "finder": Provide(provide_candidate_finder)},
+        "finder": Provide(provide_candidate_finder, sync_to_thread=False)},
     cors_config=cors_config,
     middleware=[rate_limit_config.middleware],
     plugins=[
         StructlogPlugin(),
         SQLAlchemyPlugin(config=alchemy_config)],
-    on_startup=[check_db_connection]
+    on_startup=[startup]
 )
 
