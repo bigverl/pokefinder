@@ -25,8 +25,8 @@ config = context.config
 
 # Set the database URL from your settings
 # Convert async URL to sync for Alembic (alembic doesn't support async drivers)
-db_url = settings.db_url.replace("postgresql+asyncpg://", "postgresql+psycopg://")
-config.set_main_option("sqlalchemy.url", db_url)
+database_url = settings.database_url.replace("postgresql+asyncpg://", "postgresql+psycopg://")
+config.set_main_option("sqlalchemy.url", database_url)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

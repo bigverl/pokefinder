@@ -11,9 +11,7 @@ class Settings(BaseSettings):
     )
 
     # DB URLS
-    dev_database_url: str = "postgresql+asyncpg://postgres:password@localhost:5432/postgres-dev"
-    unit_test_database_url: str = "sqlite+aiosqlite:///:memory:"  # in-memory SQLite for unit tests
-    prod_database_url: str = ""
+    database_url: str = "postgresql+asyncpg://postgres:password@localhost:5432/postgres-dev"
 
     # Litestar
     cors_origins: list[str] = ["*"]
@@ -65,15 +63,6 @@ class Settings(BaseSettings):
     @property
     def type_pairs_fixture_path(self) -> Path:
         return self.fixtures_dir / "type_pairs.json"
-
-    @property
-    def db_url(self) -> str:
-        """Returns appropriate DB based on environment"""
-        if self.environment == "production":
-            return self.prod_database_url
-        else:
-            return self.dev_database_url
-        
 
 # Settings generator and getter
 @lru_cache

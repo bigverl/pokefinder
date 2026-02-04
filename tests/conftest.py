@@ -11,9 +11,9 @@ from sqlalchemy.pool import StaticPool
 @pytest_asyncio.fixture(scope="session")
 async def _db_engine():
     """Session-scoped engine for SQLite (fast, shared across tests)"""
-    db_url = "sqlite+aiosqlite:///:memory:"
+    database_url = "sqlite+aiosqlite:///:memory:"
     engine = create_async_engine(
-        db_url,
+        database_url,
         connect_args={"check_same_thread": False},
         poolclass=StaticPool,
         echo=False,
@@ -36,8 +36,8 @@ async def _db_engine():
 @pytest_asyncio.fixture(scope="session")
 async def _db_engine_postgres():
     """Session-scoped engine for PostgreSQL (seeds once, shared across tests)"""
-    db_url = settings.db_url
-    engine = create_async_engine(db_url, echo=False)
+    database_url = settings.database_url
+    engine = create_async_engine(database_url, echo=False)
 
     async_session_maker = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 

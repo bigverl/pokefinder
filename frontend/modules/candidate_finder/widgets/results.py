@@ -8,7 +8,7 @@ from textual.widgets import (
     TabbedContent
     )
 from textual.widgets.data_table import ColumnKey
-from backend.src.modules.candidate_finder.schemas import CandidateFinderResponse
+from frontend.modules.candidate_finder.schemas import CandidateFinderResponse
 import logging
 
 if TYPE_CHECKING:
