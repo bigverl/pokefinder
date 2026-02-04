@@ -32,7 +32,7 @@ rate_limit_config = RateLimitConfig(
 )
 
 # Database
-engine = create_async_engine(settings.db_url)
+engine = create_async_engine(settings.database_url)
 alchemy_config = SQLAlchemyAsyncConfig(
     engine_instance=engine,
     session_config=AsyncSessionConfig(expire_on_commit=False)
@@ -44,15 +44,15 @@ async def startup(app: Litestar) -> None:
     try:
         async with engine.connect() as conn:
             await conn.execute(text("SELECT 1"))
-        logger.info("Database connection verified", db_url=settings.db_url.split("@")[-1])
+        logger.info("Database connection verified", database_url=settings.database_url.split("@")[-1])
     except Exception as e:
         logger.error(
             "Cannot connect to database. Is the container running?",
-            db_url=settings.db_url.split("@")[-1],
+            database_url=settings.database_url.split("@")[-1],
             error=str(e)
         )
         raise RuntimeError(
-            f"Cannot connect to database at {settings.db_url.split('@')[-1]}. "
+            f"Cannot connect to database at {settings.database_url.split('@')[-1]}. "
             "Is the database container running?"
         ) from e
 

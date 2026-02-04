@@ -1,16 +1,14 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
 import httpx
-from backend.src.modules.candidate_finder.schemas import CandidateFinderResponse
-
+from frontend.modules.candidate_finder.schemas import CandidateFinderResponse
 class ApiConfig(BaseSettings):
     backend_url: str = "http://localhost:8000"
 
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
-        extra="ignore",
-        env_prefix="API_"
+        extra="ignore"
     )
 
 @lru_cache
