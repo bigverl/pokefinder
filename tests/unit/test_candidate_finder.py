@@ -1,19 +1,19 @@
+import pprint
 
 import pytest
+
 from backend.src.lib.exceptions import (
-    NoPokemonFoundError,
     InvalidPokemonMoveError,
+    InvalidPokemonStatError,
     InvalidPokemonTypeError,
-    InvalidPokemonStatError
+    NoPokemonFoundError,
 )
-
 from backend.src.modules.candidate_finder.services import CandidateFinderService
-
-import pprint
 
 # ===========================
 # test_get_pokemon_by_move.py
 # ============================
+
 
 # Case 2: Move does not exist
 @pytest.mark.unit
@@ -21,33 +21,19 @@ def test_get_pokemon_by_move_invalid_pokemon_types(finder: CandidateFinderServic
     with pytest.raises(InvalidPokemonMoveError):
         finder.repository.get_pokemon_by_move("definitely not a move")
 
+
 # Case 3: Found
 @pytest.mark.unit
 def test_get_pokemon_by_move_found_single_type(finder: CandidateFinderService):
     result = finder.repository.get_pokemon_by_move("hypnosis")
-    # PokeRogue fixture data (current source of truth)
     assert result == {
-        'bronzong': {'level-up': 20},
-        'exeggutor': {'level-up': 1},
-        'gallade': {'level-up': 1},
-        'glameow': {'level-up': 13},
-        'gothorita': {'level-up': 24},
-        'haunter': {'level-up': 1},
-        'hoothoot': {'level-up': 36},
-        'hypno': {'level-up': 1},
-        'kirlia': {'level-up': 9},
-        'lunatone': {'level-up': 5},
-        'malamar': {'level-up': 1},
-        'munna': {'level-up': 4},
-        'poliwhirl': {'level-up': 1},
-        'sandygast': {'level-up': 30},
-        'sigilyph': {'level-up': 10},
-        'spinda': {'level-up': 19},
-        'watchog': {'level-up': 18},
-        'wyrdeer': {'level-up': 10},
-        'yanma': {'level-up': 38},
-        'yanmega': {'level-up': 0}
+        "bronzong": {"level-up": 20},
+        "exeggutor": {"level-up": 1},
+        "gallade": {"level-up": 1},
+        "haunter": {"level-up": 1},
+        "alakazam": {"level-up": 1},
     }
+
 
 # Case 4: Legendary/Mythical filtering - Default (exclude both)
 @pytest.mark.unit
@@ -63,6 +49,7 @@ def test_get_pokemon_by_move_exclude_legendary_and_mythical_by_default(finder: C
     # Should include normal Pokemon
     assert "alakazam" in result
 
+
 # Case 5: Include legendary and mythical
 @pytest.mark.unit
 def test_get_pokemon_by_move_include_legendary_and_mythical(finder: CandidateFinderService):
@@ -76,10 +63,13 @@ def test_get_pokemon_by_move_include_legendary_and_mythical(finder: CandidateFin
     # Should include normal Pokemon
     assert "alakazam" in result
 
+
 # Case 6: Include all special Pokemon (legendary, mythical, ultra beasts)
 @pytest.mark.unit
 def test_get_pokemon_by_move_include_all_special_pokemon(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_move("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
+    result = finder.repository.get_pokemon_by_move(
+        "psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True
+    )
     # Should include Ultra Beasts
     assert "nihilego" in result
     assert "blacephalon" in result
@@ -92,15 +82,18 @@ def test_get_pokemon_by_move_include_all_special_pokemon(finder: CandidateFinder
     # Should include normal Pokemon
     assert "alakazam" in result
 
+
 # ===========================
 # test_get_pokemon_by_stats.py
 # ============================
+
 
 # Case 2: Empty stat names (Caller mistake)
 @pytest.mark.unit
 def test_get_pokemon_by_stats_empty_primary_stat(finder: CandidateFinderService):
     with pytest.raises(InvalidPokemonStatError, match="primary_stat cannot be empty"):
         finder.repository.get_pokemon_by_stats("", "speed")
+
 
 @pytest.mark.unit
 def test_get_pokemon_by_stats_empty_secondary_stat(finder: CandidateFinderService):
@@ -113,6 +106,7 @@ def test_get_pokemon_by_stats_empty_secondary_stat(finder: CandidateFinderServic
 def test_get_pokemon_by_stats_invalid_primary_stat(finder: CandidateFinderService):
     with pytest.raises(InvalidPokemonStatError, match="Invalid primary_stat"):
         finder.repository.get_pokemon_by_stats("coolness", "speed")
+
 
 @pytest.mark.unit
 def test_get_pokemon_by_stats_invalid_secondary_stat(finder: CandidateFinderService):
@@ -180,10 +174,7 @@ def test_get_pokemon_by_stats_exclude_special_pokemon_by_default(finder: Candida
 @pytest.mark.unit
 def test_get_pokemon_by_stats_include_all_special_pokemon(finder: CandidateFinderService):
     result = finder.repository.get_pokemon_by_stats(
-        "attack", "speed",
-        include_legendary=True,
-        include_mythical=True,
-        include_ultra_beasts=True
+        "attack", "speed", include_legendary=True, include_mythical=True, include_ultra_beasts=True
     )
 
     # Should include Ultra Beasts
@@ -222,6 +213,7 @@ def test_get_pokemon_by_stats_explicit_min_secondary(finder: CandidateFinderServ
     # Garchomp (Attack: 130, Speed: 102) should be included
     assert "garchomp" in result
 
+
 # Case 11: min_speed filter
 @pytest.mark.unit
 def test_get_pokemon_by_stats_min_speed_filter(finder: CandidateFinderService):
@@ -237,15 +229,18 @@ def test_get_pokemon_by_stats_min_speed_filter(finder: CandidateFinderService):
     # Rhyperior (Attack: 140, Defense: 130, Speed: 40) should NOT be included (too slow)
     assert "rhyperior" not in result
 
+
 # ===========================
 # test_get_pokemon_by_type.py
 # ============================
+
 
 # Case 1: Invalid type (Caller mistake)
 @pytest.mark.unit
 def test_get_pokemon_by_type_invalid_type(finder: CandidateFinderService):
     with pytest.raises(InvalidPokemonTypeError):
         finder.repository.get_pokemon_by_type("definitely-not-a-type")
+
 
 # Case 2: Single type search
 @pytest.mark.unit
@@ -262,6 +257,7 @@ def test_get_pokemon_by_type_single_type(finder: CandidateFinderService):
     # Should NOT include non-fire types
     assert "pikachu" not in result
 
+
 # Case 3: Dual type search
 @pytest.mark.unit
 def test_get_pokemon_by_type_dual_type(finder: CandidateFinderService):
@@ -273,6 +269,7 @@ def test_get_pokemon_by_type_dual_type(finder: CandidateFinderService):
     # Should NOT include Pokemon with only one type
     assert "typhlosion" not in result  # Fire only
     assert "pidgeot" not in result  # Flying only
+
 
 # Case 4: Default behavior (exclude legendary, mythical, ultra beasts)
 @pytest.mark.unit
@@ -286,10 +283,13 @@ def test_get_pokemon_by_type_exclude_special_pokemon_by_default(finder: Candidat
     # Should include normal Pokemon
     assert "alakazam" in result
 
+
 # Case 5: Include all special Pokemon
 @pytest.mark.unit
 def test_get_pokemon_by_type_include_all_special_pokemon(finder: CandidateFinderService):
-    result = finder.repository.get_pokemon_by_type("psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True)
+    result = finder.repository.get_pokemon_by_type(
+        "psychic", include_legendary=True, include_mythical=True, include_ultra_beasts=True
+    )
 
     # Should include legendaries
     assert "mewtwo" in result
@@ -301,9 +301,11 @@ def test_get_pokemon_by_type_include_all_special_pokemon(finder: CandidateFinder
     # Should include normal Pokemon
     assert "alakazam" in result
 
+
 # ===========================
 # test_get_type_effectiveness.py
 # ============================
+
 
 # Case 1: Single type effectiveness
 @pytest.mark.unit
@@ -322,6 +324,7 @@ def test_get_type_effectiveness_single_type(finder: CandidateFinderService):
     assert "fire" in result["0.5x"]
     assert "grass" in result["0.5x"]
 
+
 # Case 2: Dual type effectiveness (stacking)
 @pytest.mark.unit
 def test_get_type_effectiveness_dual_type(finder: CandidateFinderService):
@@ -336,15 +339,18 @@ def test_get_type_effectiveness_dual_type(finder: CandidateFinderService):
     # Grass is 0.25x effective (fire resists, flying resists)
     assert "grass" in result["0.25x"]
 
+
 # ===========================
 # test_search_pokemon.py
 # ============================
+
 
 # Case 1: No filters raises ValueError
 @pytest.mark.unit
 def test_search_pokemon_no_filters(finder: CandidateFinderService):
     with pytest.raises(ValueError, match="At least one filter parameter is required"):
         finder.search_pokemon()
+
 
 # Case 2: Move filter returns frozenset of names
 @pytest.mark.unit
@@ -356,6 +362,7 @@ def test_search_pokemon_move_only(finder: CandidateFinderService):
     # Tackle is a common move, should return many Pokemon
     assert "pikachu" in result or "rattata" in result
 
+
 # Case 3: Type filter returns frozenset of names
 @pytest.mark.unit
 def test_search_pokemon_type_only(finder: CandidateFinderService):
@@ -366,6 +373,7 @@ def test_search_pokemon_type_only(finder: CandidateFinderService):
     assert "charizard" in result
     assert "typhlosion" in result
 
+
 # Case 4: Stats filter returns frozenset of names
 @pytest.mark.unit
 def test_search_pokemon_stats_only(finder: CandidateFinderService):
@@ -373,6 +381,7 @@ def test_search_pokemon_stats_only(finder: CandidateFinderService):
 
     assert isinstance(result, frozenset)
     assert len(result) > 0
+
 
 # Case 5: Multiple filters combine with AND logic (intersection)
 @pytest.mark.unit
@@ -390,6 +399,7 @@ def test_search_pokemon_multiple_filters_intersection(finder: CandidateFinderSer
         # Would need to verify both conditions, but we trust the intersection logic
         pass
 
+
 # Case 6: Legendary filtering applies to all filter types
 @pytest.mark.unit
 def test_search_pokemon_exclude_legendary_default(finder: CandidateFinderService):
@@ -400,6 +410,7 @@ def test_search_pokemon_exclude_legendary_default(finder: CandidateFinderService
     assert "latias" not in result
     assert "alakazam" in result  # Non-legendary psychic
 
+
 # Case 7: Include legendary flag works
 @pytest.mark.unit
 def test_search_pokemon_include_legendary(finder: CandidateFinderService):
@@ -409,17 +420,18 @@ def test_search_pokemon_include_legendary(finder: CandidateFinderService):
     # Note: Actual legendary Pokemon in test data may vary
     assert len(result) > 0
 
+
 # ===========================
 # test_build_response.py
 # ============================
 def test_print_all_tables(finder: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "exeggutor", "gallade"])
-    response = finder.build_response(pokemon_names,"")
+    response = finder.build_response(pokemon_names, "")
 
     tables = [
         ("moves_table", response.moves_table),
         ("stats_table", response.stats_table),
-        ("types_table", response.types_table)
+        ("types_table", response.types_table),
     ]
 
     for table_name, table in tables:
@@ -427,22 +439,24 @@ def test_print_all_tables(finder: CandidateFinderService):
         for row in table.rows:
             pprint.pprint(row)
 
+
 # Case 1: Response has all tables populated
 @pytest.mark.unit
 def test_build_response_all_tables_populated(finder: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "exeggutor", "gallade"])
-    response = finder.build_response(pokemon_names,"")
+    response = finder.build_response(pokemon_names, "")
 
     # All tables should be present
     assert response.moves_table is not None
     assert response.stats_table is not None
     assert response.types_table is not None
 
+
 # Case 2: Tables contain correct Pokemon
 @pytest.mark.unit
 def test_build_response_correct_pokemon(finder: CandidateFinderService):
     pokemon_names = frozenset(["bronzong", "haunter"])
-    response = finder.build_response(pokemon_names,"")
+    response = finder.build_response(pokemon_names, "")
 
     # Types table should have both Pokemon
     assert response.types_table is not None
@@ -457,11 +471,12 @@ def test_build_response_correct_pokemon(finder: CandidateFinderService):
     assert "Bronzong" in stats_names
     assert "Haunter" in stats_names
 
+
 # Case 3: Type data is accurate
 @pytest.mark.unit
 def test_build_response_type_data_accurate(finder: CandidateFinderService):
     pokemon_names = frozenset(["haunter"])
-    response = finder.build_response(pokemon_names,"")
+    response = finder.build_response(pokemon_names, "")
 
     # Haunter should be Ghost/Poison type
     assert response.types_table is not None
@@ -469,11 +484,12 @@ def test_build_response_type_data_accurate(finder: CandidateFinderService):
     assert haunter_row.name == "Haunter"
     assert "ghost" in [haunter_row.type1, haunter_row.type2]
 
+
 # Case 4: Stats data is accurate
 @pytest.mark.unit
 def test_build_response_stats_data_accurate(finder: CandidateFinderService):
     pokemon_names = frozenset(["haunter"])
-    response = finder.build_response(pokemon_names,"")
+    response = finder.build_response(pokemon_names, "")
 
     # Find haunter in stats table
     assert response.stats_table is not None

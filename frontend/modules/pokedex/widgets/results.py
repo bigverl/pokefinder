@@ -1,27 +1,18 @@
-
 from typing import TYPE_CHECKING
-from textual import on
+
 from textual.app import ComposeResult
-
-from textual.containers import (
-    Vertical
-    )
-
-from textual.widgets import (
-    DataTable,
-    TabPane,
-    TabbedContent
-    )
+from textual.containers import Vertical
+from textual.widgets import DataTable, TabbedContent, TabPane
 
 if TYPE_CHECKING:
-    from frontend.app import Pokefinder
+    pass
 
 
 class PokedexResults(Vertical):
     """
     Left Tab Pane representing candidate finder feature
     """
-    
+
     def compose(self) -> ComposeResult:
 
         # Checkboxes
@@ -35,5 +26,3 @@ class PokedexResults(Vertical):
 
     def on_mount(self) -> None:
         pass
-
-

@@ -1,19 +1,21 @@
 from __future__ import annotations
 
-from uuid import UUID
-from sqlalchemy import ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from advanced_alchemy.base import UUIDBase
-from advanced_alchemy.types import GUID
-
 # Static checker please ignore
 from typing import TYPE_CHECKING
+from uuid import UUID
+
+from advanced_alchemy.base import UUIDBase
+from advanced_alchemy.types import GUID
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
 if TYPE_CHECKING:
     from backend.data.models.pokemon import Pokemon
 
 # -- =================
 # -- ## One-to-One Relationship
 # -- =================
+
 
 class PokemonStats(UUIDBase):
     __tablename__ = "pokemon_stats"
@@ -25,6 +27,7 @@ class PokemonStats(UUIDBase):
     special_defense: Mapped[int]
     speed: Mapped[int]
     pokemon: Mapped["Pokemon"] = relationship(back_populates="stats")
+
 
 # -- Stats (one set per Pokemon)
 # CREATE TABLE stats (

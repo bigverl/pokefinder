@@ -1,11 +1,11 @@
-import pytest
-from unittest.mock import AsyncMock, patch
+from unittest.mock import AsyncMock
 
-from textual.widgets import DataTable, RadioButton, Input, Select
+import pytest
+from textual.widgets import DataTable
 
 from frontend.app import Pokefinder
-from frontend.modules.candidate_finder.widgets.search import CandidateFinderSearch
 from frontend.modules.candidate_finder.widgets.results import CandidateFinderResults
+from frontend.modules.candidate_finder.widgets.search import CandidateFinderSearch
 
 
 @pytest.mark.asyncio
@@ -28,6 +28,7 @@ async def test_collect_params_with_move_enabled(self):
         assert params["desired_type"] is None
         assert params["primary_stat"] is None
 
+
 @pytest.mark.asyncio
 async def test_collect_params_with_type_enabled(self):
     """When type filter is enabled, params should include desired_type."""
@@ -46,6 +47,7 @@ async def test_collect_params_with_type_enabled(self):
 
         assert params["desired_type"] == "fire"
         assert params["move"] is None
+
 
 @pytest.mark.asyncio
 async def test_collect_params_dual_type(self):
@@ -66,6 +68,7 @@ async def test_collect_params_dual_type(self):
 
         assert params["desired_type"] == "fire-flying"
 
+
 @pytest.mark.asyncio
 async def test_collect_params_special_pokemon_flags(self):
     """Special pokemon checkboxes should be collected."""
@@ -81,6 +84,7 @@ async def test_collect_params_special_pokemon_flags(self):
         assert params["include_mythical"] is False
         assert params["include_ultra_beasts"] is False
 
+
 @pytest.mark.asyncio
 async def test_parse_int_rejects_floats(self):
     """_parse_int should raise ValueError for float strings."""
@@ -91,6 +95,7 @@ async def test_parse_int_rejects_floats(self):
         with pytest.raises(ValueError, match="Expected integer"):
             search_widget._parse_int("3.14")
 
+
 @pytest.mark.asyncio
 async def test_parse_int_handles_empty(self):
     """_parse_int should return 0 for empty string."""
@@ -98,6 +103,7 @@ async def test_parse_int_handles_empty(self):
     async with app.run_test():
         search_widget = app.query_one(CandidateFinderSearch)
         assert search_widget._parse_int("") == 0
+
 
 @pytest.mark.asyncio
 async def test_populate_moves_table(self, mock_api_response):
@@ -112,6 +118,7 @@ async def test_populate_moves_table(self, mock_api_response):
         moves_table = results_widget.query_one("#candidate_moves", DataTable)
         assert moves_table.row_count == 2
 
+
 @pytest.mark.asyncio
 async def test_populate_stats_table(self, mock_api_response):
     """populate_results_table should fill stats DataTable."""
@@ -125,6 +132,7 @@ async def test_populate_stats_table(self, mock_api_response):
         stats_table = results_widget.query_one("#candidate_stats", DataTable)
         assert stats_table.row_count == 2
 
+
 @pytest.mark.asyncio
 async def test_populate_types_table(self, mock_api_response):
     """populate_results_table should fill types DataTable."""
@@ -137,6 +145,7 @@ async def test_populate_types_table(self, mock_api_response):
 
         types_table = results_widget.query_one("#candidate_types", DataTable)
         assert types_table.row_count == 2
+
 
 @pytest.mark.asyncio
 async def test_populate_clears_existing_data(self, mock_api_response):
@@ -180,15 +189,18 @@ async def test_search_button_triggers_api_call(self, mock_backend_client, mock_a
         moves_table = results_widget.query_one("#candidate_moves", DataTable)
         assert moves_table.row_count == 2
 
+
 @pytest.mark.asyncio
 async def test_search_with_no_filters_shows_error(self, mock_backend_client):
     """Search with no filters enabled should show error notification."""
-    from httpx import HTTPStatusError, Response, Request
+    from httpx import HTTPStatusError, Request, Response
 
     # Mock API to raise error (backend returns 400 for no filters)
     mock_response = Response(400, request=Request("GET", "http://test"))
     mock_backend_client.search_pokemon = AsyncMock(
-        side_effect=HTTPStatusError("Must provide at least one search parameter", request=mock_response.request, response=mock_response)
+        side_effect=HTTPStatusError(
+            "Must provide at least one search parameter", request=mock_response.request, response=mock_response
+        )
     )
 
     app = Pokefinder()

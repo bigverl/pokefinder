@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from sqlalchemy import Column, ForeignKey, Table, String, Integer, Index
 from advanced_alchemy.base import UUIDBase
 from advanced_alchemy.types import GUID
+from sqlalchemy import Column, ForeignKey, Index, Integer, String, Table
 
 # -- =================
 # -- # Junction Table (Many-to-Many)
@@ -16,5 +16,5 @@ pokemon_move = Table(
     Column("learn_method", String, nullable=False, primary_key=True),
     Column("level", Integer, default=0, primary_key=True),
     Index("idx_pokemon_moves_by_pokemon", "pokemon_id"),
-    Index("idx_pokemon_moves_by_move", "move_name")
+    Index("idx_pokemon_moves_by_move", "move_name"),
 )

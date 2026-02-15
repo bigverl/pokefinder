@@ -1,17 +1,19 @@
 from __future__ import annotations
 
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from advanced_alchemy.base import UUIDBase
-from backend.data.models.pokemon_type import pokemon_type
-from advanced_alchemy.types import GUID
-from uuid import UUID, uuid4
-
-
 # Static checker please ignore
 from typing import TYPE_CHECKING
+from uuid import UUID, uuid4
+
+from advanced_alchemy.base import UUIDBase
+from advanced_alchemy.types import GUID
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+from backend.data.models.pokemon_type import pokemon_type
+
 if TYPE_CHECKING:
     from backend.data.models.pokemon_stats import PokemonStats
     from backend.data.models.type import Type
+
 
 class Pokemon(UUIDBase):
     __tablename__ = "pokemon"
@@ -30,7 +32,8 @@ class Pokemon(UUIDBase):
     is_mythical: Mapped[bool] = mapped_column(default=0)
     is_ultra_beast: Mapped[bool] = mapped_column(default=0)
     pokemon_types: Mapped[list["Type"]] = relationship(secondary=pokemon_type, back_populates="pokemon")
-    
+
+
 # -- Pokemon
 # CREATE TABLE pokemon (
 #     id INTEGER PRIMARY KEY AUTOINCREMENT,

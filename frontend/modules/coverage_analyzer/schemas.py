@@ -2,23 +2,12 @@ from pydantic import BaseModel as _BaseModel
 
 
 class BaseModel(_BaseModel):
-    # evidently, this has to be done to enable ORM Mode
     model_config = {"from_attributes": True}
 
 
 # =============
-# DataTable row models for Candidate Finder
+# DataTable row models for Coverage Analyzer
 # ===========
-
-
-class VersusTypesTableRow(BaseModel):
-    type1: str
-    type2: str
-    four_x: str
-    two_x: str
-    one_x: str
-    half_x: str
-    zero_x: str
 
 
 class TypeCoverageTableRow(BaseModel):
@@ -30,10 +19,6 @@ class TypeCoverageTableRow(BaseModel):
 # =========
 # Table models
 # ==========
-
-
-class VersusTypesTable(BaseModel):
-    rows: list[VersusTypesTableRow]
 
 
 class TypeCoverageTable(BaseModel):

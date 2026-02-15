@@ -1,23 +1,10 @@
-from logging.config import fileConfig
-
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
-
-from alembic import context
-
 # Import your models and config
 from advanced_alchemy.base import UUIDBase
-from backend.src.config.settings import settings
+from alembic import context
+from sqlalchemy import engine_from_config, pool
 
 # Import all models so Alembic can detect them
-from backend.data.models.pokemon import Pokemon
-from backend.data.models.tm import TM
-from backend.data.models.type import Type
-from backend.data.models.pokemon_stats import PokemonStats
-from backend.data.models.pokemon_move import pokemon_move
-from backend.data.models.pokemon_type import pokemon_type
-from backend.data.models.type_matchup import type_matchup
-from backend.data.models.stat_spread import StatSpread
+from backend.src.config.settings import settings
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -83,9 +70,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
