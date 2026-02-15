@@ -1,29 +1,30 @@
-from textual.app import (
-    App, 
-    ComposeResult,
-    )
 from textual import on
+from textual.app import (
+    App,
+    ComposeResult,
+)
 from textual.containers import (
     Horizontal,
     Vertical,
     VerticalScroll,
-    )
+)
 from textual.widgets import (
     Button,
     Footer,
     TabbedContent,
     TabPane,
-    )
+)
 
 # custom imports
 from frontend.api_client import BackendClient
-from frontend.modules.candidate_finder.widgets.search import CandidateFinderSearch
-from frontend.modules.candidate_finder.widgets.results import CandidateFinderResults
-from frontend.modules.pokedex.widgets.search import PokedexSearch
-from frontend.modules.pokedex.widgets.results import PokedexResults
-from frontend.modules.coverage_analyzer.widgets.search import CoverageAnalyzerSearch
-from frontend.modules.coverage_analyzer.widgets.results import CoverageAnalyzerResults
 from frontend.libs.feature_flags import FEATURE_FLAGS
+from frontend.modules.candidate_finder.widgets.results import CandidateFinderResults
+from frontend.modules.candidate_finder.widgets.search import CandidateFinderSearch
+from frontend.modules.coverage_analyzer.widgets.results import CoverageAnalyzerResults
+from frontend.modules.coverage_analyzer.widgets.search import CoverageAnalyzerSearch
+from frontend.modules.pokedex.widgets.results import PokedexResults
+from frontend.modules.pokedex.widgets.search import PokedexSearch
+
 
 class Pokefinder(App):
     CSS_PATH = "libs/main.tcss"
@@ -32,6 +33,7 @@ class Pokefinder(App):
         super().__init__()
         self.api_client = BackendClient()
         self._previous_search_params: dict = {}
+        self._previous_coverage_params: list = []
 
     def compose(self) -> ComposeResult:
         with Horizontal():
@@ -82,7 +84,7 @@ class Pokefinder(App):
         search_widget = self.query_one(CandidateFinderSearch)
         try:
             params = search_widget._collect_search_params()
-            
+
             # Only send api request if params are different
             if params != self._previous_search_params:
                 response = await self.api_client.search_pokemon(**params)
@@ -96,6 +98,32 @@ class Pokefinder(App):
             self.notify(str(e), severity="error")
         except Exception:
             self.notify("Generic Error: Something very strange happened.")
+
+    # ===================
+    # Coverage Analyzer
+    # ===================
+    @on(Button.Pressed, ".scan_button")
+    async def on_coverage_analyzer_search(self, event: Button.Pressed) -> None:
+        search_widget = self.query_one(CoverageAnalyzerSearch)
+        try:
+            slots = search_widget._collect_search_params()
+
+            if not slots:
+                self.notify("Enable at least one slot and enter a type.", severity="error")
+                return
+
+            if slots != self._previous_coverage_params:
+                response = await self.api_client.search_team_coverage(slots)
+                results_widget = self.query_one(CoverageAnalyzerResults)
+                results_widget.populate_results_table(response)
+                self._previous_coverage_params = slots
+            else:
+                self.notify("Request not sent: Search parameters unchanged.")
+        except ValueError as e:
+            self.notify(str(e), severity="error")
+        except Exception:
+            self.notify("Generic Error: Something very strange happened.")
+
 
 if __name__ == "__main__":
     app = Pokefinder()

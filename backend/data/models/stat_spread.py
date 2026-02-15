@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from sqlalchemy import String, Integer
-from sqlalchemy.orm import Mapped, mapped_column
+from uuid import UUID, uuid4
+
 from advanced_alchemy.base import UUIDBase
 from advanced_alchemy.types import GUID
-from uuid import UUID, uuid4
+from sqlalchemy import Integer, String
+from sqlalchemy.orm import Mapped, mapped_column
 
 
 class StatSpread(UUIDBase):
@@ -17,6 +18,7 @@ class StatSpread(UUIDBase):
     percentile_80: Mapped[int] = mapped_column(Integer)
     percentile_100: Mapped[int] = mapped_column(Integer)
     median: Mapped[int] = mapped_column(Integer)
+
 
 # CREATE TABLE stat_quintiles (
 #     stat_name TEXT PRIMARY KEY,

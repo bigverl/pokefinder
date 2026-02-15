@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from sqlalchemy import ForeignKey, CheckConstraint, Table, Column, Float, Index
 from advanced_alchemy.base import UUIDBase
 from advanced_alchemy.types import GUID
+from sqlalchemy import CheckConstraint, Column, Float, ForeignKey, Index, Table
 
 # -- =================
 # -- # Junction Table (Many-to-Many)
@@ -15,7 +15,7 @@ type_matchup = Table(
     Column("attacker_type_id", GUID, ForeignKey("type.id"), primary_key=True),
     Column("multiplier", Float),
     CheckConstraint("multiplier IN (0, 0.5, 1, 2)", name="check_multiplier_valid"),
-    Index("idx_get_type_matchups_by_defender", "defender_type_id")
+    Index("idx_get_type_matchups_by_defender", "defender_type_id"),
 )
 
 # -- Type Matchups (Type effectiveness: defender vs attacker)

@@ -29,19 +29,15 @@ down:
 test-unit:
     uv run pytest -m unit
 
-test-api:
-    scripts/test_api.sh
-
-test-unit-postgres:
-    uv run pytest tests/unit/test_candidate_finder_postgres.py
-
-test-integration:
-    uv run pytest -m integration
+test-component:
+    uv run pytest -m component
 
 test-all:
-    just test-unit
-    just test-integration
-    just test-unit-postgres
+    uv run just test-unit
+    uv run just test-component
+
+check:
+    scripts/static_analysis.sh
 
 frontend:
     uv run textual run --dev frontend/app.py

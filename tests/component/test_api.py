@@ -1,13 +1,15 @@
-# tests/unit/test_api.py
-# Unit tests - uses SQLite in-memory database (no external dependencies)
+# tests/component/test_api.py
+# Component tests: HTTP -> controller -> service -> repo -> DB
 import pytest
 import structlog
+
 logger = structlog.get_logger(__name__)
+
 
 # ========
 # /health
 # ========
-@pytest.mark.unit
+@pytest.mark.component
 def test_health_check(test_client):
     """Test the health check endpoint."""
     response = test_client.get("/health")
@@ -15,24 +17,28 @@ def test_health_check(test_client):
     assert response.status_code == 200
     assert response.json() == {"status": "healthy"}
 
+
 # ========
 # /search_pokemon/ (search endpoint)
 # ========
 
+
 # Case: No param - returns 400 error
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_no_params(test_client):
     """Test /search_pokemon with no query params returns 400 error."""
     response = test_client.get("/search_pokemon")
 
     assert response.status_code == 400
 
+
 # ========
 # Move filter
 # ========
 
+
 # Case 1: Invalid move 400
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_move_invalid(test_client):
     """Test /search_pokemon with invalid move returns 400."""
     response = test_client.get("/search_pokemon?move=fakemove")
@@ -42,7 +48,7 @@ def test_pokemon_move_invalid(test_client):
 
 
 # Case 2: Success - Found 200
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_move_success(test_client):
     """Test /search_pokemon with valid move returns 200 with moves_table and types_table."""
     response = test_client.get("/search_pokemon?move=tackle")
@@ -68,8 +74,9 @@ def test_pokemon_move_success(test_client):
     assert types_table is not None
     assert len(types_table["rows"]) > 0
 
+
 # Case 3: Test legendary filter
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_move_exclude_legendary(test_client):
     """Test /search_pokemon move filter excludes legendaries by default."""
     response = test_client.get("/search_pokemon?move=psychic")
@@ -85,7 +92,7 @@ def test_pokemon_move_exclude_legendary(test_client):
 
 
 # Case 4: Test include legendary
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_move_include_legendary(test_client):
     """Test /search_pokemon move filter includes legendaries when requested."""
     response = test_client.get("/search_pokemon?move=psychic&include_legendary=true")
@@ -100,7 +107,7 @@ def test_pokemon_move_include_legendary(test_client):
 
 
 # Case 5: Test include mythical
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_move_include_mythical(test_client):
     """Test /search_pokemon move filter includes mythicals when requested."""
     response = test_client.get("/search_pokemon?move=psychic&include_mythical=true")
@@ -111,7 +118,7 @@ def test_pokemon_move_include_mythical(test_client):
 
 
 # Case 6: Test include ultra beasts
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_move_include_ultra_beasts(test_client):
     """Test /search_pokemon move filter includes ultra beasts when requested."""
     response = test_client.get("/search_pokemon?move=psychic&include_ultra_beasts=true")
@@ -125,8 +132,9 @@ def test_pokemon_move_include_ultra_beasts(test_client):
 # Type filter (desired_type parameter)
 # ========
 
+
 # Case 1: Invalid type 400
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_invalid(test_client):
     """Test /search_pokemon with invalid desired_type returns 400."""
     response = test_client.get("/search_pokemon?desired_type=faketype")
@@ -136,7 +144,7 @@ def test_pokemon_type_invalid(test_client):
 
 
 # Case 2: Too many types 400
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_too_many(test_client):
     """Test /search_pokemon with more than 2 types returns 400."""
     response = test_client.get("/search_pokemon?desired_type=fire-water-grass")
@@ -144,8 +152,9 @@ def test_pokemon_type_too_many(test_client):
     assert response.status_code == 400
     assert "maximum 2 types" in response.text.lower()
 
+
 # Case 3: Success - Single type 200
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_success_single(test_client):
     """Test /search_pokemon with single valid desired_type returns 200 with types_table."""
     response = test_client.get("/search_pokemon?desired_type=fire")
@@ -164,8 +173,9 @@ def test_pokemon_type_success_single(test_client):
     for row in types_table["rows"]:
         assert "fire" in [row["type1"], row["type2"]]
 
+
 # Case 4: Success - Dual types 200
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_success_dual(test_client):
     """Test /search_pokemon with dual desired_type returns 200."""
     response = test_client.get("/search_pokemon?desired_type=fire-flying")
@@ -186,7 +196,7 @@ def test_pokemon_type_success_dual(test_client):
 
 
 # Case 5: Test exclude legendary
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_exclude_legendary(test_client):
     """Test /search_pokemon desired_type filter excludes legendaries by default."""
     response = test_client.get("/search_pokemon?desired_type=psychic")
@@ -202,7 +212,7 @@ def test_pokemon_type_exclude_legendary(test_client):
 
 
 # Case 6: Test include legendary
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_include_legendary(test_client):
     """Test /search_pokemon desired_type filter includes legendaries when requested."""
     response = test_client.get("/search_pokemon?desired_type=psychic&include_legendary=true")
@@ -213,7 +223,7 @@ def test_pokemon_type_include_legendary(test_client):
 
 
 # Case 7: Test include mythical
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_include_mythical(test_client):
     """Test /search_pokemon desired_type filter includes mythicals when requested."""
     response = test_client.get("/search_pokemon?desired_type=psychic&include_mythical=true")
@@ -224,7 +234,7 @@ def test_pokemon_type_include_mythical(test_client):
 
 
 # Case 8: Test include ultra beasts
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_type_include_ultra_beasts(test_client):
     """Test /search_pokemon desired_type filter includes ultra beasts when requested."""
     response = test_client.get("/search_pokemon?desired_type=psychic&include_ultra_beasts=true")
@@ -238,8 +248,9 @@ def test_pokemon_type_include_ultra_beasts(test_client):
 # Stat Filter
 # ========
 
+
 # Case 1: invalid primary_stat 400
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_invalid_primary(test_client):
     """Test /search_pokemon with invalid primary_stat returns 400."""
     response = test_client.get("/search_pokemon?primary_stat=fakestat&secondary_stat=speed")
@@ -249,7 +260,7 @@ def test_pokemon_stats_invalid_primary(test_client):
 
 
 # Case 2: invalid secondary_stat 400
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_invalid_secondary(test_client):
     """Test /search_pokemon with invalid secondary_stat returns 400."""
     response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=fakestat")
@@ -259,18 +270,20 @@ def test_pokemon_stats_invalid_secondary(test_client):
 
 
 # Case 3: Not found 404
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_not_found(test_client):
     """Test /search_pokemon with stats that match no Pokemon returns 404."""
     # Use impossibly high thresholds
-    response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&min_primary=999&min_secondary=999")
+    response = test_client.get(
+        "/search_pokemon?primary_stat=attack&secondary_stat=speed&min_primary=999&min_secondary=999"
+    )
 
     assert response.status_code == 404
     assert "no pokemon found" in response.text.lower()
 
 
 # Case 4: Success 200
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_success(test_client):
     """Test /search_pokemon with valid stat filters returns 200 with stats_table and types_table."""
     response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed")
@@ -299,7 +312,7 @@ def test_pokemon_stats_success(test_client):
 
 
 # Case 5: Test exclude legendary
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_exclude_legendary(test_client):
     """Test /search_pokemon stats filter excludes legendaries by default."""
     response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed")
@@ -315,7 +328,7 @@ def test_pokemon_stats_exclude_legendary(test_client):
 
 
 # Case 6: Test include legendary
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_include_legendary(test_client):
     """Test /search_pokemon stats filter includes legendaries when requested."""
     response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&include_legendary=true")
@@ -326,7 +339,7 @@ def test_pokemon_stats_include_legendary(test_client):
 
 
 # Case 7: Test include mythical
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_include_mythical(test_client):
     """Test /search_pokemon stats filter includes mythicals when requested."""
     response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&include_mythical=true")
@@ -337,7 +350,7 @@ def test_pokemon_stats_include_mythical(test_client):
 
 
 # Case 8: Test include ultra beasts
-@pytest.mark.unit
+@pytest.mark.component
 def test_pokemon_stats_include_ultra_beasts(test_client):
     """Test /search_pokemon stats filter includes ultra beasts when requested."""
     response = test_client.get("/search_pokemon?primary_stat=attack&secondary_stat=speed&include_ultra_beasts=true")
@@ -345,3 +358,109 @@ def test_pokemon_stats_include_ultra_beasts(test_client):
     assert response.status_code == 200
     data = response.json()
     assert data.get("stats_table") is not None
+
+
+# ========
+# /team_coverage (coverage analyzer endpoint)
+# ========
+
+
+# Case 1: No slots - returns 400
+@pytest.mark.component
+def test_team_coverage_no_slots(test_client):
+    """Test /team_coverage with no slots returns 400."""
+    response = test_client.get("/team_coverage")
+
+    assert response.status_code == 400
+
+
+# Case 2: Single slot success - returns 200 with both tables
+@pytest.mark.component
+def test_team_coverage_single_slot(test_client):
+    """Test /team_coverage with single slot returns 200."""
+    response = test_client.get("/team_coverage?slot_1=fire")
+
+    assert response.status_code == 200
+    data = response.json()
+
+    assert data.get("team_strengths_table") is not None
+    assert data.get("team_weaknesses_table") is not None
+
+    strengths = data["team_strengths_table"]
+    assert len(strengths["rows"]) > 0
+
+    weaknesses = data["team_weaknesses_table"]
+    assert len(weaknesses["rows"]) > 0
+
+
+# Case 3: Dual type slot - returns 200 with correct effectiveness
+@pytest.mark.component
+def test_team_coverage_dual_type_slot(test_client):
+    """Test /team_coverage with dual type slot returns correct 4x data."""
+    response = test_client.get("/team_coverage?slot_1=fire-flying")
+
+    assert response.status_code == 200
+    data = response.json()
+
+    # Strengths: fire hits grass 2x, flying hits grass 2x — both should appear
+    strengths_rows = data["team_strengths_table"]["rows"]
+    grass_rows = [r for r in strengths_rows if r["enemy_type"] == "grass"]
+    assert len(grass_rows) >= 1
+
+    # Weaknesses: fire/flying is 4x weak to rock
+    weaknesses_rows = data["team_weaknesses_table"]["rows"]
+    rock_4x = [r for r in weaknesses_rows if r["enemy_type"] == "rock" and r["effectiveness"] == "4x"]
+    assert len(rock_4x) == 1
+
+
+# Case 4: Multiple slots - returns rows for all slots
+@pytest.mark.component
+def test_team_coverage_multiple_slots(test_client):
+    """Test /team_coverage with multiple slots returns rows for each type."""
+    response = test_client.get("/team_coverage?slot_1=fire&slot_2=water&slot_3=grass")
+
+    assert response.status_code == 200
+    data = response.json()
+
+    # Should have rows covering all 3 types
+    strengths_types = {r["friendly_type"] for r in data["team_strengths_table"]["rows"]}
+    assert "fire" in strengths_types
+    assert "water" in strengths_types
+    assert "grass" in strengths_types
+
+    weaknesses_types = {r["friendly_type"] for r in data["team_weaknesses_table"]["rows"]}
+    assert len(weaknesses_types) == 3
+
+
+# Case 5: Full team of 6 slots
+@pytest.mark.component
+def test_team_coverage_full_team(test_client):
+    """Test /team_coverage with all 6 slots returns 200."""
+    response = test_client.get(
+        "/team_coverage?slot_1=fire&slot_2=water&slot_3=grass&slot_4=electric&slot_5=psychic&slot_6=dark"
+    )
+
+    assert response.status_code == 200
+    data = response.json()
+
+    # Should have rows for all 6 types in both tables
+    strengths_types = {r["friendly_type"] for r in data["team_strengths_table"]["rows"]}
+    assert len(strengths_types) == 6
+
+    weaknesses_types = {r["friendly_type"] for r in data["team_weaknesses_table"]["rows"]}
+    assert len(weaknesses_types) == 6
+
+
+# Case 6: Row structure has expected fields
+@pytest.mark.component
+def test_team_coverage_row_structure(test_client):
+    """Test /team_coverage rows have correct field structure."""
+    response = test_client.get("/team_coverage?slot_1=fire")
+
+    assert response.status_code == 200
+    data = response.json()
+
+    row = data["team_strengths_table"]["rows"][0]
+    assert "effectiveness" in row
+    assert "enemy_type" in row
+    assert "friendly_type" in row

@@ -1,15 +1,16 @@
 from __future__ import annotations
 
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from advanced_alchemy.base import UUIDBase
-from uuid import UUID, uuid4
-
-from advanced_alchemy.types import GUID
-
 # Static checker please ignore
 from typing import TYPE_CHECKING
+from uuid import UUID, uuid4
+
+from advanced_alchemy.base import UUIDBase
+from advanced_alchemy.types import GUID
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
 if TYPE_CHECKING:
     from backend.data.models.pokemon import Pokemon
+
 
 class Type(UUIDBase):
     __tablename__ = "type"

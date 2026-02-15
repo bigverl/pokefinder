@@ -11,21 +11,20 @@ from backend.src.modules.candidate_finder.schemas import (
     StatsTable,
     StatsTableRow,
     TypesTable,
-    TypesTableRow
+    TypesTableRow,
 )
 
 # Logger
 logger = structlog.get_logger(__name__)
 
 
-class CandidateFinderService():
-
+class CandidateFinderService:
     def __init__(self, repository: SQLAlchemyRepository):
         self.repository = repository
         if not self.repository:
             logger.error("Repository not loaded properly")
             raise ValueError("Repository returned empty REPOSITORY object")
-                
+
     def search_pokemon(
         self,
         move: str | None = None,
@@ -37,7 +36,7 @@ class CandidateFinderService():
         min_speed: int | None = None,
         include_legendary: bool = False,
         include_mythical: bool = False,
-        include_ultra_beasts: bool = False
+        include_ultra_beasts: bool = False,
     ) -> frozenset[str]:
 
         # logger.debug(
@@ -59,7 +58,7 @@ class CandidateFinderService():
                 move,
                 include_legendary=include_legendary,
                 include_mythical=include_mythical,
-                include_ultra_beasts=include_ultra_beasts
+                include_ultra_beasts=include_ultra_beasts,
             )
             # Convert dict to set of names for intersection
             move_names = frozenset(move_results.keys())
@@ -67,12 +66,12 @@ class CandidateFinderService():
 
         # Apply desired_type filter
         if desired_type:
-            type_list = desired_type.split('-')
+            type_list = desired_type.split("-")
             type_results = self.repository.get_pokemon_by_type(
                 *type_list,
                 include_legendary=include_legendary,
                 include_mythical=include_mythical,
-                include_ultra_beasts=include_ultra_beasts
+                include_ultra_beasts=include_ultra_beasts,
             )
             results = type_results if results is None else results & type_results
 
@@ -87,8 +86,7 @@ class CandidateFinderService():
                 min_speed=min_speed,
                 include_legendary=include_legendary,
                 include_mythical=include_mythical,
-                include_ultra_beasts=include_ultra_beasts
-                
+                include_ultra_beasts=include_ultra_beasts,
             )
             stat_names = frozenset(stat_results.keys())
             results = stat_names if results is None else results & stat_names
@@ -97,9 +95,9 @@ class CandidateFinderService():
         if results is None:
             logger.warning("No filters provided to search_pokemon")
             raise ValueError("At least one filter parameter is required")
-        
+
         return results
-    
+
     def _build_types_table(self, pokemon_names: frozenset[str]) -> TypesTable:
         """Build types table for given Pokemon names."""
         types_rows = []
@@ -107,11 +105,9 @@ class CandidateFinderService():
             display_name = self.repository.get_pokemon_by_name(name)["display_name"]
             type_display = self.repository.get_pokemon_by_name(name)["type_display"]
             types = type_display.split("/")
-            types_rows.append(TypesTableRow(
-                name=display_name,
-                type1=types[0],
-                type2=types[1] if len(types) > 1 else None
-            ))
+            types_rows.append(
+                TypesTableRow(name=display_name, type1=types[0], type2=types[1] if len(types) > 1 else None)
+            )
         return TypesTable(rows=types_rows)
 
     def _build_moves_table(self, pokemon_names: frozenset[str], move: str | None = None) -> MovesTable:
@@ -124,13 +120,15 @@ class CandidateFinderService():
 
             # If no move provided, just show pokemon name with empty move info
             if not move:
-                moves_rows.append(MovesTableRow(
-                    pokemon_name=display_name,
-                    move_name="",
-                    level_learned="",
-                    machine="",
-                    egg_move="",
-                ))
+                moves_rows.append(
+                    MovesTableRow(
+                        pokemon_name=display_name,
+                        move_name="",
+                        level_learned="",
+                        machine="",
+                        egg_move="",
+                    )
+                )
                 continue
 
             # If move provided but pokemon doesn't learn it, skip
@@ -145,13 +143,15 @@ class CandidateFinderService():
             if level_learned == "x" and machine == "x" and egg_move == "x":
                 level_learned = "evolution"
 
-            moves_rows.append(MovesTableRow(
-                pokemon_name=display_name,
-                move_name=move,
-                level_learned=level_learned,
-                machine=machine,
-                egg_move=egg_move,
-            ))
+            moves_rows.append(
+                MovesTableRow(
+                    pokemon_name=display_name,
+                    move_name=move,
+                    level_learned=level_learned,
+                    machine=machine,
+                    egg_move=egg_move,
+                )
+            )
         return MovesTable(rows=moves_rows)
 
     def _build_stats_table(self, pokemon_names: frozenset[str]) -> StatsTable:
@@ -160,14 +160,16 @@ class CandidateFinderService():
         for name in sorted(pokemon_names):
             display_name = self.repository.get_pokemon_by_name(name)["display_name"]
             stats = stat_index[name]
-            stats_rows.append(StatsTableRow(
-                name=display_name,
-                attack=stats["attack"],
-                defense=stats["defense"],
-                special_attack=stats["special_attack"],
-                special_defense=stats["special_defense"],
-                speed=stats["speed"]
-            ))
+            stats_rows.append(
+                StatsTableRow(
+                    name=display_name,
+                    attack=stats["attack"],
+                    defense=stats["defense"],
+                    special_attack=stats["special_attack"],
+                    special_defense=stats["special_defense"],
+                    speed=stats["speed"],
+                )
+            )
         return StatsTable(rows=stats_rows)
 
     def build_response(self, pokemon_names: frozenset[str], move: str | None) -> CandidateFinderResponse:

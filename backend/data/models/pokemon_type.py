@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from sqlalchemy import ForeignKey, CheckConstraint, Table, Column, Integer, Index
 from advanced_alchemy.base import UUIDBase
 from advanced_alchemy.types import GUID
+from sqlalchemy import CheckConstraint, Column, ForeignKey, Index, Integer, Table
 
 # -- =================
 # -- # Junction Table (Many-to-Many)
@@ -25,5 +25,5 @@ pokemon_type = Table(
     Column("type_id", GUID, ForeignKey("type.id"), primary_key=True),
     Column("slot", Integer),
     CheckConstraint("slot IN (1, 2)", name="check_slot_valid"),
-    Index("idx_get_pokemon_by_type", "type_id")
-    )
+    Index("idx_get_pokemon_by_type", "type_id"),
+)

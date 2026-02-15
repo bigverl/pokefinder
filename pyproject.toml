@@ -31,6 +31,8 @@ dependencies = [
 dev = [
     "pytest>=9.0.0",
     "pytest-asyncio>=1.3.0",
+    "ruff>=0.9.0",
+    "pyright>=1.1.0",
 ]
 
 tui = [
@@ -42,12 +44,17 @@ tui = [
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 markers = [
-    "unit: Unit tests using SQLite in-memory",
-    "unit_postgres: Unit tests using PostgreSQL (slow, function-scoped)",
-    "integration: Integration tests using PostgreSQL test database",
-    "api: test http requests to backend",
+    "unit: Unit tests using mocked data",
+    "component: Service-level tests that use postgres testcontainers "
 ]
 
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
 
 [tool.alembic]
 

@@ -1,40 +1,45 @@
 from typing import TYPE_CHECKING
-from textual import on
+
 from textual.app import ComposeResult
-from textual.containers import (
-    HorizontalGroup,
-    VerticalGroup,
-    Vertical
-    )
-from textual.widgets import (
-    RadioButton,
-    Select,
-    Input,
-    Label,
-    Button
-    )
+from textual.containers import HorizontalGroup, Vertical, VerticalGroup
 from textual.suggester import SuggestFromList
+from textual.widgets import Button, Input, Label, RadioButton, Select
 
 if TYPE_CHECKING:
-    from frontend.app import Pokefinder
+    pass
 
 TYPE_SUGGESTIONS = [
-    "normal", "fire", "water", "electric", "grass", "ice",
-    "fighting", "poison", "ground", "flying", "psychic", "bug",
-    "rock", "ghost", "dragon", "dark", "steel", "fairy"
+    "normal",
+    "fire",
+    "water",
+    "electric",
+    "grass",
+    "ice",
+    "fighting",
+    "poison",
+    "ground",
+    "flying",
+    "psychic",
+    "bug",
+    "rock",
+    "ghost",
+    "dragon",
+    "dark",
+    "steel",
+    "fairy",
 ]
 
 STAT_SELECTIONS = [
-    ("attack","attack"),
-    ("defense","defense"),
-    ("special attack","special_attack"),
-    ("special defense","special_defense"),
-    ("speed","speed")
-    ]
+    ("attack", "attack"),
+    ("defense", "defense"),
+    ("special attack", "special_attack"),
+    ("special defense", "special_defense"),
+    ("speed", "speed"),
+]
+
 
 # Left tab pane
 class CandidateFinderSearch(Vertical):
-
     def _parse_int(self, value: str) -> int | None:
         if not value:
             return None
@@ -43,12 +48,12 @@ class CandidateFinderSearch(Vertical):
         try:
             result = int(value)
         except ValueError:
-            raise ValueError("Stat field must be a number between 1 and 255") 
+            raise ValueError("Stat field must be a number between 1 and 255")
         if result < 1 or result > 255:
             raise ValueError("Stat field must be a number between 1 and 255")
-        
+
         return result
-    
+
     def _collect_search_params(self):
         move_enabled = self.query_one("#move_radio_button", RadioButton).value
         stats_enabled = self.query_one("#stats_radio_button", RadioButton).value
@@ -69,9 +74,13 @@ class CandidateFinderSearch(Vertical):
             "move": move if move_enabled else None,
             "desired_type": desired_type if desired_type_enabled else None,
             "primary_stat": self.query_one("#primary_stat_select", Select).value if stats_enabled else None,
-            "secondary_stat":  self.query_one("#secondary_stat_select", Select).value if stats_enabled else None,
-            "min_primary": self._parse_int(self.query_one("#primary_stat_input", Input).value) if stats_enabled else None,
-            "min_secondary": self._parse_int(self.query_one("#secondary_stat_input", Input).value) if stats_enabled else None,
+            "secondary_stat": self.query_one("#secondary_stat_select", Select).value if stats_enabled else None,
+            "min_primary": self._parse_int(self.query_one("#primary_stat_input", Input).value)
+            if stats_enabled
+            else None,
+            "min_secondary": self._parse_int(self.query_one("#secondary_stat_input", Input).value)
+            if stats_enabled
+            else None,
             "min_speed": self._parse_int(self.query_one("#speed_input", Input).value) if stats_enabled else None,
             "include_mythical": self.query_one("#mythical_radio_button", RadioButton).value,
             "include_legendary": self.query_one("#legendary_radio_button", RadioButton).value,
@@ -102,10 +111,7 @@ class CandidateFinderSearch(Vertical):
                 # statname: <select>
                 with HorizontalGroup():
                     yield Label(content="stat name")
-                    yield Select(
-                        prompt="select stat",
-                        options=(STAT_SELECTIONS),
-                        id="primary_stat_select")
+                    yield Select(prompt="select stat", options=(STAT_SELECTIONS), id="primary_stat_select")
                 # minimum: <input>
                 with HorizontalGroup():
                     yield Label(content="minimum value")
@@ -114,10 +120,7 @@ class CandidateFinderSearch(Vertical):
             with VerticalGroup(id="secondary_stat_box", classes="box"):
                 with HorizontalGroup():
                     yield Label(content="stat name")
-                    yield Select(
-                        prompt="select stat",
-                        options=(STAT_SELECTIONS),
-                        id="secondary_stat_select")
+                    yield Select(prompt="select stat", options=(STAT_SELECTIONS), id="secondary_stat_select")
                 # minimum: <input>
                 with HorizontalGroup():
                     yield Label(content="minimum value")
@@ -130,23 +133,21 @@ class CandidateFinderSearch(Vertical):
 
         # Desired Type Box
         with VerticalGroup(id="desired_type_box", classes="box"):
-            yield RadioButton("enabled",id="desired_type_radio_button")
+            yield RadioButton("enabled", id="desired_type_radio_button")
             with HorizontalGroup(classes="aligned_inputs"):
                 yield Label(content="type 1")
                 yield Input(
                     id="type1_input",
                     classes="type_input",
-                    suggester=SuggestFromList(
-                    TYPE_SUGGESTIONS, case_sensitive=False)
-                    )
+                    suggester=SuggestFromList(TYPE_SUGGESTIONS, case_sensitive=False),
+                )
             with HorizontalGroup(classes="aligned_inputs"):
                 yield Label(content="type 2")
                 yield Input(
                     id="type2_input",
                     classes="type_input",
-                    suggester=SuggestFromList(
-                    TYPE_SUGGESTIONS, case_sensitive=False)
-                    )
+                    suggester=SuggestFromList(TYPE_SUGGESTIONS, case_sensitive=False),
+                )
 
         yield Button(label="Catch 'em all!", classes="go_button")
 

@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from sqlalchemy.orm import Mapped, mapped_column
+from typing import Optional
+from uuid import UUID, uuid4
+
 from advanced_alchemy.base import UUIDBase
 from advanced_alchemy.types import GUID
-from uuid import UUID, uuid4
-from typing import Optional
+from sqlalchemy.orm import Mapped, mapped_column
 
 
 class TM(UUIDBase):
@@ -12,6 +13,7 @@ class TM(UUIDBase):
     id: Mapped[UUID] = mapped_column(GUID, primary_key=True, default=uuid4)
     name: Mapped[str] = mapped_column(unique=True)
     machine_id: Mapped[Optional[str]] = mapped_column(unique=True)
+
 
 # -- TM
 # CREATE TABLE TM (

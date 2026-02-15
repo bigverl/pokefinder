@@ -1,18 +1,16 @@
+import logging
 from typing import TYPE_CHECKING
+
 from textual import on
 from textual.app import ComposeResult
 from textual.containers import Vertical
-from textual.widgets import (
-    DataTable,
-    TabPane,
-    TabbedContent
-    )
+from textual.widgets import DataTable, TabbedContent, TabPane
 from textual.widgets.data_table import ColumnKey
+
 from frontend.modules.candidate_finder.schemas import CandidateFinderResponse
-import logging
 
 if TYPE_CHECKING:
-    from frontend.app import Pokefinder
+    pass
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +23,7 @@ MOVES_COLUMNS = ["pokemon", "move", "level learned", "machine", "egg move"]
 STATS_COLUMNS = ["name", "attack", "defense", "special attack", "special defense", "speed"]
 
 TYPES_COLUMNS = ["name", "type 1", "type 2"]
+
 
 class CandidateFinderResults(Vertical):
     """
@@ -71,46 +70,30 @@ class CandidateFinderResults(Vertical):
         results_moves_table = self.query_one("#candidate_moves", DataTable)
         results_moves_table.clear()
         if data.moves_table:
-            results_moves_table.add_rows([
-                (
-                    row.pokemon_name, 
-                    row.move_name, 
-                    row.level_learned, 
-                    row.machine or "", 
-                    row.egg_move or ""
-                )
-                for row in data.moves_table.rows
-            ])
+            results_moves_table.add_rows(
+                [
+                    (row.pokemon_name, row.move_name, row.level_learned, row.machine or "", row.egg_move or "")
+                    for row in data.moves_table.rows
+                ]
+            )
 
         # Stats table
         results_stats_table = self.query_one("#candidate_stats", DataTable)
         results_stats_table.clear()
         if data.stats_table:
-            results_stats_table.add_rows([
-                (
-                    row.name,
-                    row.attack,
-                    row.defense,
-                    row.special_attack,
-                    row.special_defense,
-                    row.speed)
+            results_stats_table.add_rows(
+                [
+                    (row.name, row.attack, row.defense, row.special_attack, row.special_defense, row.speed)
                     for row in data.stats_table.rows
-                
-                ])
+                ]
+            )
 
         # Types table
         results_types_table = self.query_one("#candidate_types", DataTable)
         results_types_table.clear()
         if data.types_table:
-            results_types_table.add_rows([
-                (
-                    row.name,
-                    row.type1,
-                    row.type2 or ""
-                    )
-                    for row in data.types_table.rows
-                ])
-    
+            results_types_table.add_rows([(row.name, row.type1, row.type2 or "") for row in data.types_table.rows])
+
     def compose(self) -> ComposeResult:
         # Checkboxes
         with TabbedContent():
