@@ -1,8 +1,8 @@
 """Initial schema
 
-Revision ID: c71da52a04f5
+Revision ID: 8a9ec8a657b7
 Revises:
-Create Date: 2026-01-28 19:34:14.772379
+Create Date: 2026-02-17 18:38:36.404271
 
 """
 
@@ -13,7 +13,7 @@ from advanced_alchemy.types import GUID
 from alembic import op
 
 # revision identifiers, used by Alembic.
-revision: str = "c71da52a04f5"
+revision: str = "8a9ec8a657b7"
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
