@@ -1,9 +1,16 @@
-# Import your models and config
 from advanced_alchemy.base import UUIDBase
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-# Import all models so Alembic can detect them
+# Import all models so Alembic can detect them via UUIDBase.metadata
+from backend.data.models.pokemon import Pokemon  # noqa: F401
+from backend.data.models.pokemon_move import pokemon_move  # noqa: F401
+from backend.data.models.pokemon_stats import PokemonStats  # noqa: F401
+from backend.data.models.pokemon_type import pokemon_type  # noqa: F401
+from backend.data.models.stat_spread import StatSpread  # noqa: F401
+from backend.data.models.tm import TM  # noqa: F401
+from backend.data.models.type import Type  # noqa: F401
+from backend.data.models.type_matchup import type_matchup  # noqa: F401
 from backend.src.config.settings import settings
 
 # this is the Alembic Config object, which provides

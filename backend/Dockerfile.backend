@@ -1,0 +1,37 @@
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+
+WORKDIR /app
+
+# Create user
+RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
+
+# Switch user
+USER appuser
+
+# Copy + install as appuser
+COPY --chown=appuser:appuser pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev
+
+# Copy application
+COPY --chown=appuser:appuser backend ./backend
+COPY --chown=appuser:appuser scripts ./scripts
+
+# Set PYTHONPATH
+ENV PYTHONPATH=/app
+
+# Expose port
+EXPOSE 8000
+
+# Run with textual serve (using sh -c to allow env var expansion while keeping exec form)
+CMD ["uv", "run", "litestar", "--app=backend.src.app:app", "run", "--host", "0.0.0.0"]
+
+# build
+# docker build -f ./dockerfiles/Dockerfile.backend -t backend-pokefinder ../pokefinder/
+# docker tag backend-pokefinder12345.dkr.ecr.us-east-1.amazonaws.com/pokefinder:backend-v0.1.2
+# docker push 12345.dkr.ecr.us-east-1.amazonaws.com/pokefinder:backend-v0.1.2
+
+# Run it if postgres-dev is up and seeded
+# docker run -p 8000:8000 -e DATABASE_URL=postgresql+asyncpg://postgres:password@host.docker.internal:5432/postgres-dev backend-pokefinder
+
+# ecs rds task definition command
+# CMD ["sh", "-c", "alembic upgrade head && python3 ./scripts/seed_db.py "] 

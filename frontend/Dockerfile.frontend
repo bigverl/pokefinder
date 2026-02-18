@@ -1,0 +1,48 @@
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+
+WORKDIR /app
+
+# Create user
+RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
+
+# Switch user
+USER appuser
+
+# Copy + install as appuser
+COPY --chown=appuser:appuser pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev --group tui
+COPY --chown=appuser:appuser frontend ./frontend
+
+# Set PYTHONPATH
+ENV PYTHONPATH=/app
+
+# Default public URL (can be overridden with -e PUBLIC_URL=...)
+ENV PUBLIC_URL=http://localhost:8080
+
+# Switch to non-root user
+USER appuser
+
+# Expose port
+EXPOSE 8080
+
+# Health check - verifies the web server is responding
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8080/ || exit 1
+
+# Run with textual serve (using sh -c to allow env var expansion while keeping exec form)
+CMD ["sh", "-c", "uv run --group tui textual serve --host 0.0.0.0 --port 8080 --url ${PUBLIC_URL} frontend/app.py"]
+
+# 
+#######
+# Build
+# docker build -f ./dockerfiles/Dockerfile.frontend -t frontend-pokefinder ../pokefinder/
+# aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 535833531373.dkr.ecr.us-east-1.amazonaws.com
+# docker push 123456.dkr.ecr.us-east-1.amazonaws.com/pokefinder:frontend-v0.1.2
+
+# Run with flags
+# docker run -p 8080:8080 -e FEATURE_POKEDEX=false -e FEATURE_COVERAGE_ANALYZER=false frontend-pokefinder
+# http://localhost:8080
+# ?-e PUBLIC_URL=http://localhost:8080 ?
+
+# Run in interactive shell
+# docker run -it frontend-pokefinder uv run --group tui python frontend/app.py

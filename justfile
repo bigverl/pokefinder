@@ -1,27 +1,71 @@
 install:
-    uv sync --all-groups
+    @echo "=> Installing dependencies..."
+    @uv sync --all-groups 2>&1 | tail -n 0
+    @echo "   Done"
+    @echo ""
+    @just init-db
+    @echo ""
+    @echo "=> Seeding database..."
+    @just seed-db
+    @echo ""
+    @echo "=> Stopping database..."
+    @-docker stop pokefinder-db > /dev/null 2>&1
+    @echo "   Done"
+    @echo ""
+    @echo "Install complete. Run 'just start' to launch."
+
+install-debug:
+    @echo "=> Installing dependencies..."
+    @VERBOSE=1 uv sync --all-groups
+    @echo "   Done"
+    @echo ""
+    @VERBOSE=1 just init-db
+    @echo ""
+    @echo "=> Seeding database..."
+    @VERBOSE=1 just seed-db
+    @echo ""
+    @echo "=> Stopping database..."
+    @-docker stop pokefinder-db 2>&1
+    @echo "   Done"
+    @echo ""
+    @echo "Install complete. Run 'just start' to launch."
 
 init-db:
-    scripts/reset_db.sh
+    @VERBOSE=${VERBOSE:-0} scripts/reset_db.sh
 
 seed-db:
-    python3 scripts/seed_db.py
+    @VERBOSE=${VERBOSE:-0} python3 scripts/seed_db.py
 
-go:
-    just install
-    just init-db
-    just seed-db
-
-run:
-    @echo "Starting PostgreSQL..."
-    @docker start postgres-dev 2>/dev/null || docker run --name postgres-dev -e POSTGRES_PASSWORD=password -e POSTGRES_DB=postgres-dev -p 5432:5432 -d postgres:16
-    @echo "Waiting for database..."
+start:
+    @echo "=> Starting database. This will take a few seconds...  "
+    @docker start pokefinder-db > /dev/null 2>&1 || docker run --name pokefinder-db -e POSTGRES_PASSWORD=password -e POSTGRES_DB=pokefinder-db -p 5432:5432 -d postgres:16 > /dev/null 2>&1
     @sleep 3
-    @echo "Starting app..."
-    uv run litestar --app backend.src.app:app run --reload
+    @echo "done"
+    @echo "=> Starting backend...     "
+    @uv run litestar --app backend.src.app:app run --reload > /dev/null 2>&1 &
+    @sleep 2
+    @echo "done"
+    @echo "=> Starting frontend...    "
+    @uv run textual serve --dev frontend/app.py --port 8080 > /dev/null 2>&1 &
+    @echo "done"
+    @echo ""
+    @echo "Open http://localhost:8080 in your browser"
+
+stop:
+    @echo "=> Stopping frontend...   done"
+    @-lsof -ti:8080 | xargs kill 2>/dev/null
+    @echo "=> Stopping backend...    done"
+    @-lsof -ti:8000 | xargs kill 2>/dev/null
+    @echo "=> Stopping database... done"
+    @-docker stop pokefinder-db > /dev/null 2>&1
+    @echo ""
+    @echo "Stopped all services"
 
 up:
     docker-compose up -d --build
+    @echo ""
+    @echo "Open http://localhost:8080 in your browser"
+    @echo ""
 
 down:
     docker-compose down

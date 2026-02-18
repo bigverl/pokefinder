@@ -159,7 +159,7 @@ class CandidateFinderSearch(Vertical):
             self.query_one("#move_box").border_title = "move"
             self.query_one("#stats_box").border_title = "stats"
             self.query_one("#primary_stat_box").border_title = "primary stat"
-            self.query_one("#secondary_stat_box").border_title = "secondary stat (optional)"
+            self.query_one("#secondary_stat_box").border_title = "secondary stat"
             self.query_one("#min_speed_box").border_title = "desired speed (optional)"
             self.query_one("#desired_type_box").border_title = "desired type"
         except Exception as e:
