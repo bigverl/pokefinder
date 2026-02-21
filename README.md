@@ -21,11 +21,12 @@ A Pokedex-style team building tool for PokeRogue.
 ### Quickstart
 
 ```bash
+# Make sure docker engine is started
 just install
 just start
 ```
 
-`just install` sets up dependencies, runs database migrations, and seeds the database.
+`just install` sets up dependencies, runs database migrations, and seeds the database. Requires docker engine to be active
 `just start` starts the backend and frontend. Open http://localhost:8080 when it's ready.
 
 To stop:
@@ -65,3 +66,5 @@ just install-debug
 
 ### Architecture
 - [ ] Remove database entirely and replace with json fixture
+- [ ] Refactor frontend to use React
+- [ ] Host on GitHub Pages
