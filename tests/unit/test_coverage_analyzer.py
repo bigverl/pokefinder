@@ -1,6 +1,6 @@
 import pytest
 
-from backend.src.lib.repository import SQLAlchemyRepository
+from backend.src.lib.repository import JSONRepository
 from backend.src.modules.coverage_analyzer.services import CoverageAnalyzerService
 
 # ===========================
@@ -10,14 +10,14 @@ from backend.src.modules.coverage_analyzer.services import CoverageAnalyzerServi
 
 # Case 1: Index is populated at startup
 @pytest.mark.unit
-def test_my_team_strengths_index_populated(fake_repo: SQLAlchemyRepository):
+def test_my_team_strengths_index_populated(fake_repo: JSONRepository):
     index = fake_repo.get_my_team_strengths_type_index()
     assert len(index) > 0
 
 
 # Case 2: Single-type offensive lookup - fire hits grass/ice/bug/steel for 2x
 @pytest.mark.unit
-def test_my_team_strengths_fire_offensive(fake_repo: SQLAlchemyRepository):
+def test_my_team_strengths_fire_offensive(fake_repo: JSONRepository):
     index = fake_repo.get_my_team_strengths_type_index()
     fire_strengths = index["fire"]
 
@@ -36,7 +36,7 @@ def test_my_team_strengths_fire_offensive(fake_repo: SQLAlchemyRepository):
 
 # Case 3: Single-type offensive lookup - normal does 0x to ghost
 @pytest.mark.unit
-def test_my_team_strengths_normal_vs_ghost(fake_repo: SQLAlchemyRepository):
+def test_my_team_strengths_normal_vs_ghost(fake_repo: JSONRepository):
     index = fake_repo.get_my_team_strengths_type_index()
     normal_strengths = index["normal"]
 
@@ -45,7 +45,7 @@ def test_my_team_strengths_normal_vs_ghost(fake_repo: SQLAlchemyRepository):
 
 # Case 4: Dual-type offensive lookup - fire/flying hits grass for 4x
 @pytest.mark.unit
-def test_my_team_strengths_fire_flying_offensive(fake_repo: SQLAlchemyRepository):
+def test_my_team_strengths_fire_flying_offensive(fake_repo: JSONRepository):
     index = fake_repo.get_my_team_strengths_type_index()
 
     # Find the fire/flying key (could be either ordering)
@@ -67,7 +67,7 @@ def test_my_team_strengths_fire_flying_offensive(fake_repo: SQLAlchemyRepository
 
 # Case 5: Index contains both single and dual types
 @pytest.mark.unit
-def test_my_team_strengths_index_has_single_and_dual(fake_repo: SQLAlchemyRepository):
+def test_my_team_strengths_index_has_single_and_dual(fake_repo: JSONRepository):
     index = fake_repo.get_my_team_strengths_type_index()
 
     single_types = [k for k in index if "/" not in k]
@@ -79,7 +79,7 @@ def test_my_team_strengths_index_has_single_and_dual(fake_repo: SQLAlchemyReposi
 
 # Case 6: Effectiveness categories are frozensets
 @pytest.mark.unit
-def test_my_team_strengths_values_are_frozensets(fake_repo: SQLAlchemyRepository):
+def test_my_team_strengths_values_are_frozensets(fake_repo: JSONRepository):
     index = fake_repo.get_my_team_strengths_type_index()
     fire_strengths = index["fire"]
 
@@ -89,7 +89,7 @@ def test_my_team_strengths_values_are_frozensets(fake_repo: SQLAlchemyRepository
 
 # Case 7: Ghost does 0x to normal (the reverse of case 3)
 @pytest.mark.unit
-def test_my_team_strengths_ghost_vs_normal(fake_repo: SQLAlchemyRepository):
+def test_my_team_strengths_ghost_vs_normal(fake_repo: JSONRepository):
     index = fake_repo.get_my_team_strengths_type_index()
     ghost_strengths = index["ghost"]
 

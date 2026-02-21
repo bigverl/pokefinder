@@ -1,5 +1,5 @@
 # tests/component/test_api.py
-# Component tests: HTTP -> controller -> service -> repo -> DB
+# Component tests: HTTP -> controller -> service -> repo
 import pytest
 import structlog
 
@@ -158,7 +158,7 @@ def test_pokemon_type_too_many(test_client):
 def test_pokemon_type_success_single(test_client):
     """Test /search_pokemon with single valid desired_type returns 200 with types_table."""
     response = test_client.get("/search_pokemon?desired_type=fire")
-    logger.info("Response status: {response.status_code}")
+    logger.info(f"Response status: {response.status_code}")
     logger.info(f"Response body: {response.text}")
     data = response.json()
 

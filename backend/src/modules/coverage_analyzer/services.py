@@ -1,6 +1,6 @@
 import structlog
 
-from backend.src.lib.repository import SQLAlchemyRepository
+from backend.src.lib.repository import JSONRepository
 
 # Schemas
 from backend.src.modules.coverage_analyzer.schemas import (
@@ -14,7 +14,7 @@ logger = structlog.get_logger(__name__)
 
 
 class CoverageAnalyzerService:
-    def __init__(self, repository: SQLAlchemyRepository):
+    def __init__(self, repository: JSONRepository):
         self.repository = repository
         if not self.repository:
             logger.error("Repository not loaded properly")
