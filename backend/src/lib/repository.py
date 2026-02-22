@@ -2,11 +2,11 @@ import json
 from typing import Any
 
 import structlog
-from sqlalchemy import text
-from sqlalchemy.exc import DatabaseError
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.src.config.settings import settings
+
+# DTOs
+from backend.src.lib.dtos import Pokemon, PokemonMove, PokemonStats, PokemonType, StatSpread, Tm, TypeMatchup
 
 # Exceptions
 from backend.src.lib.exceptions import (
@@ -24,17 +24,11 @@ STAT_WEIGHT_SECONDARY = 0.3
 logger = structlog.get_logger(__name__)
 
 
-class SQLAlchemyRepository:
-    def __init__(self, session: AsyncSession):
-        self.session = session
+class JSONRepository:
+    def __init__(self):
+        self._load_all_indexes()
 
-    @classmethod
-    async def create(cls, session: AsyncSession):
-        self = cls(session)
-        await self._load_all_indexes()
-        return self
-
-    async def _load_all_indexes(self):
+    def _load_all_indexes(self):
         """Load all indexes from database on initialization."""
         # Load canonical type pairs
         with open(settings.type_pairs_fixture_path) as f:
@@ -42,16 +36,16 @@ class SQLAlchemyRepository:
             self.type_pairs = frozenset(type_pairs_data["type_pairs"])
 
         try:
-            self._pokemon_index = await self._query_pokemon_index()
-            self._move_index = await self._query_move_index()
-            self._stat_index = await self._query_stat_index()
-            self._stat_spread_index = await self._query_stat_spread_index()
-            self._type_index = await self._query_type_index()
-            self._opponent_weakness_type_index = await self._query_opponent_weakness_type_index()
-            self._my_team_strengths_type_index = await self._query_my_team_strengths_type_index()
-            self._machine_moves_index = await self._query_machine_moves_index()
-        except DatabaseError as e:
-            logger.error("Database query failed", error=str(e))
+            self._pokemon_index = self._load_pokemon_index()
+            self._move_index = self._load_move_index()
+            self._stat_index = self._load_stat_index()
+            self._stat_spread_index = self._load_stat_spread_index()
+            self._type_index = self._load_type_index()
+            self._opponent_weakness_type_index = self._load_opponent_weakness_type_index()
+            self._my_team_strengths_type_index = self._load_my_team_strengths_type_index()
+            self._machine_moves_index = self._load_machine_moves_index()
+        except (OSError, ValueError) as e:
+            logger.error("Failed to load indexes from fixtures", error=str(e))
             raise
 
         logger.info(
@@ -66,86 +60,51 @@ class SQLAlchemyRepository:
             machine_moves_count=len(self._machine_moves_index),
         )
 
-    async def _query_pokemon_index(self) -> dict[str, dict[str, Any]]:
-        result = await self.session.execute(
-            text("""
-            SELECT * from pokemon
-        """)
-        )
-        rows = result.all()
+    # Pokemon
+    def _load_pokemon_index(self) -> dict[str, dict]:
 
-        pokemon_index = {}
+        with open(settings.pokemon_fixture_path) as file:
+            data = json.load(file)
 
-        for row in rows:
-            pokemon_index[row.name] = {
-                "display_name": row.display_name,
-                "number": row.number,
-                "height": row.height,
-                "weight": row.weight,
-                "sprite_url": row.sprite_url,
-                "description": row.description,
-                "genus": row.genus,
-                "type_display": row.type_display,
-                "is_legendary": row.is_legendary,  # Fixed typo
-                "is_mythical": row.is_mythical,
-                "is_ultra_beast": row.is_ultra_beast,
-            }
+        rows = [Pokemon(**entry) for entry in data]
+        pokemon_index = {row.name: row.model_dump() for row in rows}
+
         logger.info("Pokemon info index created successfully", pokemon_count=len(pokemon_index))
         return pokemon_index
 
-    async def _query_move_index(self) -> dict[str, dict[str, dict[str, Any]]]:
-        """Query move index: {move_name: {pokemon_name: {learn_method: level/True}}}"""
+    # Moves
+    def _load_move_index(self) -> dict[str, dict[str, dict[str, Any]]]:
 
-        result = await self.session.execute(
-            text("""
-            SELECT pm.move_name, p.name as pokemon_name, pm.learn_method, pm.level
-            FROM pokemon_move pm
-            JOIN pokemon p ON pm.pokemon_id = p.id
-            ORDER BY pm.move_name, p.name
-        """)
-        )
-        rows = result.all()
+        with open(settings.pokemon_move_fixture_path) as file:
+            data = json.load(file)
+
+        rows = [PokemonMove(**listing) for listing in data]
 
         move_index = {}
+
         for row in rows:
-            move_name = row.move_name
-            pokemon_name = row.pokemon_name
-            method = row.learn_method
-            level = row.level
-
-            # Initialize move entry
-            if move_name not in move_index:
-                move_index[move_name] = {}
-
-            # Initialize pokemon entry for this move
-            if pokemon_name not in move_index[move_name]:
-                move_index[move_name][pokemon_name] = {}
-
-            # Add learn method
-            if method == "level-up":
-                move_index[move_name][pokemon_name][method] = level
+            if row.move_name not in move_index:
+                move_index[row.move_name] = {}
+            if row.pokemon_name not in move_index[row.move_name]:
+                move_index[row.move_name][row.pokemon_name] = {}
+            if row.learn_method == "level-up":
+                move_index[row.move_name][row.pokemon_name][row.learn_method] = row.level
             else:
-                # machine, tutor, egg stored as boolean
-                move_index[move_name][pokemon_name][method] = True
+                move_index[row.move_name][row.pokemon_name][row.learn_method] = True
 
         logger.info("Move index created successfully", move_count=len(move_index))
         return move_index
 
-    async def _query_stat_index(self) -> dict[str, dict[str, int]]:
-        """Query base stats: {pokemon_name: {stat_name: value}}"""
-        result = await self.session.execute(
-            text("""
-            SELECT p.name, s.hp, s.attack, s.defense,
-                   s.special_attack, s.special_defense, s.speed
-            FROM pokemon_stats s
-            JOIN pokemon p ON s.pokemon_id = p.id
-        """)
-        )
-        rows = result.all()
+    def _load_stat_index(self) -> dict[str, dict[str, int]]:
+
+        with open(settings.pokemon_stats_fixture_path) as file:
+            data = json.load(file)
+
+        rows = [PokemonStats(**listing) for listing in data]
 
         stat_index = {}
         for row in rows:
-            stat_index[row.name] = {
+            stat_index[row.pokemon_name] = {
                 "hp": row.hp,
                 "attack": row.attack,
                 "defense": row.defense,
@@ -157,16 +116,12 @@ class SQLAlchemyRepository:
         logger.info("Stat index created successfully", stat_count=len(stat_index))
         return stat_index
 
-    async def _query_stat_spread_index(self) -> dict[str, Any]:
-        """Query stat distribution: {STAT_MEDIANS: {...}, QUINTILES: {...}}"""
-        result = await self.session.execute(
-            text("""
-            SELECT stat_name, percentile_20, percentile_40, percentile_60,
-                   percentile_80, percentile_100, median
-            FROM stat_spread
-        """)
-        )
-        rows = result.all()
+    def _load_stat_spread_index(self) -> dict[str, Any]:
+
+        with open(settings.stat_spreads_fixture_path) as file:
+            data = json.load(file)
+
+        rows = [StatSpread(**listing) for listing in data]
 
         medians = {}
         quintiles = {}
@@ -188,46 +143,24 @@ class SQLAlchemyRepository:
         logger.info("Stat spread index created successfully")  # No need for count here.
         return {"STAT_MEDIANS": medians, "QUINTILES": quintiles}
 
-    async def _query_type_index(self) -> dict[str, frozenset[str]]:
-        """Query type index: {type_name: frozenset(pokemon_names)}
+    def _load_type_index(self) -> dict[str, frozenset[str]]:
+        """Load type index: {type_name: frozenset(pokemon_names)}
 
         Dual-type Pokemon are stored under BOTH of their individual types.
         For example, Charizard (fire/flying) appears in both type_index["fire"]
         and type_index["flying"] for easy searching.
         """
-        # Query all Pokemon with their types
-        result = await self.session.execute(
-            text("""
-            SELECT
-                p.name as pokemon_name,
-                t1.name as type1,
-                t2.name as type2
-            FROM pokemon p
-            LEFT JOIN pokemon_type pt1 ON p.id = pt1.pokemon_id AND pt1.slot = 1
-            LEFT JOIN pokemon_type pt2 ON p.id = pt2.pokemon_id AND pt2.slot = 2
-            LEFT JOIN type t1 ON pt1.type_id = t1.id
-            LEFT JOIN type t2 ON pt2.type_id = t2.id
-        """)
-        )
-        rows = result.all()
+        with open(settings.pokemon_type_fixture_path) as file:
+            data = json.load(file)
+
+        rows = [PokemonType(**listing) for listing in data]
 
         type_index = {}
 
         for row in rows:
-            pokemon_name = row.pokemon_name
-            type1 = row.type1
-            type2 = row.type2
-
-            # Add to type1 index
-            if type1 not in type_index:
-                type_index[type1] = []
-            type_index[type1].append(pokemon_name)
-
-            # If dual-type, also add to type2 index
-            if type2 is not None:
-                if type2 not in type_index:
-                    type_index[type2] = []
-                type_index[type2].append(pokemon_name)
+            if row.type_name not in type_index:
+                type_index[row.type_name] = []
+            type_index[row.type_name].append(row.pokemon_name)
 
         # Convert lists to frozensets
         filtered = {type_name: frozenset(pokemon_list) for type_name, pokemon_list in type_index.items()}
@@ -235,22 +168,15 @@ class SQLAlchemyRepository:
         logger.info("Type index created successfully", type_count=len(filtered))
         return filtered
 
-    async def _query_opponent_weakness_type_index(self) -> dict[str, dict[str, frozenset[str]]]:
+    def _load_opponent_weakness_type_index(self) -> dict[str, dict[str, frozenset[str]]]:
         """Opponent weakness index: What attacks this defending type effectively.
 
         Returns: {defending_type: {"4x": frozenset(attacking_types), ...}}
         """
-        result = await self.session.execute(
-            text("""
-            SELECT defender.name as defender_type,
-                   attacker.name as attacker_type,
-                   tm.multiplier
-            FROM type_matchup tm
-            JOIN type defender ON tm.defender_type_id = defender.id
-            JOIN type attacker ON tm.attacker_type_id = attacker.id
-        """)
-        )
-        rows = result.all()
+        with open(settings.type_matchups_fixture_path) as file:
+            data = json.load(file)
+
+        rows = [TypeMatchup(**listing) for listing in data]
 
         # Build base matchup lookup
         base_matchups = {}
@@ -285,22 +211,15 @@ class SQLAlchemyRepository:
         )
         return opponent_weakness_index
 
-    async def _query_my_team_strengths_type_index(self) -> dict[str, dict[str, frozenset[str]]]:
+    def _load_my_team_strengths_type_index(self) -> dict[str, dict[str, frozenset[str]]]:
         """My team strengths index: What defending types this attacking type is effective against.
 
         Returns: {attacking_type: {"4x": frozenset(defending_types), ...}}
         """
-        result = await self.session.execute(
-            text("""
-            SELECT defender.name as defender_type,
-                   attacker.name as attacker_type,
-                   tm.multiplier
-            FROM type_matchup tm
-            JOIN type defender ON tm.defender_type_id = defender.id
-            JOIN type attacker ON tm.attacker_type_id = attacker.id
-        """)
-        )
-        rows = result.all()
+        with open(settings.type_matchups_fixture_path) as file:
+            data = json.load(file)
+
+        rows = [TypeMatchup(**listing) for listing in data]
 
         base_matchups = {}
         all_types = set()
@@ -333,6 +252,21 @@ class SQLAlchemyRepository:
             dual_types=sum(1 for k in my_team_strengths_index if "/" in k),
         )
         return my_team_strengths_index
+
+    def _load_machine_moves_index(self) -> dict:
+        """Load machine moves index: {move_name: machine_id}"""
+        with open(settings.tm_fixture_path) as file:
+            data = json.load(file)
+
+        rows = [Tm(**listing) for listing in data]
+
+        machine_moves_index = {}
+        for row in rows:
+            if row.machine_id is not None:
+                machine_moves_index[row.name] = row.machine_id
+
+        logger.info("Machine moves index created successfully", machine_moves_count=len(machine_moves_index))
+        return machine_moves_index
 
     def _calculate_my_teams_effectiveness(
         self, base_matchups: dict, all_types: set, defending_types: list
@@ -411,22 +345,6 @@ class SQLAlchemyRepository:
                 eff["0x"].append(type_pair)
 
         return {k: frozenset(v) for k, v in eff.items()}
-
-    async def _query_machine_moves_index(self) -> dict:
-        """Query machine moves index: {move_name: machine_id}"""
-        result = await self.session.execute(
-            text("""
-            SELECT name, machine_id FROM tm WHERE machine_id IS NOT NULL;
-        """)
-        )
-        rows = result.all()
-
-        machine_moves_index = {}
-        for row in rows:
-            machine_moves_index[row.name] = row.machine_id
-
-        logger.info("Machine moves index created successfully", machine_moves_count=len(machine_moves_index))
-        return machine_moves_index
 
     # Public interface - return cached indexes
     def get_pokemon_index(self) -> dict[str, dict[str, Any]]:

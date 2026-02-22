@@ -12,9 +12,6 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # DB URLS
-    database_url: str = "postgresql+asyncpg://postgres:password@localhost:5432/pokefinder-db"
-
     # Litestar
     cors_origins: list[str] = ["*"]
     log_level: str = "INFO"
@@ -65,10 +62,6 @@ class Settings(BaseSettings):
     @property
     def type_pairs_fixture_path(self) -> Path:
         return self.fixtures_dir / "type_pairs.json"
-
-    @property
-    def db_url(self) -> str:
-        return self.database_url
 
 
 # Settings generator and getter
