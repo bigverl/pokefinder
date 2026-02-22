@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FilterBox } from '../shared/FilterBox';
 import { TypeInput } from '../shared/TypeInput';
+import '../shared/SearchForm.css';
 import './CoverageAnalyzerSearch.css';
 
 interface SlotState {

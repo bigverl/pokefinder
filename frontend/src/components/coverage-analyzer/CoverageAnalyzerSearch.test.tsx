@@ -43,7 +43,7 @@ describe('CoverageAnalyzerSearch', () => {
   it('calls onError when no slots are enabled', async () => {
     const { onError } = setup();
     const user = userEvent.setup();
-    await user.click(screen.getByText('Scan'));
+    await user.click(screen.getByText('Scan coverage'));
     expect(onError).toHaveBeenCalledWith('Enable at least one slot and enter a type.');
   });
 
@@ -52,7 +52,7 @@ describe('CoverageAnalyzerSearch', () => {
     const user = userEvent.setup();
     const checkboxes = screen.getAllByRole('checkbox', { name: /enabled/i });
     await user.click(checkboxes[0]);
-    await user.click(screen.getByText('Scan'));
+    await user.click(screen.getByText('Scan coverage'));
     expect(onError).toHaveBeenCalledWith('Enable at least one slot and enter a type.');
   });
 
@@ -63,7 +63,7 @@ describe('CoverageAnalyzerSearch', () => {
     await user.click(checkboxes[0]);
     const type1Inputs = screen.getAllByLabelText('type 1');
     await user.type(type1Inputs[0], 'fire');
-    await user.click(screen.getByText('Scan'));
+    await user.click(screen.getByText('Scan coverage'));
     expect(onSearch).toHaveBeenCalledWith(['fire']);
   });
 
@@ -76,7 +76,7 @@ describe('CoverageAnalyzerSearch', () => {
     const type2Inputs = screen.getAllByLabelText('type 2');
     await user.type(type1Inputs[0], 'water');
     await user.type(type2Inputs[0], 'ground');
-    await user.click(screen.getByText('Scan'));
+    await user.click(screen.getByText('Scan coverage'));
     expect(onSearch).toHaveBeenCalledWith(['water-ground']);
   });
 
@@ -87,7 +87,7 @@ describe('CoverageAnalyzerSearch', () => {
     await user.click(checkboxes[0]);
     const type1Inputs = screen.getAllByLabelText('type 1');
     await user.type(type1Inputs[0], 'fire');
-    await user.click(screen.getByText('Scan'));
+    await user.click(screen.getByText('Scan coverage'));
     expect(onError).toHaveBeenCalledWith('Request not sent: Search parameters unchanged.');
   });
 });

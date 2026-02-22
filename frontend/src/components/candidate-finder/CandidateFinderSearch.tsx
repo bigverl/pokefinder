@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FilterBox } from '../shared/FilterBox';
 import { TypeInput } from '../shared/TypeInput';
 import type { CandidateFinderParams } from '../../api/types';
+import '../shared/SearchForm.css';
 import './CandidateFinderSearch.css';
 
 const STAT_OPTIONS = [

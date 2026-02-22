@@ -50,7 +50,9 @@ app = Litestar(
     route_handlers=[CandidateFinderController, CoverageAnalyzerController],
     static_files_config=[
         StaticFilesConfig(directories=[_dist], path="/", html_mode=True),
-    ] if _dist.exists() else [],
+    ]
+    if _dist.exists()
+    else [],
     dependencies={
         "finder": Provide(provide_candidate_finder, sync_to_thread=False),
         "coverage_analyzer": Provide(provide_coverage_analyzer, sync_to_thread=False),

@@ -52,6 +52,10 @@ test-all:
 check:
     scripts/static_analysis.sh
 
+commit:
+    just check
+    just test-all
+
 frontend:
     cd frontend && npm run dev
 
