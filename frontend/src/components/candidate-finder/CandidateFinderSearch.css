@@ -1,7 +1,7 @@
 .cf-search {
   display: flex;
   flex-direction: column;
-  padding: 20px 18px 0;
+  padding: 20px 20px 0;
   gap: 0;
   overflow-y: auto;
   height: 100%;
@@ -16,7 +16,7 @@
 }
 
 .input-row .text-input,
-.input-row .type-input {
+.input-row .type-input-wrap {
   margin-left: 6px;
 }
 
