@@ -6,6 +6,10 @@
   margin-bottom: 16px;
 }
 
+.filter-box .filter-box {
+  padding-top: 15px;
+}
+
 .filter-box-title {
   position: absolute;
   top: -0.6em;

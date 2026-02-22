@@ -56,10 +56,10 @@ htmlcov/
 # Node / React / Vite
 # ============================
 
-frontend-web/node_modules/
-frontend-web/dist/
-frontend-web/.vite/
-frontend-web/coverage/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
 
 # Structlog / runtime output (if you log to files)
 *.json.log

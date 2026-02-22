@@ -11,7 +11,7 @@ start:
     @sleep 2
     @echo "   done"
     @echo "=> Starting frontend..."
-    @cd frontend-web && npm run dev > /dev/null 2>&1 &
+    @cd frontend && npm run dev > /dev/null 2>&1 &
     @echo "   done"
     @echo ""
     @echo "Open http://localhost:5173 in your browser"
@@ -42,7 +42,7 @@ test-component:
     uv run pytest -m component
 
 test-frontend:
-    cd frontend-web && npm run test
+    cd frontend && npm run test
 
 test-all:
     just test-unit
@@ -53,7 +53,7 @@ check:
     scripts/static_analysis.sh
 
 frontend:
-    cd frontend-web && npm run dev
+    cd frontend && npm run dev
 
 backend:
     litestar --app=backend.src.app:app run --debug --reload

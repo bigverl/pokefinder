@@ -5,7 +5,7 @@
   border-radius: 2px;
   height: var(--row);
   padding: 0 6px;
-  width: 340px;
+  flex: 1;
   outline: none;
 }
 
