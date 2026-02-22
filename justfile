@@ -56,6 +56,16 @@ commit:
     just check
     just test-all
 
+build:
+    @echo "=> Building frontend..."
+    @cd frontend && npm run build
+    @echo "   Done"
+
+start-prod:
+    @echo "=> Starting production server..."
+    @uv run litestar --app backend.src.app:app run --host 0.0.0.0
+    @echo "   Open http://localhost:8000 in your browser"
+
 frontend:
     cd frontend && npm run dev
 

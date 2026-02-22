@@ -4,10 +4,10 @@ import type {
   CoverageAnalyzerResponse,
 } from './types';
 
-const BASE_URL = import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:8000';
+const BASE_URL = import.meta.env.VITE_BACKEND_URL ?? '';
 
 async function get<T>(path: string, params: Record<string, string>): Promise<T> {
-  const url = new URL(path, BASE_URL);
+  const url = new URL(path, BASE_URL || window.location.origin);
   for (const [key, value] of Object.entries(params)) {
     url.searchParams.set(key, value);
   }
@@ -15,7 +15,9 @@ async function get<T>(path: string, params: Record<string, string>): Promise<T> 
   const res = await fetch(url.toString());
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(text);
+    let message = text;
+    try { message = JSON.parse(text).detail ?? text; } catch {}
+    throw new Error(message);
   }
   return res.json() as Promise<T>;
 }
