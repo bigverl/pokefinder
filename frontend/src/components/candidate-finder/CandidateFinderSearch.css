@@ -34,6 +34,7 @@
   color: var(--fg);
   border: none;
   height: var(--row);
+  padding-left: 6px;
   flex: 1;
   outline: none;
 }
