@@ -427,7 +427,7 @@ class JSONRepository:
 
         # Case 3: Move does not exist
         if move not in self._move_index:
-            raise InvalidPokemonMoveError(f"Invalid move: '{move}'")
+            raise InvalidPokemonMoveError(f"Invalid move: '{move.replace('_', ' ')}'")
 
         # Case 4: Success
         pokemon_found = self._move_index[move]
@@ -513,7 +513,7 @@ class JSONRepository:
         # Case 7: No Pokemon found matching criteria
         if not candidates:
             raise NoPokemonFoundError(
-                f"No Pokemon found with {primary_stat} >= {min_primary} and {secondary_stat} >= {min_secondary}"
+                f"No Pokemon found: {primary_stat} {min_primary} and {secondary_stat} {min_secondary}"
             )
 
         # Case 8: Rank by weighted composite score (70% primary, 30% secondary)

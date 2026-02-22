@@ -1,0 +1,11 @@
+.ca-search {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.ca-search .filter-box:last-of-type {
+  margin-bottom: 0;
+}

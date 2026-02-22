@@ -1,0 +1,45 @@
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: var(--row);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.toggle-row input[type='checkbox'] {
+  accent-color: var(--cyan);
+  width: 14px;
+  height: 14px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--row);
+}
+
+.input-row label {
+  color: var(--fg);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.go-button {
+  margin-top: auto;
+  margin-bottom: auto;
+  align-self: center;
+  background: var(--cyan);
+  color: var(--surface);
+  border: none;
+  border-radius: 2px;
+  height: calc(2 * var(--row));
+  padding: 0 24px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.go-button:hover {
+  opacity: 0.85;
+}

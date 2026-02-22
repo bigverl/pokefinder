@@ -146,7 +146,7 @@ class CandidateFinderService:
             moves_rows.append(
                 MovesTableRow(
                     pokemon_name=display_name,
-                    move_name=move,
+                    move_name=move.replace("_", " "),
                     level_learned=level_learned,
                     machine=machine,
                     egg_move=egg_move,

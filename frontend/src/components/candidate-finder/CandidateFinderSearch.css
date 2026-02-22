@@ -1,0 +1,62 @@
+.cf-search {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.toggle-row + .filter-box {
+  margin-top: 15px;
+}
+
+.toggle-row + .input-row {
+  margin-top: 5px;
+}
+
+.input-row .text-input,
+.input-row .type-input-wrap {
+  margin-left: 6px;
+}
+
+.filter-box .filter-box .input-row .text-input,
+.filter-box .filter-box .input-row .stat-select {
+  margin-left: 0;
+}
+
+.filter-box .filter-box .input-row label {
+  min-width: 15ch;
+}
+
+.text-input {
+  background: var(--muted);
+  color: var(--fg);
+  border: none;
+  height: var(--row);
+  padding-left: 6px;
+  flex: 1;
+  outline: none;
+}
+
+.text-input:disabled {
+  opacity: 0.4;
+}
+
+.stat-select {
+  background: var(--muted);
+  color: var(--fg);
+  border: none;
+  border-radius: 2px;
+  height: var(--row);
+  padding: 0 6px;
+  flex: 1;
+  outline: none;
+}
+
+.stat-select:disabled {
+  opacity: 0.4;
+}
+
+.cf-search .filter-box:last-of-type {
+  margin-bottom: 0;
+}
