@@ -1,18 +1,45 @@
-.type-input {
+.type-input-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
   background: var(--muted);
-  color: var(--fg);
-  border: none;
   border-radius: 2px;
   height: var(--row);
-  padding: 0 6px;
-  flex: 1;
-  outline: none;
 }
 
-.type-input:focus {
-  outline: 1px solid var(--comment);
-}
-
-.type-input:disabled {
+.type-input-wrap:has(.type-input:disabled) {
   opacity: 0.4;
 }
+
+.type-ghost {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 5px;
+  line-height: var(--row);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.type-ghost-typed {
+  color: transparent;
+}
+
+.type-ghost-suffix {
+  color: var(--comment);
+}
+
+.type-input {
+  background: transparent;
+  color: var(--fg);
+  border: none;
+  height: var(--row);
+  flex: 1;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+

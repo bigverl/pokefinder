@@ -50,9 +50,9 @@ export function DataTable({ columns, rows }: DataTableProps) {
             {columns.map((col, i) => (
               <th key={col} onClick={() => handleHeaderClick(i)} className="sortable-header">
                 {col}
-                {sortCol === i && (
-                  <span className="sort-indicator">{sortDir === 'asc' ? ' ^' : ' v'}</span>
-                )}
+                <span className="sort-indicator" style={{ visibility: sortCol === i ? 'visible' : 'hidden' }}>
+                  {sortDir === 'asc' ? ' ^' : ' v'}
+                </span>
               </th>
             ))}
           </tr>

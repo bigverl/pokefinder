@@ -17,7 +17,7 @@
 
 .input-row .text-input,
 .input-row .type-input {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 
 .filter-box .filter-box .input-row .text-input,
@@ -38,9 +38,6 @@
   outline: none;
 }
 
-.text-input:focus {
-  outline: 1px solid var(--comment);
-}
 
 .text-input:disabled {
   opacity: 0.4;
@@ -61,15 +58,19 @@
   opacity: 0.4;
 }
 
+.cf-search .filter-box:last-of-type {
+  margin-bottom: 0;
+}
+
 .go-button {
-  margin-top: 12px;
-  margin-bottom: 20px;
-  align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-self: center;
   background: var(--cyan);
   color: var(--surface);
   border: none;
   border-radius: 2px;
-  height: var(--row);
+  height: calc(2 * var(--row));
   padding: 0 24px;
   font-weight: bold;
   letter-spacing: 0.03em;

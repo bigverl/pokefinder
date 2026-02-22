@@ -84,7 +84,7 @@ export function CoverageAnalyzerSearch({ onSearch, onError, lastSlots }: Coverag
       ))}
 
       <button className="go-button" onClick={handleSubmit}>
-        Scan
+        Scan coverage
       </button>
     </div>
   );
