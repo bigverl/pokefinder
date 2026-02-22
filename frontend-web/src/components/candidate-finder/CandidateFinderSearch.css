@@ -1,0 +1,93 @@
+.cf-search {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 18px 0;
+  gap: 0;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: var(--row);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.toggle-row input[type='checkbox'] {
+  accent-color: var(--cyan);
+  width: 14px;
+  height: 14px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--row);
+  padding-left: 8px;
+}
+
+.input-row label {
+  color: var(--fg);
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.text-input {
+  background: var(--muted);
+  color: var(--fg);
+  border: none;
+  border-radius: 2px;
+  height: var(--row);
+  padding: 0 6px;
+  width: 140px;
+  outline: none;
+}
+
+.text-input:focus {
+  outline: 1px solid var(--comment);
+}
+
+.text-input:disabled {
+  opacity: 0.4;
+}
+
+.text-input.narrow {
+  width: 80px;
+}
+
+.stat-select {
+  background: var(--muted);
+  color: var(--fg);
+  border: none;
+  border-radius: 2px;
+  height: var(--row);
+  padding: 0 6px;
+  width: 140px;
+  outline: none;
+}
+
+.stat-select:disabled {
+  opacity: 0.4;
+}
+
+.go-button {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  background: var(--cyan);
+  color: var(--surface);
+  border: none;
+  border-radius: 2px;
+  height: var(--row);
+  padding: 0 24px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.go-button:hover {
+  opacity: 0.85;
+}

@@ -52,6 +52,15 @@ htmlcov/
 .textual-dev/
 *.tcss.cache  # Textual CSS cache
 
+# ============================
+# Node / React / Vite
+# ============================
+
+frontend-web/node_modules/
+frontend-web/dist/
+frontend-web/.vite/
+frontend-web/coverage/
+
 # Structlog / runtime output (if you log to files)
 *.json.log
 

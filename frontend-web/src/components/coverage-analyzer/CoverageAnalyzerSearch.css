@@ -1,0 +1,52 @@
+.ca-search {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: var(--row);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.toggle-row input[type='checkbox'] {
+  accent-color: var(--cyan);
+  width: 14px;
+  height: 14px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--row);
+  padding-left: 8px;
+}
+
+.input-row label {
+  color: var(--fg);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.go-button {
+  margin-top: 12px;
+  align-self: flex-start;
+  background: var(--cyan);
+  color: var(--surface);
+  border: none;
+  border-radius: 2px;
+  height: var(--row);
+  padding: 0 24px;
+  font-weight: bold;
+}
+
+.go-button:hover {
+  opacity: 0.85;
+}

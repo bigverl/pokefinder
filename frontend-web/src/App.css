@@ -1,0 +1,92 @@
+.app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  gap: 8px;
+  padding: 8px;
+  background: var(--bg);
+}
+
+.left-pane {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--comment);
+  border-radius: 4px;
+  position: relative;
+}
+
+.right-pane {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--comment);
+  border-radius: 4px;
+  position: relative;
+}
+
+.pane-border-title {
+  position: absolute;
+  top: -0.75em;
+  background: var(--bg);
+  padding: 0 4px;
+  color: var(--cyan);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.pane-border-title.right {
+  right: 12px;
+}
+
+.pane-border-title.left {
+  left: 12px;
+}
+
+.pane-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--muted);
+  padding: 10px 30px 10px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.feature-tabs {
+  display: flex;
+  gap: 0;
+}
+
+.feature-tab {
+  background: transparent;
+  border: none;
+  color: var(--comment);
+  height: var(--row);
+  padding: 0 12px 0 0;
+}
+
+.feature-tab:hover {
+  color: var(--cyan);
+}
+
+.feature-tab.active {
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+.pane-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.error-msg {
+  color: var(--red);
+  height: var(--row);
+  padding: 0 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,18 @@
+.type-input {
+  background: var(--muted);
+  color: var(--fg);
+  border: none;
+  border-radius: 2px;
+  height: var(--row);
+  padding: 0 6px;
+  width: 340px;
+  outline: none;
+}
+
+.type-input:focus {
+  outline: 1px solid var(--comment);
+}
+
+.type-input:disabled {
+  opacity: 0.4;
+}

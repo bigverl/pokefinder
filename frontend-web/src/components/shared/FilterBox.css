@@ -1,0 +1,18 @@
+.filter-box {
+  position: relative;
+  border: 1px solid var(--comment);
+  border-radius: 4px;
+  padding: 20px 20px 10px 20px;
+  margin-bottom: 16px;
+}
+
+.filter-box-title {
+  position: absolute;
+  top: -0.6em;
+  left: 10px;
+  background: var(--bg);
+  padding: 0 4px;
+  color: var(--cyan);
+  display: inline-block;
+  line-height: 1;
+}

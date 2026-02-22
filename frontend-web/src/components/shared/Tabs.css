@@ -1,0 +1,40 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabs-bar {
+  display: flex;
+  gap: 0;
+  padding: 10px 10px 10px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--muted);
+  flex-shrink: 0;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--comment);
+  height: var(--row);
+  padding: 0 16px;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.tab-btn:hover {
+  color: var(--cyan);
+}
+
+.tab-btn.active {
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+.tab-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

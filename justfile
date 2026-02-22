@@ -6,21 +6,23 @@ install:
     @echo "Install complete. Run 'just start' to launch."
 
 start:
-    @echo "=> Starting backend...     "
+    @echo "=> Starting backend..."
     @uv run litestar --app backend.src.app:app run --reload > /dev/null 2>&1 &
     @sleep 2
-    @echo "done"
-    @echo "=> Starting frontend...    "
-    @uv run textual serve --dev frontend/app.py --port 8080 > /dev/null 2>&1 &
-    @echo "done"
+    @echo "   done"
+    @echo "=> Starting frontend..."
+    @cd frontend-web && npm run dev > /dev/null 2>&1 &
+    @echo "   done"
     @echo ""
-    @echo "Open http://localhost:8080 in your browser"
+    @echo "Open http://localhost:5173 in your browser"
 
 stop:
-    @echo "=> Stopping frontend...   done"
-    @-lsof -ti:8080 | xargs kill 2>/dev/null
-    @echo "=> Stopping backend...    done"
+    @echo "=> Stopping frontend..."
+    @-lsof -ti:5173 | xargs kill 2>/dev/null
+    @echo "   done"
+    @echo "=> Stopping backend..."
     @-lsof -ti:8000 | xargs kill 2>/dev/null
+    @echo "   done"
     @echo ""
     @echo "Stopped all services"
 
@@ -39,18 +41,19 @@ test-unit:
 test-component:
     uv run pytest -m component
 
+test-frontend:
+    cd frontend-web && npm run test
+
 test-all:
-    uv run just test-unit
-    uv run just test-component
+    just test-unit
+    just test-component
+    just test-frontend
 
 check:
     scripts/static_analysis.sh
 
 frontend:
-    uv run textual run --dev frontend/app.py
-
-serve:
-    textual serve --dev frontend/app.py --port 8080
+    cd frontend-web && npm run dev
 
 backend:
     litestar --app=backend.src.app:app run --debug --reload
