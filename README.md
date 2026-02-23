@@ -1,6 +1,6 @@
 # PokeFinder
 
-A Pokedex-style team building tool for PokeRogue.
+A team building tool for PokeRogue. Search for Pokemon by move, type, and stats. Analyze your team's offensive and defensive type coverage.
 
 ## Features
 
@@ -9,62 +9,32 @@ A Pokedex-style team building tool for PokeRogue.
 
 ---
 
-## Installation
+## Stack
 
-### Prerequisites
+- Backend: Litestar (Python 3.12+), JSON fixtures, uv
+- Frontend: React + TypeScript (Vite)
+- Hosting: Railway
+
+---
+
+## Prerequisites
 
 - [Python 3.12+](https://www.python.org/downloads/)
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) — Python package manager
-- [just](https://github.com/casey/just#installation) — Command runner
-- [Docker](https://docs.docker.com/get-docker/) — For PostgreSQL
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+- [just](https://github.com/casey/just#installation)
+- [Node.js 20+](https://nodejs.org/)
 
-### Quickstart
+---
+
+## Quickstart
 
 ```bash
-# Make sure docker engine is started
 just install
 just start
 ```
 
-`just install` sets up dependencies, runs database migrations, and seeds the database. Requires docker engine to be active
-`just start` starts the backend and frontend. Open http://localhost:8080 when it's ready.
-
-To stop:
+Open http://localhost:5173 in your browser.
 
 ```bash
 just stop
 ```
-
-### Debug Install
-
-To see verbose output during installation (database setup steps, migration details, seed counts per table):
-
-```bash
-just install-debug
-```
-
----
-
-## Usage
-
-| Command | Description |
-|---------|-------------|
-| `just install` | First-time setup |
-| `just start` | Start backend, frontend, and database |
-| `just stop` | Stop all services |
-| `just install-debug` | First-time setup with verbose output |
-| `just up` | Docker compose up. Containerized usage (slow) |
-| `just down` | Docker compose down. |
-
-
----
-
-## Todos
-
-### Features
-- [ ] Pokedex
-
-### Architecture
-- [ ] Remove database entirely and replace with json fixture
-- [ ] Refactor frontend to use React
-- [ ] Host on GitHub Pages
