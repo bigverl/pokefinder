@@ -60,6 +60,14 @@ export function CandidateFinderSearch({ onSearch, onError, lastParams }: Candida
       }
 
       if (statsEnabled) {
+        if (primaryStat && !secondaryStat) {
+          onError('Select a secondary stat.');
+          return;
+        }
+        if (secondaryStat && !primaryStat) {
+          onError('Select a primary stat.');
+          return;
+        }
         if (primaryStat) params.primary_stat = primaryStat;
         if (secondaryStat) params.secondary_stat = secondaryStat;
         const mp = parseStatInt(minPrimary);

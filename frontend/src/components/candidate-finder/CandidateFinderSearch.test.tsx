@@ -91,4 +91,26 @@ describe('CandidateFinderSearch', () => {
     setup();
     expect(screen.getByLabelText('minimum value', { selector: '#min-primary' })).toBeDisabled();
   });
+
+  it('calls onError when primary stat selected but no secondary stat', async () => {
+    const { onError } = setup();
+    const user = userEvent.setup();
+
+    await user.click(screen.getAllByRole('checkbox', { name: /enabled/i })[1]);
+    await user.selectOptions(screen.getAllByRole('combobox', { name: 'stat name' })[0], 'attack');
+    await user.click(screen.getByText("Catch 'em all!"));
+
+    expect(onError).toHaveBeenCalledWith('Select a secondary stat.');
+  });
+
+  it('calls onError when secondary stat selected but no primary stat', async () => {
+    const { onError } = setup();
+    const user = userEvent.setup();
+
+    await user.click(screen.getAllByRole('checkbox', { name: /enabled/i })[1]);
+    await user.selectOptions(screen.getAllByRole('combobox', { name: 'stat name' })[1], 'defense');
+    await user.click(screen.getByText("Catch 'em all!"));
+
+    expect(onError).toHaveBeenCalledWith('Select a primary stat.');
+  });
 });

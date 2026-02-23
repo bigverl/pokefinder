@@ -16,7 +16,7 @@ async function get<T>(path: string, params: Record<string, string>): Promise<T> 
   if (!res.ok) {
     const text = await res.text();
     let message = text;
-    try { message = JSON.parse(text).detail ?? text; } catch {}
+    try { message = JSON.parse(text).detail ?? text; } catch { /* response is plain text */ }
     throw new Error(message);
   }
   return res.json() as Promise<T>;
