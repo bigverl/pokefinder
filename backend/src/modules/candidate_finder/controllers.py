@@ -106,6 +106,12 @@ class CandidateFinderController(Controller):
         if not any([move, desired_type, primary_stat, secondary_stat]):
             raise NoSearchParamsError("Must provide at least one search parameter")
 
+        # Case 2: Only one of primary/secondary stat provided
+        if primary_stat and not secondary_stat:
+            raise InvalidPokemonStatError("Both stats are required. Missing: secondary stat.")
+        if secondary_stat and not primary_stat:
+            raise InvalidPokemonStatError("Both stats are required. Missing: primary stat.")
+
         # Get results
         response: frozenset[str] = finder.search_pokemon(
             move=move,

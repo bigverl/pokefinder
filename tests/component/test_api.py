@@ -249,7 +249,27 @@ def test_pokemon_type_include_ultra_beasts(test_client):
 # ========
 
 
-# Case 1: invalid primary_stat 400
+# Case 1: primary_stat only (no secondary_stat) → 400
+@pytest.mark.component
+def test_pokemon_stats_primary_only(test_client):
+    """Test /search_pokemon with primary_stat but no secondary_stat returns 400."""
+    response = test_client.get("/search_pokemon?primary_stat=attack")
+
+    assert response.status_code == 400
+    assert "secondary" in response.text.lower()
+
+
+# Case 2: secondary_stat only (no primary_stat) → 400
+@pytest.mark.component
+def test_pokemon_stats_secondary_only(test_client):
+    """Test /search_pokemon with secondary_stat but no primary_stat returns 400."""
+    response = test_client.get("/search_pokemon?secondary_stat=speed")
+
+    assert response.status_code == 400
+    assert "primary" in response.text.lower()
+
+
+# Case 3: invalid primary_stat 400
 @pytest.mark.component
 def test_pokemon_stats_invalid_primary(test_client):
     """Test /search_pokemon with invalid primary_stat returns 400."""
