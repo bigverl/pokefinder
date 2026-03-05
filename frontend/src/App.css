@@ -79,6 +79,90 @@
   flex-direction: column;
 }
 
+.help-btn {
+  background: transparent;
+  border: none;
+  color: var(--cyan);
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  height: var(--row);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+}
+
+.help-btn:hover {
+  color: var(--fg);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--comment);
+  border-radius: 4px;
+  padding: 32px;
+  max-width: 784px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--comment);
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1em;
+}
+
+.modal-close:hover {
+  color: var(--fg);
+}
+
+.modal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-section h2 {
+  color: var(--cyan);
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.modal-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 8px;
+}
+
+.modal-label {
+  color: var(--cyan);
+}
+
+.modal-note {
+  color: var(--cyan);
+}
+
 .error-msg {
   color: var(--red);
   height: var(--row);

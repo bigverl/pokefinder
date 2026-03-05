@@ -58,7 +58,7 @@ describe('CandidateFinderSearch', () => {
     await user.type(screen.getByLabelText('minimum value', { selector: '#min-primary' }), '1.5');
     await user.click(screen.getByText("Catch 'em all!"));
 
-    expect(onError).toHaveBeenCalledWith('Expected integer, got float: 1.5');
+    expect(onError).toHaveBeenCalledWith('Stat values must be whole numbers');
   });
 
   it('calls onError for stat value out of range', async () => {

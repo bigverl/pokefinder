@@ -15,7 +15,7 @@ const STAT_OPTIONS = [
 
 function parseStatInt(raw: string): number | null {
   if (!raw) return null;
-  if (raw.includes('.')) throw new Error(`Expected integer, got float: ${raw}`);
+  if (raw.includes('.')) throw new Error('Stat values must be whole numbers');
   const n = parseInt(raw, 10);
   if (isNaN(n)) throw new Error('Stat field must be a number between 1 and 255');
   if (n < 1 || n > 255) throw new Error('Stat field must be a number between 1 and 255');
@@ -78,8 +78,9 @@ export function CandidateFinderSearch({ onSearch, onError, lastParams }: Candida
         if (msp != null) params.min_speed = msp;
       }
 
-      if (typeEnabled && type1) {
-        params.desired_type = type2 ? `${type1}-${type2}` : type1;
+      if (typeEnabled && (type1 || type2)) {
+        if (type1 && type2) params.desired_type = `${type1}-${type2}`;
+        else params.desired_type = type1 || type2;
       }
 
       const key = JSON.stringify(params);
@@ -125,6 +126,7 @@ export function CandidateFinderSearch({ onSearch, onError, lastParams }: Candida
             value={moveName}
             onChange={e => setMoveName(e.target.value)}
             disabled={!moveEnabled}
+            maxLength={100}
           />
         </div>
       </FilterBox>
@@ -151,8 +153,12 @@ export function CandidateFinderSearch({ onSearch, onError, lastParams }: Candida
           <div className="input-row">
             <label htmlFor="min-primary">minimum value</label>
             <input
+              type="number"
               id="min-primary"
               className="text-input narrow"
+              min={1}
+              max={255}
+              step={1}
               value={minPrimary}
               onChange={e => setMinPrimary(e.target.value)}
               disabled={!statsEnabled}
@@ -176,8 +182,12 @@ export function CandidateFinderSearch({ onSearch, onError, lastParams }: Candida
           <div className="input-row">
             <label htmlFor="min-secondary">minimum value</label>
             <input
+              type="number"
               id="min-secondary"
               className="text-input narrow"
+              min={1}
+              max={255}
+              step={1}
               value={minSecondary}
               onChange={e => setMinSecondary(e.target.value)}
               disabled={!statsEnabled}
@@ -188,8 +198,12 @@ export function CandidateFinderSearch({ onSearch, onError, lastParams }: Candida
           <div className="input-row">
             <label htmlFor="min-speed">minimum value</label>
             <input
+              type="number"
               id="min-speed"
               className="text-input narrow"
+              min={1}
+              max={255}
+              step={1}
               value={minSpeed}
               onChange={e => setMinSpeed(e.target.value)}
               disabled={!statsEnabled}

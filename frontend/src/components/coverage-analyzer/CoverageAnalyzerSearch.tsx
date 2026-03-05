@@ -29,11 +29,12 @@ export function CoverageAnalyzerSearch({ onSearch, onError, lastSlots }: Coverag
 
   function handleSubmit() {
     const active = slots
-      .filter(s => s.enabled && s.type1.trim())
+      .filter(s => s.enabled && (s.type1.trim() || s.type2.trim()))
       .map(s => {
         const t1 = s.type1.trim().toLowerCase();
         const t2 = s.type2.trim().toLowerCase();
-        return t2 ? `${t1}-${t2}` : t1;
+        if (t1 && t2) return `${t1}-${t2}`;
+        return t1 || t2;
       });
 
     if (active.length === 0) {
