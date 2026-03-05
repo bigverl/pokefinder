@@ -3,6 +3,7 @@ import { CandidateFinderSearch } from './components/candidate-finder/CandidateFi
 import { CandidateFinderResults } from './components/candidate-finder/CandidateFinderResults';
 import { CoverageAnalyzerSearch } from './components/coverage-analyzer/CoverageAnalyzerSearch';
 import { CoverageAnalyzerResults } from './components/coverage-analyzer/CoverageAnalyzerResults';
+import { HelpModal } from './components/shared/HelpModal';
 import { searchPokemon, searchTeamCoverage } from './api/client';
 import type { CandidateFinderParams, CandidateFinderResponse, CoverageAnalyzerResponse } from './api/types';
 import './App.css';
@@ -11,6 +12,7 @@ type Feature = 'candidate-finder' | 'coverage-analyzer';
 
 export default function App() {
   const [activeFeature, setActiveFeature] = useState<Feature>('candidate-finder');
+  const [helpOpen, setHelpOpen] = useState(false);
 
   const [cfData, setCfData] = useState<CandidateFinderResponse | null>(null);
   const [cfLastParams, setCfLastParams] = useState<CandidateFinderParams | null>(null);
@@ -44,6 +46,7 @@ export default function App() {
 
   return (
     <div className="app">
+      {helpOpen && <HelpModal onClose={() => setHelpOpen(false)} />}
       <div className="left-pane">
         <span className="pane-border-title right">poke-finder</span>
         <div className="pane-header">
@@ -89,6 +92,7 @@ export default function App() {
 
       <div className="right-pane">
         <span className="pane-border-title left">results</span>
+        <button className="help-btn" onClick={() => setHelpOpen(true)}>CLICK HERE FOR HELP!</button>
         <div className="pane-body">
           {activeFeature === 'candidate-finder' && <CandidateFinderResults data={cfData} />}
           {activeFeature === 'coverage-analyzer' && <CoverageAnalyzerResults data={caData} />}

@@ -112,15 +112,23 @@ class CandidateFinderController(Controller):
         if secondary_stat and not primary_stat:
             raise InvalidPokemonStatError("Both stats are required. Missing: primary stat.")
 
+        # Parse stat minimums
+        try:
+            min_primary_int = int(min_primary) if min_primary else 0
+            min_secondary_int = int(min_secondary) if min_secondary else None
+            min_speed_int = int(min_speed) if min_speed else None
+        except ValueError:
+            raise InvalidPokemonStatError("Stat minimum values must be integers")
+
         # Get results
         response: frozenset[str] = finder.search_pokemon(
             move=move,
             desired_type=desired_type,
             primary_stat=primary_stat,
             secondary_stat=secondary_stat,
-            min_primary=int(min_primary) if min_primary else 0,
-            min_secondary=int(min_secondary) if min_secondary else None,
-            min_speed=int(min_speed) if min_speed else None,
+            min_primary=min_primary_int,
+            min_secondary=min_secondary_int,
+            min_speed=min_speed_int,
             include_legendary=include_legendary,
             include_mythical=include_mythical,
             include_ultra_beasts=include_ultra_beasts,

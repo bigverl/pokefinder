@@ -23,7 +23,7 @@ logger = structlog.get_logger(__name__)
 cors_config = CORSConfig(allow_origins=settings.cors_origins)
 
 # Rate limiter
-rate_limit_config = RateLimitConfig(rate_limit=("minute", 100), exclude=["/health", "/schema"])
+rate_limit_config = RateLimitConfig(rate_limit=("minute", 100))
 
 
 # Startup hook — load JSON fixtures once and store services as singletons
