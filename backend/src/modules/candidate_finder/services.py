@@ -39,17 +39,6 @@ class CandidateFinderService:
         include_ultra_beasts: bool = False,
     ) -> frozenset[str]:
 
-        # logger.debug(
-        #     "Searching pokemon with:",
-        #     move=move,
-        #     desired_type=desired_type,
-        #     primary_stat=primary_stat,
-        #     secondary_stat=secondary_stat,
-        #     include_legendary=include_legendary,
-        #     include_mythical=include_mythical,
-        #     include_ultra_beasts=include_ultra_beasts
-        # )
-
         results = None
 
         # Apply move filter
@@ -77,7 +66,6 @@ class CandidateFinderService:
 
         # Apply stat filter
         if primary_stat and secondary_stat:
-            # try:
             stat_results = self.repository.get_pokemon_by_stats(
                 primary_stat,
                 secondary_stat,
@@ -102,8 +90,9 @@ class CandidateFinderService:
         """Build types table for given Pokemon names."""
         types_rows = []
         for name in sorted(pokemon_names):
-            display_name = self.repository.get_pokemon_by_name(name)["display_name"]
-            type_display = self.repository.get_pokemon_by_name(name)["type_display"]
+            pokemon = self.repository.get_pokemon_by_name(name)
+            display_name = pokemon["display_name"]
+            type_display = pokemon["type_display"]
             types = type_display.split("/")
             types_rows.append(
                 TypesTableRow(name=display_name, type1=types[0], type2=types[1] if len(types) > 1 else None)

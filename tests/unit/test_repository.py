@@ -11,6 +11,7 @@ import pytest
 
 from backend.src.lib.exceptions import (
     InvalidPokemonMoveError,
+    InvalidPokemonNameError,
     InvalidPokemonStatError,
     InvalidPokemonTypeError,
     NoPokemonFoundError,
@@ -457,7 +458,7 @@ class TestGetPokemonByName:
             fake_repo.get_pokemon_by_name("")
 
     def test_invalid_name_raises(self, fake_repo):
-        with pytest.raises(InvalidPokemonMoveError):
+        with pytest.raises(InvalidPokemonNameError):
             fake_repo.get_pokemon_by_name("notapokemon")
 
 
