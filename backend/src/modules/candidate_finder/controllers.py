@@ -1,5 +1,3 @@
-import logging
-
 from litestar import Controller, MediaType, Request, Response, get
 from litestar.exceptions import NotFoundException
 from litestar.status_codes import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND
@@ -17,8 +15,6 @@ from backend.src.modules.candidate_finder.services import CandidateFinderService
 
 HEALTH = "/health"
 SEARCH_POKEMON = "/search_pokemon"
-
-logger = logging.getLogger(__name__)
 
 
 # Error handlers
@@ -71,7 +67,7 @@ def no_search_params_error_handler(_: Request, exc: NoSearchParamsError) -> Resp
 
 
 class CandidateFinderController(Controller):
-    path = ""  # Routes already have full paths from urls.py
+    path = ""
 
     exception_handlers = {
         InvalidPokemonMoveError: invalid_pokemon_move_error_handler,

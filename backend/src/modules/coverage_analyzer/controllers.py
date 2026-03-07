@@ -1,5 +1,3 @@
-import logging
-
 from litestar import Controller, MediaType, Request, Response, get
 from litestar.status_codes import (
     HTTP_400_BAD_REQUEST,
@@ -10,8 +8,6 @@ from backend.src.modules.coverage_analyzer.schemas import CoverageAnalyzerRespon
 from backend.src.modules.coverage_analyzer.services import CoverageAnalyzerService
 
 TEAM_COVERAGE = "/team_coverage"
-
-logger = logging.getLogger(__name__)
 
 
 # Error handlers

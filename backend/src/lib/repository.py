@@ -11,6 +11,7 @@ from backend.src.lib.dtos import Pokemon, PokemonMove, PokemonStats, PokemonType
 # Exceptions
 from backend.src.lib.exceptions import (
     InvalidPokemonMoveError,
+    InvalidPokemonNameError,
     InvalidPokemonStatError,
     InvalidPokemonTypeError,
     NoPokemonFoundError,
@@ -392,7 +393,7 @@ class JSONRepository:
 
         # Case 3: Name does not exist
         if name not in self._pokemon_index:
-            raise InvalidPokemonMoveError(f"Invalid name: '{name}'")
+            raise InvalidPokemonNameError(f"Invalid name: '{name}'")
 
         # Case 4: Success
         results = self._pokemon_index[name]
